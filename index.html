@@ -21,7 +21,7 @@
         }
     </script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen scroll-smooth">
 
     <!-- HEADER / NAVBAR -->
     <header class="bg-inneNavy text-white sticky top-0 z-50 shadow-md">
@@ -36,8 +36,9 @@
             
             <nav class="hidden md:flex space-x-6 font-medium text-sm">
                 <a href="#" class="text-inneGold hover:text-white transition-colors">Inicio</a>
-                <a href="#tramites" class="hover:text-inneGold transition-colors">Trámites</a>
-                <a href="#investigacion" class="hover:text-inneGold transition-colors">Investigación</a>
+                <a href="#malla" class="hover:text-inneGold transition-colors">Malla Curricular</a>
+                <a href="#avisos" class="hover:text-inneGold transition-colors">Avisos y Noticias</a>
+                <a href="#supervivencia" class="hover:text-inneGold transition-colors">Guía de Supervivencia</a>
                 <a href="#contacto" class="hover:text-inneGold transition-colors">Contacto</a>
             </nav>
 
@@ -48,15 +49,16 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-inneNavy border-t border-gray-700 px-4 py-3 space-y-3 text-sm">
             <a href="#" class="block text-inneGold">Inicio</a>
-            <a href="#tramites" class="block hover:text-inneGold">Trámites</a>
-            <a href="#investigacion" class="block hover:text-inneGold">Investigación</a>
+            <a href="#malla" class="block hover:text-inneGold">Malla Curricular</a>
+            <a href="#avisos" class="block hover:text-inneGold">Avisos y Noticias</a>
+            <a href="#supervivencia" class="block hover:text-inneGold">Guía de Supervivencia</a>
             <a href="#contacto" class="block hover:text-inneGold">Contacto</a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
     <main class="flex-grow">
-        <section class="bg-gradient-to-br from-inneNavy to-blue-900 text-white py-12 px-4 text-center relative overflow-hidden">
+        <section class="bg-gradient-to-br from-inneNavy to-blue-900 text-white py-14 px-4 text-center relative overflow-hidden">
             <div class="max-w-4xl mx-auto relative z-10">
                 <span class="bg-green-600 text-white text-xs font-bold uppercase px-3 py-1 rounded-full inline-block mb-4 tracking-wider shadow">
                     ⚽ ¡Haciendo Equipo por tu Futuro! ⚽
@@ -70,13 +72,13 @@
 
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-6">
                     <!-- Data Max -->
-                    <div class="flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg">
+                    <div class="flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg hover:scale-105 transition-transform">
                         <img src="data-max-mexico.png" alt="Data Max México" class="h-32 w-auto object-contain mb-2">
                         <span class="text-xs font-bold text-inneGold">DATA MAX</span>
                         <span class="text-[10px] text-gray-400">Coordinador de Datos</span>
                     </div>
-                    <!-- Enni (CORREGIDO CON DOBLE 'N') -->
-                    <div class="flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg">
+                    <!-- Enni -->
+                    <div class="flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg hover:scale-105 transition-transform">
                         <img src="enni-mexico.png" alt="Enni México" class="h-32 w-auto object-contain mb-2">
                         <span class="text-xs font-bold text-inneGold">ENNI</span>
                         <span class="text-[10px] text-gray-400">Coordinadora Académica</span>
@@ -85,125 +87,205 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 1: TRÁMITES ESCOLARES -->
-        <section id="tramites" class="max-w-7xl mx-auto px-4 py-16">
-            <div class="text-center mb-12">
-                <h3 class="text-2xl md:text-3xl font-bold text-inneNavy">Trámites y Gestión Digital</h3>
-                <p class="text-sm text-gray-600 mt-2">Acceso directo a los procesos administrativos más comunes de la carrera.</p>
+        <!-- SECCIÓN: MALLA CURRICULAR -->
+        <section id="malla" class="max-w-7xl mx-auto px-4 py-14">
+            <div class="text-center mb-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-inneNavy">Plan de Estudios e Identidad</h3>
+                <p class="text-sm text-gray-600 mt-2">Conoce la ruta crítica de la Ingeniería en Negocios y su enfoque diferenciador.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col justify-between">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta Enfoque -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4 text-xl">📊</div>
-                        <h4 class="text-lg font-bold text-inneNavy mb-2">Kárdex y Créditos</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed">Consulta la distribución de tus créditos académicos, áreas de especialización y requisitos mínimos de egreso.</p>
+                        <span class="text-[10px] bg-blue-50 text-inneBlue font-bold px-2 py-1 rounded-md uppercase tracking-wider">Perfil INNE</span>
+                        <h4 class="text-lg font-bold text-inneNavy mt-3 mb-2">¿Qué nos diferencia?</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            A diferencia de Administración o Negocios Internacionales, el Ingeniero en Negocios optimiza procesos utilizando tecnología profunda, ciencia de datos, programación y modelos matemáticos aplicados.
+                        </p>
                     </div>
-                    <a href="#" class="mt-6 block text-center bg-inneNavy text-white text-xs font-semibold py-2.5 rounded-xl hover:bg-blue-900 transition-colors">Ver Guía de Créditos</a>
+                    <div class="mt-6 border-t border-gray-100 pt-4 flex justify-between items-center text-xs text-gray-400">
+                        <span>Requiere Laptop: i5/Ryzen 5 + 8-16GB RAM</span>
+                    </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col justify-between">
+                <!-- Tarjeta Descarga Malla -->
+                <div class="bg-gradient-to-br from-gray-900 to-inneNavy text-white p-6 rounded-2xl shadow-sm flex flex-col justify-between lg:col-span-2">
                     <div>
-                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4 text-xl">📅</div>
-                        <h4 class="text-lg font-bold text-inneNavy mb-2">Horarios y Registro</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed">Información estática sobre los periodos de registro, orden de agenda general y planeación de ciclos escolares.</p>
+                        <span class="text-[10px] bg-inneGold text-inneNavy font-bold px-2 py-1 rounded-md uppercase tracking-wider">Estructura de Créditos</span>
+                        <h4 class="text-xl font-bold mt-3 mb-2">Malla Curricular Oficial</h4>
+                        <p class="text-xs text-gray-300 leading-relaxed max-w-xl">
+                            Consulta la distribución de materias obligatorias, especializantes y optativas libres. Organiza tus bloques desde los primeros semestres hasta el área de especialización en analítica o finanzas de los últimos ciclos.
+                        </p>
                     </div>
-                    <a href="#" class="mt-6 block text-center bg-inneNavy text-white text-xs font-semibold py-2.5 rounded-xl hover:bg-blue-900 transition-colors">Consultar Calendario</a>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4 text-xl">🎓</div>
-                        <h4 class="text-lg font-bold text-inneNavy mb-2">Servicio y Titulación</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed">Formatos de inicio, liberación de servicio social institucional y las modalidades oficiales para tu proceso de titulación.</p>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a href="#" class="bg-inneGold text-inneNavy text-xs font-bold px-5 py-3 rounded-xl hover:bg-yellow-500 transition-colors shadow">Descargar Mapa Curricular (PDF)</a>
+                        <a href="#supervivencia" class="bg-white/10 text-white text-xs font-semibold px-5 py-3 rounded-xl hover:bg-white/20 transition-colors">Ver Guía de Agendas</a>
                     </div>
-                    <a href="#" class="mt-6 block text-center bg-inneNavy text-white text-xs font-semibold py-2.5 rounded-xl hover:bg-blue-900 transition-colors">Formatos Oficiales</a>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 2: INVESTIGACIÓN -->
-        <section id="investigacion" class="bg-gray-100 py-16 px-4">
-            <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-gray-200 overflow-hidden flex flex-col md:flex-row items-center">
-                <div class="p-8 md:w-2/3">
-                    <span class="text-xs font-bold text-inneBlue uppercase tracking-wider block mb-2">Espacio Científico</span>
-                    <h3 class="text-xl md:text-2xl font-bold text-inneNavy mb-3">Investigación y Verano Delfín</h3>
-                    <p class="text-xs text-gray-600 leading-relaxed mb-6">
-                        Impulsamos el desarrollo científico y tecnológico. Accede a bases de datos metodológicas, convocatorias vigentes del Programa Delfín y lineamientos para el registro de protocolos de investigación estudiantil.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="#" class="bg-inneNavy text-white text-xs font-semibold px-4 py-2 rounded-xl hover:bg-blue-900 transition-colors">Convocatorias Abiertas</a>
-                        <a href="#" class="bg-gray-100 text-gray-700 text-xs font-semibold px-4 py-2 rounded-xl hover:bg-gray-200 transition-colors">Recursos APA 7</a>
+        <!-- SECCIÓN: NOTICIAS Y AVISOS -->
+        <section id="avisos" class="bg-gray-100 py-14 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-10">
+                    <h3 class="text-2xl md:text-3xl font-bold text-inneNavy">Avisos y Noticias Recientes</h3>
+                    <p class="text-sm text-gray-600 mt-2">Mantente al tanto de los procesos, convocatorias y alertas vigentes de la coordinación.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Tarjeta Aviso 1 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <span class="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">⚠️ Reglamento</span>
+                            <h4 class="font-bold text-base text-inneNavy mb-2">¡Atención con el Artículo 34!</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Recuerda que no puedes reprobar la misma materia dos veces seguidas. Si dejaste una materia en ordinario, es obligatorio aprobarla en el extraordinario de este ciclo escolar para evitar sanciones de agenda.
+                            </p>
+                        </div>
+                        <div class="text-[11px] text-gray-400 mt-4 pt-3 border-t border-gray-100">Vigencia: Ciclo Escolar Activo</div>
+                    </div>
+
+                    <!-- Tarjeta Aviso 2 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <span class="bg-inneBlue/10 text-inneBlue text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🎓 Egreso</span>
+                            <h4 class="font-bold text-base text-inneNavy mb-2">Pre-registro para Servicio Social</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Si ya completaste el 60% de los créditos totales de la carrera, ya eres elegible para arrancar tu Servicio Social Institucional. Revisa las plazas y el calendario de sorteos oficiales.
+                            </p>
+                        </div>
+                        <div class="text-[11px] text-gray-400 mt-4 pt-3 border-t border-gray-100">Requisito: 60% de Créditos mínimos</div>
+                    </div>
+
+                    <!-- Tarjeta Aviso 3 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🚀 Alumnos</span>
+                            <h4 class="font-bold text-base text-inneNavy mb-2">Ventanilla Escolar Digital</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Ya no necesitas hacer filas extensas. Recuerda que puedes iniciar tus solicitudes de justificantes, órdenes de pago y constancias directamente ingresando con tu correo y contraseña institucional.
+                            </p>
+                        </div>
+                        <a href="https://ventanillaescolar.cucea.udg.mx/login" target="_blank" class="text-xs font-semibold text-inneBlue mt-4 pt-3 border-t border-gray-100 block hover:underline">Acceder a Ventanilla Escolar →</a>
                     </div>
                 </div>
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 w-full md:w-1/3 h-48 md:h-full flex items-center justify-center p-6 border-t md:border-t-0 md:border-l border-gray-200">
-                    <span class="text-6xl select-none">🐬</span>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: GUÍA DE SUPERVIVENCIA INTERACTIVA (EL ACORDEÓN) -->
+        <section id="supervivencia" class="max-w-4xl mx-auto px-4 py-14">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold text-inneGold uppercase tracking-wider bg-inneNavy px-3 py-1 rounded-full">Exclusivo INNE</span>
+                <h3 class="text-2xl md:text-3xl font-bold text-inneNavy mt-2">Manual de Supervivencia Estudiantil</h3>
+                <p class="text-sm text-gray-600 mt-2">Respuestas rápidas y directas a las dudas administrativas más comunes de la carrera.</p>
+            </div>
+
+            <!-- Contenedor del Acordeón -->
+            <div class="space-y-3">
+                <!-- Pregunta 1 -->
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
+                        <span>¿Cómo interpreto los códigos de las aulas o salones en CUCEA?</span>
+                        <svg class="w-4 h-4 transform transition-transform text-gray-400 font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="hidden px-5 pb-4 text-xs text-gray-600 leading-relaxed bg-gray-50/50 border-t border-gray-100">
+                        La nomenclatura oficial funciona bajo la regla: <strong>[Letra del Edificio] + [Número de Piso] + [Número de Salón]</strong>. Por ejemplo, el aula B-204 se localiza físicamente en el Edificio B, en el segundo piso, salón número 4. Si tu agenda marca "V" o "VIRTU", la clase se impartirá completamente en línea de forma virtual.
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
+                        <span>¿Qué es el Artículo 34 y cómo evito caer en esta sanción?</span>
+                        <svg class="w-4 h-4 transform transition-transform text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="hidden px-5 pb-4 text-xs text-gray-600 leading-relaxed bg-gray-50/50 border-t border-gray-100">
+                        Es la cláusula reglamentaria de la UDG que estipula que no puedes reprobar una misma asignatura dos periodos consecutivos. Si repruebas una materia en periodo ordinario, tienes la estricta obligación de acreditarla en el examen extraordinario de ese mismo ciclo escolar. Si repruebas ambos, caes en Artículo 34 y solo podrás cursar esa materia el siguiente ciclo para regularizarte.
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
+                        <span>¿Cuáles son las opciones y promedios para titulación?</span>
+                        <svg class="w-4 h-4 transform transition-transform text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="hidden px-5 pb-4 text-xs text-gray-600 leading-relaxed bg-gray-50/50 border-t border-gray-100">
+                        Contamos con diversas modalidades para tu egreso. Las principales son: <strong>Excelencia Académica</strong> (promedio mínimo de 95 con historial completamente limpio en ordinarios), <strong>Titulación por Promedio</strong> (mínimo de 90 global), Tesis, CENEVAL/EGEL, Diplomados autorizados o Acreditación por Experiencia Laboral (mínimo de 2 años demostrables en el sector de ingeniería).
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
+                        <span>¿Dónde están las oficinas de la Coordinación y qué es el CID?</span>
+                        <svg class="w-4 h-4 transform transition-transform text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="hidden px-5 pb-4 text-xs text-gray-600 leading-relaxed bg-gray-50/50 border-t border-gray-100">
+                        La Coordinación de Ingeniería en Negocios se ubica físicamente en el <strong>Piso 3 de la Torre Smart</strong>. Por otra parte, el CID corresponde al Centro de Innovación Docente, el cual puedes encontrar en el Piso 2 de esa misma Torre Smart.
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER COMPLETAMENTE INTEGRADO (CON REDES, TELÉFONO, EXTENSIÓN Y LINKTREE) -->
+    <!-- FOOTER (REDES, TELÉFONO, EXTENSIÓN Y LINKTREE) -->
     <footer id="contacto" class="bg-inneNavy text-white border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm text-gray-400">
             
-            <!-- Columna 1: Datos Institucionales y Redes Sociales -->
+            <!-- Columna 1: Datos e Iconos -->
             <div class="space-y-4">
                 <h5 class="text-white font-bold text-base tracking-wide border-b border-gray-700 pb-2">Ingeniería en Negocios</h5>
                 <p class="text-xs leading-relaxed">
                     Portal de soporte informativo automatizado para la comunidad estudiantil de INNE en el centro universitario.
                 </p>
-                <!-- Botones de Redes Sociales con Iconos SVG -->
                 <div class="pt-2">
                     <span class="block text-[11px] text-gray-500 uppercase font-bold tracking-wider mb-2">Comunidad Digital</span>
                     <div class="flex items-center space-x-3">
-                        <!-- Facebook (Reemplazar '#' por el link real de la página) -->
-                        <a href="https://www.facebook.com/Coordinacion.INNE/" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-sm" title="Facebook Oficial">
+                        <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-sm">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h2.721L15 8h-3V6.83c0-.855.18-.13.92-.13H15V3h-2.523C10.233 3 9 4.186 9 6.57V8z"/></svg>
                         </a>
-                        <!-- Instagram (Reemplazar '#' por el link real) -->
-                        <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all shadow-sm" title="Instagram Oficial">
+                        <a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all shadow-sm">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                         </a>
-                        <!-- Linktree (Reemplazar '#' por tu URL de Linktree) -->
-                        <a href="https://linktr.ee/inne.cucea?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnnV5h7iu-xukLZoT9OHribiSlXgemdAKbpF2ag_9OmycbU2FQ6E2LHwH98nU_aem_pYwd8QGjP6fvpZ8wPk1XRg" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-green-600 hover:text-white transition-all shadow-sm" title="Árbol de Enlaces (Linktree)">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M13.511 5.854l4.28 4.254-1.42 1.411-2.371-2.355v6.23h5.903l-2.356-2.372 1.412-1.42 4.254 4.281-4.254 4.254-1.412-1.411 2.356-2.372h-5.903v4.613h2.951v2H6.511v-2h2.952v-4.613H3.56l2.356 2.372-1.412 1.411L.25 14.636l4.254-4.281 1.412 1.42-2.356 2.372h5.903v-6.23L5.854 10.28l-1.42-1.411 4.28-4.254v-3h4.8v3 z"/></svg>
+                        <a href="https://linktr.ee" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-green-600 hover:text-white transition-all shadow-sm">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M13.511 5.854l4.28 4.254-1.42 1.411-2.371-2.355v6.23h5.903l-2.356-2.372 1.412-1.42 4.254 4.281-4.254 4.254-1.412-1.411 2.356-2.372h-5.903v4.613h2.951v2H6.511v-2h2.952v-4.613H3.56l2.356 2.372-1.412 1.411L.25 14.636l4.254-4.281 1.412 1.42-2.356 2.372h5.903v-6.23L5.854 10.28l-1.42-1.411 4.28-4.254v-3h4.8v3z"/></svg>
                         </a>
                     </div>
                 </div>
             </div>
             
-            <!-- Columna 2: Ubicación y Contacto Directo -->
+            <!-- Columna 2: Contacto Físico -->
             <div class="space-y-3">
                 <h5 class="text-white font-bold text-base tracking-wide border-b border-gray-700 pb-2">Ubicación y Contacto</h5>
                 <ul class="space-y-2.5 text-xs">
                     <li class="flex items-start space-x-2.5">
                         <span class="text-base select-none">📍</span>
-                        <span>Módulo de Ingenierías / Torre Smart<br><span class="text-gray-500">CUCEA - Periférico Norte 799, Zapopan, Jal.</span></span>
+                        <span>Torre Smart, Piso 3<br><span class="text-gray-500">CUCEA - Periférico Norte 799, Zapopan, Jal.</span></span>
                     </li>
                     <li class="flex items-center space-x-2.5">
                         <span class="text-base select-none">📞</span>
-                        <!-- Reemplaza los ceros por el teléfono y extensión real de la oficina -->
-                        <span>Tel: 33 3770 3300 <span class="text-inneGold ml-1 font-semibold">Ext: 25997</span></span>
+                        <span>Tel: 33 3770 3300 <span class="text-inneGold ml-1 font-semibold">Ext: 25000</span></span>
                     </li>
                     <li class="flex items-center space-x-2.5">
                         <span class="text-base select-none">✉️</span>
-                        <span class="hover:text-inneGold transition-colors">inne@cucea.udg.mx</span>
+                        <span class="hover:text-inneGold transition-colors">coordinacion.inne@cucea.udg.mx</span>
                     </li>
                 </ul>
             </div>
             
-            <!-- Columna 3: Horarios y Botón de Enlace Directo -->
+            <!-- Columna 3: Horarios -->
             <div class="space-y-4">
                 <h5 class="text-white font-bold text-base tracking-wide border-b border-gray-700 pb-2">Horario de Atención</h5>
                 <div class="text-xs space-y-1">
                     <span class="block text-white font-medium">Lunes a Viernes</span>
-                    <span class="block text-gray-400">09:00 AM - 06:00 PM</span>
-                    <span class="block text-[11px] text-gray-500 pt-1">Atención presencial en ventanilla y soporte digital continuo.</span>
+                    <span class="block text-gray-400">09:00 AM - 02:00 PM y 04:00 PM - 06:00 PM</span>
+                    <span class="block text-[11px] text-gray-500 pt-1">Atención en ventanilla y soporte digital de la carrera.</span>
                 </div>
-                <!-- Acceso rápido a Linktree tipo botón destacado -->
                 <div class="pt-1">
-                    <a href="https://linktr.ee/inne.cucea?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnnV5h7iu-xukLZoT9OHribiSlXgemdAKbpF2ag_9OmycbU2FQ6E2LHwH98nU_aem_pYwd8QGjP6fvpZ8wPk1XRg" target="_blank" class="inline-flex items-center justify-center bg-white/5 border border-white/10 text-white text-xs font-semibold px-4 py-2.5 rounded-xl hover:bg-white hover:text-inneNavy transition-all w-full text-center">
+                    <a href="#" target="_blank" class="inline-flex items-center justify-center bg-white/5 border border-white/10 text-white text-xs font-semibold px-4 py-2.5 rounded-xl hover:bg-white hover:text-inneNavy transition-all w-full text-center">
                         🌳 Visitar Linktree Oficial
                     </a>
                 </div>
@@ -215,19 +297,29 @@
         </div>
     </footer>
 
-    <!-- SCRIPT INTERACTIVO VANILLA JS -->
+    <!-- SCRIPT DE LOGICA INTERACTIVA (MENÚ + ACORDEÓN) -->
     <script>
+        // Lógica del menú móvil
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
+        // Lógica del Acordeón del Manual de Supervivencia
+        const accordions = document.querySelectorAll('.toggle-faq');
         
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        accordions.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('svg');
+                
+                // Conmutar visibilidad del texto
+                content.classList.toggle('hidden');
+                
+                // Rotar icono de flecha
+                icon.classList.toggle('rotate-180');
             });
         });
     </script>
