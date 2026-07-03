@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="es" class="notranslate" translate="no">
 <head>
+    <!-- =================================================================
+         [BLOQUE 1]: CONFIGURACIÓN, METADATOS Y TAILWIND CSS
+         ================================================================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate" />
     <title>Coordinación INNE - Portal Oficial</title>
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,8 +27,13 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen scroll-smooth">
 
+    <!-- =================================================================
+         [BLOQUE 2]: ENCABEZADO / MENÚ DE NAVEGACIÓN (NAVBAR)
+         ================================================================= -->
     <header class="bg-inneNavy text-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            
+            <!-- Logotipo y Título de la Carrera -->
             <div class="flex items-center space-x-3">
                 <img src="logo-inne.png" alt="Logo INNE" class="h-10 w-auto object-contain">
                 <div>
@@ -32,6 +42,7 @@
                 </div>
             </div>
             
+            <!-- Menú de Escritorio (Desktop) -->
             <nav class="hidden md:flex space-x-6 font-medium text-sm">
                 <a href="#" class="text-inneGold hover:text-white transition-colors">Inicio</a>
                 <a href="#malla" class="hover:text-inneGold transition-colors">Malla Curricular</a>
@@ -41,11 +52,13 @@
                 <a href="#contacto" class="hover:text-inneGold transition-colors">Contacto</a>
             </nav>
 
+            <!-- Botón de Hamburguesa (Móvil) -->
             <button id="menu-btn" class="md:hidden text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
 
+        <!-- Menú Desplegable (Móvil) -->
         <div id="mobile-menu" class="hidden md:hidden bg-inneNavy border-t border-gray-700 px-4 py-3 space-y-3 text-sm">
             <a href="#" class="block text-inneGold">Inicio</a>
             <a href="#malla" class="block hover:text-inneGold">Malla Curricular</a>
@@ -56,10 +69,16 @@
         </div>
     </header>
 
+
     <main class="flex-grow">
+        <!-- =================================================================
+             [BLOQUE 3]: SECCIÓN HERO (BIENVENIDA Y PERSONAJES ANIMADOS)
+             ================================================================= -->
         <section class="bg-gradient-to-br from-inneNavy to-blue-900 text-white py-14 px-4 text-center relative overflow-hidden">
             <div class="max-w-4xl mx-auto relative z-10">
-                
+                <span class="bg-green-600 text-white text-xs font-bold uppercase px-3 py-1 rounded-full inline-block mb-4 tracking-wider shadow">
+                    ⚽ ¡Haciendo Equipo por tu Futuro! ⚽
+                </span>
                 <h2 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
                     Eficiencia Académica y Gestión Inteligente
                 </h2>
@@ -69,20 +88,19 @@
 
                 <!-- Tarjetas de Coordinadores Animadas en Bucle Fijo -->
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-6">
-                    <!-- Data Max -->
+                    
+                    <!-- Tarjeta: Data Max -->
                     <div class="flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg hover:scale-105 hover:bg-white/10 transition-all cursor-pointer">
                         <div class="h-32 w-full relative overflow-hidden flex justify-center items-center mb-2">
-                            <!-- Se elimina la imagen estática y el GIF corre de forma permanente -->
                             <img src="data-max-saludando.gif" alt="Data Max Saludando" class="h-32 w-auto object-contain">
                         </div>
                         <span class="text-xs font-bold text-inneGold">DATA MAX</span>
                         <span class="text-[10px] text-gray-400">Coordinador de Datos</span>
                     </div>
 
-                    <!-- Enni -->
+                    <!-- Tarjeta: Enni -->
                     <div class="flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg hover:scale-105 hover:bg-white/10 transition-all cursor-pointer">
                         <div class="h-32 w-full relative overflow-hidden flex justify-center items-center mb-2">
-                            <!-- Escalamos el GIF un 65% con Tailwind para eliminar el espacio en blanco de la IA y emparejar los tamaños -->
                             <img src="enni-saludando.gif" alt="Enni Saludando" class="h-32 w-auto object-contain transform scale-[1.65] origin-center">
                         </div>
                         <span class="text-xs font-bold text-inneGold">ENNI</span>
@@ -92,42 +110,56 @@
             </div>
         </section>
 
-        <section id="malla" class="max-w-7xl mx-auto px-4 py-14">
-            <div class="text-center mb-10">
-                <h3 class="text-2xl md:text-3xl font-bold text-inneNavy">Plan de Estudios e Identidad</h3>
-                <p class="text-sm text-gray-600 mt-2">Conoce la ruta crítica de la Ingeniería en Negocios y su enfoque diferenciador.</p>
-            </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
-                    <div>
-                        <span class="text-[10px] bg-blue-50 text-inneBlue font-bold px-2 py-1 rounded-md uppercase tracking-wider">Perfil INNE</span>
-                        <h4 class="text-lg font-bold text-inneNavy mt-3 mb-2">¿Qué nos diferencia?</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed">
-                            A diferencia de Administración o Negocios Internacionales, el Ingeniero en Negocios optimiza procesos utilizando tecnología profunda, ciencia de datos, programación y modelos matemáticos aplicados.
-                        </p>
+        <!-- =================================================================
+             [BLOQUE 4]: SECCIÓN DE LA MALLA CURRICULAR (FONDO COLOR CELESTE)
+             ================================================================= -->
+        <section id="malla" class="bg-[#64a3c5] py-14 px-4">
+            <div class="max-w-7xl mx-auto">
+                
+                <div class="text-center mb-10">
+                    <h3 class="text-2xl md:text-3xl font-bold text-inneNavy">Plan de Estudios e Identidad</h3>
+                    <p class="text-sm text-inneNavy/90 font-medium mt-2">Conoce la ruta crítica de la Ingeniería en Negocios y su enfoque diferenciador.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Tarjeta: Enfoque Profesional -->
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-white/20 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] bg-blue-50 text-inneBlue font-bold px-2 py-1 rounded-md uppercase tracking-wider">Perfil INNE</span>
+                            <h4 class="text-lg font-bold text-inneNavy mt-3 mb-2">¿Qué nos diferencia?</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                A diferencia de Administración o Negocios Internacionales, el Ingeniero en Negocios optimiza procesos utilizando tecnología profunda, ciencia de datos, programación y modelos matemáticos aplicados.
+                            </p>
+                        </div>
+                        <div class="mt-6 border-t border-gray-100 pt-4 flex justify-between items-center text-xs text-gray-400">
+                            <span>Requiere Laptop: i5/Ryzen 5 + 8-16GB RAM</span>
+                        </div>
                     </div>
-                    <div class="mt-6 border-t border-gray-100 pt-4 flex justify-between items-center text-xs text-gray-400">
-                        <span>Requiere Laptop: i5/Ryzen 5 + 8-16GB RAM</span>
+
+                    <!-- Tarjeta: Descarga de Archivos -->
+                    <div class="bg-gradient-to-br from-gray-900 to-inneNavy text-white p-6 rounded-2xl shadow-md flex flex-col justify-between lg:col-span-2">
+                        <div>
+                            <span class="text-[10px] bg-inneGold text-inneNavy font-bold px-2 py-1 rounded-md uppercase tracking-wider">Estructura de Créditos</span>
+                            <h4 class="text-xl font-bold mt-3 mb-2">Malla Curricular Oficial</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed max-w-xl">
+                                Consulta la distribución de materias obligatorias, especializantes y optativas libres. Organiza tus bloques desde los primeros semestres hasta el área de especialización en analítica o finanzas de los últimos ciclos.
+                            </p>
+                        </div>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="malla-curricular.jpg" target="_blank" class="bg-inneGold text-inneNavy text-xs font-bold px-5 py-3 rounded-xl hover:bg-yellow-500 transition-colors shadow">Descargar Mapa Curricular (JPG)</a>
+                            <a href="#supervivencia" class="bg-white/10 text-white text-xs font-semibold px-5 py-3 rounded-xl hover:bg-white/20 transition-colors">Ver Guía de Agendas</a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-gradient-to-br from-gray-900 to-inneNavy text-white p-6 rounded-2xl shadow-sm flex flex-col justify-between lg:col-span-2">
-                    <div>
-                        <span class="text-[10px] bg-inneGold text-inneNavy font-bold px-2 py-1 rounded-md uppercase tracking-wider">Estructura de Créditos</span>
-                        <h4 class="text-xl font-bold mt-3 mb-2">Malla Curricular Oficial</h4>
-                        <p class="text-xs text-gray-300 leading-relaxed max-w-xl">
-                            Consulta la distribución de materias obligatorias, especializantes y optativas libres. Organiza tus bloques desde los primeros semestres hasta el área de especialización en analítica o finanzas de los últimos ciclos.
-                        </p>
-                    </div>
-                    <div class="mt-8 flex flex-wrap gap-4">
-                        <a href="malla-curricular.jpg" target="_blank" class="bg-inneGold text-inneNavy text-xs font-bold px-5 py-3 rounded-xl hover:bg-yellow-500 transition-colors shadow">Descargar Mapa Curricular (JPG)</a>
-                        <a href="#supervivencia" class="bg-white/10 text-white text-xs font-semibold px-5 py-3 rounded-xl hover:bg-white/20 transition-colors">Ver Guía de Agendas</a>
-                    </div>
-                </div>
             </div>
         </section>
 
+
+        <!-- =================================================================
+             [BLOQUE 5]: SECCIÓN DE AVISOS FIJOS Y PIZARRA DIGITAL EN VIVO (DRIVE)
+             ================================================================= -->
         <section id="avisos" class="bg-gray-100 py-14 px-4">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-10">
@@ -135,7 +167,9 @@
                     <p class="text-sm text-gray-600 mt-2">Mantente al tanto de los procesos, convocatorias y alertas vigentes de la coordinación.</p>
                 </div>
 
+                <!-- Bloque de 3 Tarjetas Informativas Fijas -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Alerta 1: Artículo 34 -->
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div>
                             <span class="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">⚠️ Reglamento</span>
@@ -149,6 +183,7 @@
                         </a>
                     </div>
 
+                    <!-- Alerta 2: Servicio Social -->
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div>
                             <span class="bg-inneBlue/10 text-inneBlue text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🎓 Egreso</span>
@@ -162,6 +197,7 @@
                         </a>
                     </div>
 
+                    <!-- Alerta 3: Ventanilla Escolar -->
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div>
                             <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🚀 Alumnos</span>
@@ -174,6 +210,7 @@
                     </div>
                 </div>
 
+                <!-- Contenedor del Iframe Conectado Directamente a Google Docs -->
                 <div class="mt-10 bg-white p-5 rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
                     <div class="flex items-center space-x-2 mb-3">
                         <span class="animate-pulse h-2 w-2 rounded-full bg-green-500"></span>
@@ -181,13 +218,21 @@
                     </div>
                     <h4 class="font-bold text-lg text-inneNavy mb-1">Boletín Oficial y Circulares Informativas</h4>
                     <p class="text-xs text-gray-500 mb-4">Espacio de actualización inmediata gestionado por el equipo de asistencia y marketing de la carrera.</p>
+                    
+                    <!-- IFRAME DE TRANSMISIÓN EN VIVO -->
                     <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkMMz4Mu6-nn92o7ILoA30BSZPYba3CmOgcWBTcQtY5LMVTVx1Ojuh8V_8-SF9bj_VdOrHO6FVMQy5/pub?embedded=true" class="w-full h-96 border border-gray-100 rounded-xl bg-gray-50"></iframe>
                 </div>
             </div>
         </section>
 
+
+        <!-- =================================================================
+             [BLOQUE 6]: SECCIÓN DEL CARRUSEL INTERACTIVO DE INSTAGRAM
+             ================================================================= -->
         <section id="instagram" class="py-14 px-4 bg-white overflow-hidden">
             <div class="max-w-7xl mx-auto relative">
+                
+                <!-- Encabezado y Flechas de Navegación -->
                 <div class="flex justify-between items-end mb-8">
                     <div class="text-left">
                         <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">#ComunidadINNE</span>
@@ -199,9 +244,11 @@
                     </div>
                 </div>
 
+                <!-- Ventana Desplazable del Carrusel -->
                 <div class="relative w-full overflow-hidden">
                     <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out gap-4" style="transform: translateX(0px);">
                         
+                        <!-- Post 1 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
                                 <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
@@ -211,6 +258,7 @@
                             </a>
                         </div>
 
+                        <!-- Post 2 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
                                 <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
@@ -220,6 +268,7 @@
                             </a>
                         </div>
 
+                        <!-- Post 3 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
                                 <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
@@ -229,6 +278,7 @@
                             </a>
                         </div>
 
+                        <!-- Post 4 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
                                 <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
@@ -238,6 +288,7 @@
                             </a>
                         </div>
 
+                        <!-- Post 5 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
                                 <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
@@ -252,6 +303,10 @@
             </div>
         </section>
 
+
+        <!-- =================================================================
+             [BLOQUE 7]: MANUAL DE SUPERVIVENCIA ESTUDIANTIL (ACORDEONES)
+             ================================================================= -->
         <section id="supervivencia" class="max-w-4xl mx-auto px-4 py-14">
             <div class="text-center mb-10">
                 <span class="text-xs font-bold text-inneGold uppercase tracking-wider bg-inneNavy px-3 py-1 rounded-full">Exclusivo INNE</span>
@@ -260,6 +315,7 @@
             </div>
 
             <div class="space-y-3">
+                <!-- FAQ 1 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                     <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Cómo interpreto los códigos de las aulas o salones en CUCEA?</span>
@@ -270,6 +326,7 @@
                     </div>
                 </div>
 
+                <!-- FAQ 2 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                     <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Qué es el Artículo 34 y cómo evito caer en esta sanción?</span>
@@ -280,6 +337,7 @@
                     </div>
                 </div>
 
+                <!-- FAQ 3 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                     <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Cuáles son las opciones y promedios para titulación?</span>
@@ -290,6 +348,7 @@
                     </div>
                 </div>
 
+                <!-- FAQ 4 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                     <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Dónde están las oficinas de la Coordinación y qué es el CID?</span>
@@ -303,8 +362,14 @@
         </section>
     </main>
 
+
+    <!-- =================================================================
+         [BLOQUE 8]: PIE DE PÁGINA (FOOTER) Y DATOS DE CONTACTO DE LA UDG
+         ================================================================= -->
     <footer id="contacto" class="bg-inneNavy text-white border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm text-gray-400">
+            
+            <!-- Columna 1: Redes Sociales -->
             <div class="space-y-4">
                 <h5 class="text-white font-bold text-base tracking-wide border-b border-gray-700 pb-2">Ingeniería en Negocios</h5>
                 <p class="text-xs leading-relaxed">Portal de soporte informativo automatizado para la comunidad estudiantil de INNE.</p>
@@ -324,6 +389,7 @@
                 </div>
             </div>
             
+            <!-- Columna 2: Ubicación Física -->
             <div class="space-y-3">
                 <h5 class="text-white font-bold text-base tracking-wide border-b border-gray-700 pb-2">Ubicación y Contacto</h5>
                 <ul class="space-y-2.5 text-xs">
@@ -342,6 +408,7 @@
                 </ul>
             </div>
             
+            <!-- Columna 3: Horarios y Código QR Móvil -->
             <div class="space-y-4 flex flex-col justify-between">
                 <div>
                     <h5 class="text-white font-bold text-base tracking-wide border-b border-gray-700 pb-2">Horario de Atención</h5>
@@ -359,18 +426,23 @@
                 </div>
             </div>
         </div>
+        
         <div class="bg-black/20 text-center py-4 text-[11px] text-gray-500 border-t border-white/5">
             © 2026 Coordinación INNE - CUCEA. Todos los derechos reservados. Desarrollado con optimización inteligente.
         </div>
     </footer>
 
+
+    <!-- =================================================================
+         [BLOQUE 9]: CÓDIGO JAVASCRIPT (INTERACTIVIDAD INTERNA)
+         ================================================================= -->
     <script>
-        // Menú móvil
+        // --- CONTROLADOR 1: MENÚ COLAPSABLE MÓVIL ---
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
 
-        // Acordeón FAQ
+        // --- CONTROLADOR 2: ACORDEÓN DE PREGUNTAS (FAQ) ---
         const accordions = document.querySelectorAll('.toggle-faq');
         accordions.forEach(button => {
             button.addEventListener('click', () => {
@@ -381,25 +453,28 @@
             });
         });
 
-        // CONTROLADOR INTELIGENTE DEL CARRUSEL DE INSTAGRAM
+        // --- CONTROLADOR 3: RIEL DEL CARRUSEL DE INSTAGRAM ---
         const track = document.getElementById('carousel-track');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
 
         let currentPosition = 0;
         
+        // Calcula dinámicamente el salto del carrusel dependiendo del dispositivo
         function getScrollAmount() {
-            if (window.innerWidth >= 768) return track.parentElement.offsetWidth / 4; 
-            if (window.innerWidth >= 640) return track.parentElement.offsetWidth / 2; 
-            return track.parentElement.offsetWidth; 
+            if (window.innerWidth >= 768) return track.parentElement.offsetWidth / 4; // PC: Mueve 1 de 4 columnas
+            if (window.innerWidth >= 640) return track.parentElement.offsetWidth / 2; // Tablet: Mueve 1 de 2 columnas
+            return track.parentElement.offsetWidth; // Móvil: Mueve la pantalla completa
         }
 
+        // Calcula el límite máximo de arrastre hacia la derecha
         function getMaxScroll() {
             const totalWidth = track.scrollWidth;
             const containerWidth = track.parentElement.offsetWidth;
             return -(totalWidth - containerWidth);
         }
 
+        // Evento Flecha Derecha (Avanzar)
         nextBtn.addEventListener('click', () => {
             const scrollAmount = getScrollAmount();
             const maxScroll = getMaxScroll();
@@ -408,6 +483,7 @@
             track.style.transform = `translateX(${currentPosition}px)`;
         });
 
+        // Evento Flecha Izquierda (Retroceder)
         prevBtn.addEventListener('click', () => {
             const scrollAmount = getScrollAmount();
             currentPosition += scrollAmount;
@@ -415,6 +491,7 @@
             track.style.transform = `translateX(${currentPosition}px)`;
         });
 
+        // Reinicia la posición si el usuario cambia el tamaño de la ventana del navegador
         window.addEventListener('resize', () => {
             currentPosition = 0;
             track.style.transform = `translateX(0px)`;
