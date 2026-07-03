@@ -112,19 +112,19 @@
 
 
         <!-- =================================================================
-             [BLOQUE 4]: SECCIÓN DE LA MALLA CURRICULAR (FONDO COLOR CELESTE)
+             [BLOQUE 4]: SECCIÓN DE LA MALLA CURRICULAR (RECUADRO CELESTE #64a3c5)
              ================================================================= -->
-        <section id="malla" class="bg-[#64a3c5] py-14 px-4">
+        <section id="malla" class="bg-white py-14 px-4">
             <div class="max-w-7xl mx-auto">
                 
                 <div class="text-center mb-10">
                     <h3 class="text-2xl md:text-3xl font-bold text-inneNavy">Plan de Estudios e Identidad</h3>
-                    <p class="text-sm text-inneNavy/90 font-medium mt-2">Conoce la ruta crítica de la Ingeniería en Negocios y su enfoque diferenciador.</p>
+                    <p class="text-sm text-gray-600 mt-2">Conoce la ruta crítica de la Ingeniería en Negocios y su enfoque diferenciador.</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <!-- Tarjeta: Enfoque Profesional -->
-                    <div class="bg-white p-6 rounded-2xl shadow-md border border-white/20 flex flex-col justify-between">
+                    <!-- Tarjeta Izquierda: Enfoque Profesional -->
+                    <div class="bg-gray-50 p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
                         <div>
                             <span class="text-[10px] bg-blue-50 text-inneBlue font-bold px-2 py-1 rounded-md uppercase tracking-wider">Perfil INNE</span>
                             <h4 class="text-lg font-bold text-inneNavy mt-3 mb-2">¿Qué nos diferencia?</h4>
@@ -137,18 +137,19 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta: Descarga de Archivos -->
-                    <div class="bg-gradient-to-br from-gray-900 to-inneNavy text-white p-6 rounded-2xl shadow-md flex flex-col justify-between lg:col-span-2">
+                    <!-- Tarjeta Derecha: Estructura de Créditos (CON EL COLOR AZUL CELESTE #64a3c5) -->
+                    <div class="bg-[#64a3c5] p-6 rounded-2xl shadow-md flex flex-col justify-between lg:col-span-2 text-inneNavy">
                         <div>
-                            <span class="text-[10px] bg-inneGold text-inneNavy font-bold px-2 py-1 rounded-md uppercase tracking-wider">Estructura de Créditos</span>
-                            <h4 class="text-xl font-bold mt-3 mb-2">Malla Curricular Oficial</h4>
-                            <p class="text-xs text-gray-300 leading-relaxed max-w-xl">
+                            <span class="text-[10px] bg-inneNavy text-white font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Estructura de Créditos</span>
+                            <h4 class="text-xl font-bold mt-3 mb-2 text-inneNavy">Malla Curricular Oficial</h4>
+                            <p class="text-xs text-inneNavy/90 font-medium leading-relaxed max-w-xl">
                                 Consulta la distribución de materias obligatorias, especializantes y optativas libres. Organiza tus bloques desde los primeros semestres hasta el área de especialización en analítica o finanzas de los últimos ciclos.
                             </p>
                         </div>
+                        <!-- Botones adaptados para contraste premium -->
                         <div class="mt-8 flex flex-wrap gap-4">
-                            <a href="malla-curricular.jpg" target="_blank" class="bg-inneGold text-inneNavy text-xs font-bold px-5 py-3 rounded-xl hover:bg-yellow-500 transition-colors shadow">Descargar Mapa Curricular (JPG)</a>
-                            <a href="#supervivencia" class="bg-white/10 text-white text-xs font-semibold px-5 py-3 rounded-xl hover:bg-white/20 transition-colors">Ver Guía de Agendas</a>
+                            <a href="malla-curricular.jpg" target="_blank" class="bg-inneNavy text-white text-xs font-bold px-5 py-3 rounded-xl hover:bg-blue-900 transition-colors shadow">Descargar Mapa Curricular (JPG)</a>
+                            <a href="#supervivencia" class="bg-white text-inneNavy text-xs font-semibold px-5 py-3 rounded-xl hover:bg-gray-50 transition-colors shadow-sm">Ver Guía de Agendas</a>
                         </div>
                     </div>
                 </div>
@@ -218,8 +219,6 @@
                     </div>
                     <h4 class="font-bold text-lg text-inneNavy mb-1">Boletín Oficial y Circulares Informativas</h4>
                     <p class="text-xs text-gray-500 mb-4">Espacio de actualización inmediata gestionado por el equipo de asistencia y marketing de la carrera.</p>
-                    
-                    <!-- IFRAME DE TRANSMISIÓN EN VIVO -->
                     <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkMMz4Mu6-nn92o7ILoA30BSZPYba3CmOgcWBTcQtY5LMVTVx1Ojuh8V_8-SF9bj_VdOrHO6FVMQy5/pub?embedded=true" class="w-full h-96 border border-gray-100 rounded-xl bg-gray-50"></iframe>
                 </div>
             </div>
@@ -460,21 +459,18 @@
 
         let currentPosition = 0;
         
-        // Calcula dinámicamente el salto del carrusel dependiendo del dispositivo
         function getScrollAmount() {
-            if (window.innerWidth >= 768) return track.parentElement.offsetWidth / 4; // PC: Mueve 1 de 4 columnas
-            if (window.innerWidth >= 640) return track.parentElement.offsetWidth / 2; // Tablet: Mueve 1 de 2 columnas
-            return track.parentElement.offsetWidth; // Móvil: Mueve la pantalla completa
+            if (window.innerWidth >= 768) return track.parentElement.offsetWidth / 4; 
+            if (window.innerWidth >= 640) return track.parentElement.offsetWidth / 2; 
+            return track.parentElement.offsetWidth; 
         }
 
-        // Calcula el límite máximo de arrastre hacia la derecha
         function getMaxScroll() {
             const totalWidth = track.scrollWidth;
             const containerWidth = track.parentElement.offsetWidth;
             return -(totalWidth - containerWidth);
         }
 
-        // Evento Flecha Derecha (Avanzar)
         nextBtn.addEventListener('click', () => {
             const scrollAmount = getScrollAmount();
             const maxScroll = getMaxScroll();
@@ -483,7 +479,6 @@
             track.style.transform = `translateX(${currentPosition}px)`;
         });
 
-        // Evento Flecha Izquierda (Retroceder)
         prevBtn.addEventListener('click', () => {
             const scrollAmount = getScrollAmount();
             currentPosition += scrollAmount;
@@ -491,7 +486,6 @@
             track.style.transform = `translateX(${currentPosition}px)`;
         });
 
-        // Reinicia la posición si el usuario cambia el tamaño de la ventana del navegador
         window.addEventListener('resize', () => {
             currentPosition = 0;
             track.style.transform = `translateX(0px)`;
