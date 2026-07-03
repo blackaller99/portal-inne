@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate" />
     <title>Coordinación INNE - Portal Oficial</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,7 +22,6 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen scroll-smooth">
 
-    <!-- HEADER / NAVBAR -->
     <header class="bg-inneNavy text-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3">
@@ -38,6 +36,7 @@
                 <a href="#" class="text-inneGold hover:text-white transition-colors">Inicio</a>
                 <a href="#malla" class="hover:text-inneGold transition-colors">Malla Curricular</a>
                 <a href="#avisos" class="hover:text-inneGold transition-colors">Avisos y Noticias</a>
+                <a href="#instagram" class="hover:text-inneGold transition-colors">Comunidad INNE</a>
                 <a href="#supervivencia" class="hover:text-inneGold transition-colors">Guía de Supervivencia</a>
                 <a href="#contacto" class="hover:text-inneGold transition-colors">Contacto</a>
             </nav>
@@ -51,12 +50,12 @@
             <a href="#" class="block text-inneGold">Inicio</a>
             <a href="#malla" class="block hover:text-inneGold">Malla Curricular</a>
             <a href="#avisos" class="block hover:text-inneGold">Avisos y Noticias</a>
+            <a href="#instagram" class="block hover:text-inneGold">Comunidad INNE</a>
             <a href="#supervivencia" class="block hover:text-inneGold">Guía de Supervivencia</a>
             <a href="#contacto" class="block hover:text-inneGold">Contacto</a>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <main class="flex-grow">
         <section class="bg-gradient-to-br from-inneNavy to-blue-900 text-white py-14 px-4 text-center relative overflow-hidden">
             <div class="max-w-4xl mx-auto relative z-10">
@@ -71,15 +70,20 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-6">
-                    <!-- Data Max -->
-                    <div class="flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg hover:scale-105 transition-transform">
-                        <img src="data-max-mexico.png" alt="Data Max México" class="h-32 w-auto object-contain mb-2">
+                    <div class="group flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg hover:scale-105 hover:bg-white/10 transition-all cursor-pointer">
+                        <div class="h-32 w-full relative overflow-hidden flex justify-center items-center mb-2">
+                            <img src="data-max-mexico.png" alt="Data Max" class="h-32 w-auto object-contain block group-hover:hidden">
+                            <img src="data-max-saludando.gif" alt="Data Max Saludando" class="h-32 w-auto object-contain hidden group-hover:block">
+                        </div>
                         <span class="text-xs font-bold text-inneGold">DATA MAX</span>
                         <span class="text-[10px] text-gray-400">Coordinador de Datos</span>
                     </div>
-                    <!-- Enni -->
-                    <div class="flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg hover:scale-105 transition-transform">
-                        <img src="enni-mexico.png" alt="Enni México" class="h-32 w-auto object-contain mb-2">
+
+                    <div class="group flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg hover:scale-105 hover:bg-white/10 transition-all cursor-pointer">
+                        <div class="h-32 w-full relative overflow-hidden flex justify-center items-center mb-2">
+                            <img src="enni-mexico.png" alt="Enni" class="h-32 w-auto object-contain block group-hover:hidden">
+                            <img src="enni-saludando.gif" alt="Enni Saludando" class="h-32 w-auto object-contain hidden group-hover:block">
+                        </div>
                         <span class="text-xs font-bold text-inneGold">ENNI</span>
                         <span class="text-[10px] text-gray-400">Coordinadora Académica</span>
                     </div>
@@ -87,7 +91,6 @@
             </div>
         </section>
 
-        <!-- SECCIÓN: MALLA CURRICULAR -->
         <section id="malla" class="max-w-7xl mx-auto px-4 py-14">
             <div class="text-center mb-10">
                 <h3 class="text-2xl md:text-3xl font-bold text-inneNavy">Plan de Estudios e Identidad</h3>
@@ -124,7 +127,6 @@
             </div>
         </section>
 
-        <!-- SECCIÓN: NOTICIAS Y AVISOS + PIZARRA EN VIVO -->
         <section id="avisos" class="bg-gray-100 py-14 px-4">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-10">
@@ -171,7 +173,6 @@
                     </div>
                 </div>
 
-                <!-- LA PIZARRA DIGITAL EN VIVO (CONECTADA DIRECTAMENTE A TU ENLACE) -->
                 <div class="mt-10 bg-white p-5 rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
                     <div class="flex items-center space-x-2 mb-3">
                         <span class="animate-pulse h-2 w-2 rounded-full bg-green-500"></span>
@@ -179,14 +180,77 @@
                     </div>
                     <h4 class="font-bold text-lg text-inneNavy mb-1">Boletín Oficial y Circulares Informativas</h4>
                     <p class="text-xs text-gray-500 mb-4">Espacio de actualización inmediata gestionado por el equipo de asistencia y marketing de la carrera.</p>
-                    
-                    <!-- ENLACE REAL INYECTADO -->
                     <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkMMz4Mu6-nn92o7ILoA30BSZPYba3CmOgcWBTcQtY5LMVTVx1Ojuh8V_8-SF9bj_VdOrHO6FVMQy5/pub?embedded=true" class="w-full h-96 border border-gray-100 rounded-xl bg-gray-50"></iframe>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN: GUÍA DE SUPERVIVENCIA INTERACTIVA -->
+        <section id="instagram" class="py-14 px-4 bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto relative">
+                <div class="flex justify-between items-end mb-8">
+                    <div class="text-left">
+                        <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">#ComunidadINNE</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-inneNavy mt-1">Síguenos en Instagram</h3>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button id="prev-btn" class="w-10 h-10 rounded-xl bg-gray-100 hover:bg-inneNavy hover:text-white flex items-center justify-center font-bold text-lg transition-colors focus:outline-none shadow-sm">&lt;</button>
+                        <button id="next-btn" class="w-10 h-10 rounded-xl bg-gray-100 hover:bg-inneNavy hover:text-white flex items-center justify-center font-bold text-lg transition-colors focus:outline-none shadow-sm">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="relative w-full overflow-hidden">
+                    <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out gap-4" style="transform: translateX(0px);">
+                        
+                        <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
+                            <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
+                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
+                                    <img src="insta-post-1.jpg" alt="Post Instagram" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <p class="text-xs text-gray-600 line-clamp-2">📈 ¡Ruta de Especialización! Descubre cómo orientar tus materias optativas en analítica avanzada de negocios...</p>
+                            </a>
+                        </div>
+
+                        <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
+                            <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
+                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
+                                    <img src="insta-post-2.jpg" alt="Post Instagram" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <p class="text-xs text-gray-600 line-clamp-2">💻 Laptop Ideal: Todo lo que necesitas saber antes de comprar tu equipo de cómputo para los laboratorios de código...</p>
+                            </a>
+                        </div>
+
+                        <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
+                            <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
+                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
+                                    <img src="insta-post-3.jpg" alt="Post Instagram" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <p class="text-xs text-gray-600 line-clamp-2">🎓 ¡Proceso de Titulación! Conoce los promedios mínimos y las 5 modalidades aprobadas para Ingeniería en Negocios...</p>
+                            </a>
+                        </div>
+
+                        <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
+                            <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
+                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
+                                    <img src="insta-post-4.jpg" alt="Post Instagram" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <p class="text-xs text-gray-600 line-clamp-2">⚽ ¡Haciendo equipo! Conoce las fechas del torneo deportivo inter-carreras y regístrate con tu bloque antes del cierre...</p>
+                            </a>
+                        </div>
+
+                        <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
+                            <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
+                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
+                                    <img src="insta-post-5.jpg" alt="Post Instagram" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <p class="text-xs text-gray-600 line-clamp-2">🚀 ¡Verano de Investigación! Abierta la convocatoria para estancias de desarrollo científico en tecnologías 4.0...</p>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="supervivencia" class="max-w-4xl mx-auto px-4 py-14">
             <div class="text-center mb-10">
                 <span class="text-xs font-bold text-inneGold uppercase tracking-wider bg-inneNavy px-3 py-1 rounded-full">Exclusivo INNE</span>
@@ -221,7 +285,7 @@
                         <svg class="w-4 h-4 transform transition-transform text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div class="hidden px-5 pb-4 text-xs text-gray-600 leading-relaxed bg-gray-50/50 border-t border-gray-100">
-                        Contamos con diversas modalidades para tu egreso. Las principales son: <strong>Excelencia Académica</strong> (promedio mínimo de 95 con historial limpio en ordinarios), <strong>Titulación por Promedio</strong> (mínimo de 90 global), Tesis, CENEVAL/EGEL, Diplomados autorizados o Acreditación por Experiencia Laboral.
+                        Contamos con diversas modalidades para tu egreso, tales como Excelencia Académica, Titulación por Promedio, Tesis, Tesina y Diplomados de Posgrado. Para **Excelencia Académica** necesitas un promedio mínimo de 95 con historial completamente limpio en ordinarios, mientras que la **Titulación por Promedio** te solicita un mínimo global de 90.
                     </div>
                 </div>
 
@@ -238,7 +302,6 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer id="contacto" class="bg-inneNavy text-white border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm text-gray-400">
             <div class="space-y-4">
@@ -301,13 +364,12 @@
     </footer>
 
     <script>
+        // Menú móvil
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
+        // Acordeón FAQ
         const accordions = document.querySelectorAll('.toggle-faq');
         accordions.forEach(button => {
             button.addEventListener('click', () => {
@@ -316,6 +378,45 @@
                 content.classList.toggle('hidden');
                 icon.classList.toggle('rotate-180');
             });
+        });
+
+        // CONTROLADOR INTELIGENTE DEL CARRUSEL DE INSTAGRAM
+        const track = document.getElementById('carousel-track');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        let currentPosition = 0;
+        
+        function getScrollAmount() {
+            if (window.innerWidth >= 768) return track.parentElement.offsetWidth / 4; 
+            if (window.innerWidth >= 640) return track.parentElement.offsetWidth / 2; 
+            return track.parentElement.offsetWidth; 
+        }
+
+        function getMaxScroll() {
+            const totalWidth = track.scrollWidth;
+            const containerWidth = track.parentElement.offsetWidth;
+            return -(totalWidth - containerWidth);
+        }
+
+        nextBtn.addEventListener('click', () => {
+            const scrollAmount = getScrollAmount();
+            const maxScroll = getMaxScroll();
+            currentPosition -= scrollAmount;
+            if (currentPosition < maxScroll) currentPosition = maxScroll; 
+            track.style.transform = `translateX(${currentPosition}px)`;
+        });
+
+        prevBtn.addEventListener('click', () => {
+            const scrollAmount = getScrollAmount();
+            currentPosition += scrollAmount;
+            if (currentPosition > 0) currentPosition = 0; 
+            track.style.transform = `translateX(${currentPosition}px)`;
+        });
+
+        window.addEventListener('resize', () => {
+            currentPosition = 0;
+            track.style.transform = `translateX(0px)`;
         });
     </script>
 </body>
