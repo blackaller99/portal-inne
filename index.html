@@ -9,6 +9,11 @@
     <meta name="google" content="notranslate" />
     <title>Coordinación INNE - Portal Oficial</title>
     
+    <!-- API de Google Fonts: Importación de la fuente oficial POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -16,45 +21,52 @@
             theme: {
                 extend: {
                     colors: {
-                        inneNavy: '#0A2540',
-                        inneGold: '#D4AF37',
-                        inneBlue: '#0066CC'
+                        /* PALETA DE COLORES OFICIAL BRANDBOARD INNE */
+                        inneAzul: '#286BA3',
+                        inneAzulSecundario: '#599CAC',
+                        inneAzulClaro: '#A0DBE7',
+                        inneMostaza: '#DCD853',
+                        inneAmarillo: '#F9F47E',
+                        inneCrema: '#ECF6D2'
+                    },
+                    fontFamily: {
+                        /* Forzamos a Tailwind a usar Poppins por defecto */
+                        sans: ['Poppins', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Remueve barras de scroll ocultas en motores de renderizado específicos */
+        /* Remueve barras de scroll ocultas en el iframe */
         iframe::-webkit-scrollbar { display: none; }
         iframe { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen scroll-smooth">
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen scroll-smooth">
 
     <!-- =================================================================
-         [BLOQUE 2]: ENCABEZADO / MENÚ DE NAVEGACIÓN (NAVBAR CON LOGO INTERACTIVO)
+         [BLOQUE 2]: ENCABEZADO / MENÚ DE NAVEGACIÓN (NAVBAR)
          ================================================================= -->
-    <header class="bg-inneNavy text-white sticky top-0 z-50 shadow-md">
+    <header class="bg-inneAzul text-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
-            <!-- Logotipo Activador del Easter Egg (5 clics rápidos aquí abren el juego) -->
+            <!-- Logotipo Activador del Easter Egg -->
             <div id="header-logo" class="flex items-center space-x-3 cursor-pointer select-none group">
                 <img src="logo-inne.png" alt="Logo INNE" class="h-10 w-auto object-contain group-hover:scale-105 transition-transform">
                 <div>
-                    <h1 class="text-base md:text-lg font-bold tracking-tight group-hover:text-inneGold transition-colors">INNE COORDINACIÓN</h1>
-                    <p class="text-xs text-gray-400 hidden sm:block">Portal Informativo Oficial</p>
+                    <h1 class="text-base md:text-lg font-bold tracking-tight group-hover:text-inneAmarillo transition-colors leading-tight">INNE COORDINACIÓN</h1>
+                    <p class="text-[10px] text-inneAzulClaro hidden sm:block font-medium">Portal Informativo Oficial</p>
                 </div>
             </div>
             
-            <!-- Menú de Escritorio Limpio -->
+            <!-- Menú de Escritorio -->
             <nav class="hidden md:flex space-x-6 font-medium text-sm">
-                <a href="#" class="text-inneGold hover:text-white transition-colors">Inicio</a>
-                <a href="#malla" class="hover:text-inneGold transition-colors">Malla Curricular</a>
-                <a href="#avisos" class="hover:text-inneGold transition-colors">Avisos y Agenda</a>
-                <a href="#instagram" class="hover:text-inneGold transition-colors">Comunidad INNE</a>
-                <a href="#supervivencia" class="hover:text-inneGold transition-colors">Guía de Supervivencia</a>
-                <a href="#contacto" class="hover:text-inneGold transition-colors">Contacto</a>
+                <a href="#" class="text-inneAmarillo hover:text-white transition-colors">Inicio</a>
+                <a href="#identidad" class="hover:text-inneAmarillo transition-colors">Identidad</a>
+                <a href="#malla" class="hover:text-inneAmarillo transition-colors">Malla Curricular</a>
+                <a href="#avisos" class="hover:text-inneAmarillo transition-colors">Avisos y Agenda</a>
+                <a href="#supervivencia" class="hover:text-inneAmarillo transition-colors">Supervivencia</a>
             </nav>
 
             <!-- Botón de Hamburguesa (Móvil) -->
@@ -64,69 +76,86 @@
         </div>
 
         <!-- Menú Desplegable (Móvil) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-inneNavy border-t border-gray-700 px-4 py-3 space-y-3 text-sm">
-            <a href="#" class="block text-inneGold">Inicio</a>
-            <a href="#malla" class="block hover:text-inneGold">Malla Curricular</a>
-            <a href="#avisos" class="block hover:text-inneGold">Avisos y Agenda</a>
-            <a href="#instagram" class="block hover:text-inneGold">Comunidad INNE</a>
-            <a href="#supervivencia" class="block hover:text-inneGold">Guía de Supervivencia</a>
-            <a href="#contacto" class="block hover:text-inneGold">Contacto</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-inneAzul border-t border-white/10 px-4 py-3 space-y-3 text-sm font-medium">
+            <a href="#" class="block text-inneAmarillo">Inicio</a>
+            <a href="#identidad" class="block hover:text-inneAmarillo">Identidad Institucional</a>
+            <a href="#malla" class="block hover:text-inneAmarillo">Malla Curricular</a>
+            <a href="#avisos" class="block hover:text-inneAmarillo">Avisos y Agenda</a>
+            <a href="#supervivencia" class="block hover:text-inneAmarillo">Guía de Supervivencia</a>
         </div>
     </header>
 
-
     <main class="flex-grow">
         <!-- =================================================================
-             [BLOQUE 3]: SECCIÓN HERO (BIENVENIDA Y PERSONAJES ANIMADOS VIVOS)
+             [BLOQUE 3]: SECCIÓN HERO (ANIMADOS)
              ================================================================= -->
-        <section class="bg-gradient-to-br from-inneNavy to-blue-900 text-white py-14 px-4 text-center relative overflow-hidden">
+        <section class="bg-gradient-to-br from-inneAzul to-inneAzulSecundario text-white py-14 px-4 text-center relative overflow-hidden">
             <div class="max-w-4xl mx-auto relative z-10">
-                <h2 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight text-white">
                     Eficiencia Académica y Gestión Inteligente
                 </h2>
-                <p class="text-sm md:text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+                <p class="text-sm md:text-lg text-inneAzulClaro max-w-2xl mx-auto mb-8 font-light">
                     Tu portal centralizado para la consulta de trámites escolares, recursos metodológicos y vinculación académica de la carrera.
                 </p>
 
-                <!-- Tarjetas de Coordinadores Animadas en Bucle Fijo -->
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-6">
                     <!-- Tarjeta: Data Max -->
-                    <div class="flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg hover:scale-105 hover:bg-white/10 transition-all cursor-pointer">
+                    <div class="flex flex-col items-center bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20 w-44 shadow-lg hover:scale-105 hover:bg-white/20 transition-all cursor-pointer">
                         <div class="h-32 w-full relative overflow-hidden flex justify-center items-center mb-2">
                             <img src="data-max-saludando.gif" alt="Data Max Saludando" class="h-32 w-auto object-contain">
                         </div>
-                        <span class="text-xs font-bold text-inneGold">DATA MAX</span>
-                        <span class="text-[10px] text-gray-400">Coordinador de Datos</span>
+                        <span class="text-xs font-bold text-inneAmarillo">DATA MAX</span>
+                        <span class="text-[10px] text-white/80">Coordinador de Datos</span>
                     </div>
 
                     <!-- Tarjeta: Enni -->
-                    <div class="flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg hover:scale-105 hover:bg-white/10 transition-all cursor-pointer">
+                    <div class="flex flex-col items-center bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20 w-44 shadow-lg hover:scale-105 hover:bg-white/20 transition-all cursor-pointer">
                         <div class="h-32 w-full relative overflow-hidden flex justify-center items-center mb-2">
                             <img src="enni-saludando.gif" alt="Enni Saludando" class="h-32 w-auto object-contain transform scale-[1.65] origin-center">
                         </div>
-                        <span class="text-xs font-bold text-inneGold">ENNI</span>
-                        <span class="text-[10px] text-gray-400">Coordinadora Académica</span>
+                        <span class="text-xs font-bold text-inneAmarillo">ENNI</span>
+                        <span class="text-[10px] text-white/80">Coordinadora Académica</span>
                     </div>
                 </div>
             </div>
         </section>
 
-
         <!-- =================================================================
-             [BLOQUE 3.5]: VIDEO DE BIENVENIDA DE LA MAESTRA
+             [BLOQUE 3.5]: VIDEO DE BIENVENIDA
              ================================================================= -->
-        <section class="bg-white py-12 px-4 border-b border-b-gray-100">
+        <section class="bg-white py-12 px-4">
             <div class="max-w-4xl mx-auto text-center">
-                <span class="text-[10px] bg-inneBlue/10 text-inneBlue font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Mensaje Institucional</span>
-                <h3 class="text-xl md:text-2xl font-bold text-inneNavy mt-2 mb-1">Bienvenido a Ingeniería en Negocios</h3>
+                <span class="text-[10px] bg-inneAzulSecundario/10 text-inneAzulSecundario font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Mensaje Institucional</span>
+                <h3 class="text-xl md:text-2xl font-bold text-inneAzul mt-2 mb-1">Bienvenido a Ingeniería en Negocios</h3>
                 <p class="text-xs text-gray-500 mb-6">Conoce el mensaje de nuestra coordinación académica para este ciclo escolar.</p>
                 
-                <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-gray-50">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-gray-50">
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de Bienvenida INNE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
 
+        <!-- =================================================================
+             [BLOQUE 3.8]: IDENTIDAD INSTITUCIONAL (NUEVO DEL BRANDBOARD)
+             ================================================================= -->
+        <section id="identidad" class="bg-inneCrema/40 py-16 px-4 border-y border-inneMostaza/20">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-10">
+                    <span class="text-[10px] font-bold text-inneAzul bg-inneMostaza/30 px-3 py-1 rounded-full uppercase tracking-wider">ADN INNE</span>
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-inneAzul mt-3">Identidad Institucional</h3>
+                    <p class="text-sm text-gray-600 mt-2">Nuestra razón de ser, hacia dónde vamos y el perfil de nuestros ingenieros.</p>
+                </div>
+
+                <!-- Misión y Visión -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <!-- Tarjeta Misión -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-inneAzulSecundario/20 hover:shadow-md transition-shadow">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg">M</div>
+                            <h4 class="text-xl font-bold text-inneAzul">Misión</h4>
+                        </div>
+                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed text-justify">
+                            Formar ingenieros con talento en ciencia, ingeniería y tecnología, en cumplimiento con los requerimientos estratégicos de México y Jalisco y para cumplir con la demanda de profesionistas de clase mundial con perfiles globales e internacionales. En un campo profesional innovador que ofrece opciones para el desarrollo de la industria y las organizaciones de negocios tales como: la aeroespNormally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
 
         <!-- =================================================================
              [BLOQUE 4]: SECCIÓN DE LA MALLA CURRICULAR
