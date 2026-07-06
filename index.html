@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="es" class="notranslate" translate="no">
 <head>
+    <!-- =================================================================
+         [BLOQUE 1]: CONFIGURACIÓN, METADATOS Y TAILWIND CSS
+         ================================================================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate" />
     <title>Coordinación INNE - Portal Oficial</title>
     
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,35 +27,42 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen scroll-smooth">
 
+    <!-- =================================================================
+         [BLOQUE 2]: ENCABEZADO / MENÚ DE NAVEGACIÓN (NAVBAR CON LOGO INTERACTIVO)
+         ================================================================= -->
     <header class="bg-inneNavy text-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
-            <div class="flex items-center space-x-3">
-                <img src="logo-inne.png" alt="Logo INNE" class="h-10 w-auto object-contain">
+            <!-- Logotipo Activador del Easter Egg (5 clics aquí abren el juego) -->
+            <div id="header-logo" class="flex items-center space-x-3 cursor-pointer select-none group">
+                <img src="logo-inne.png" alt="Logo INNE" class="h-10 w-auto object-contain group-hover:scale-105 transition-transform">
                 <div>
-                    <h1 class="text-base md:text-lg font-bold tracking-tight">INNE COORDINACIÓN</h1>
+                    <h1 class="text-base md:text-lg font-bold tracking-tight group-hover:text-inneGold transition-colors">INNE COORDINACIÓN</h1>
                     <p class="text-xs text-gray-400 hidden sm:block">Portal Informativo Oficial</p>
                 </div>
             </div>
             
+            <!-- Menú de Escritorio Limpio (Opción A: Sin sobrecarga de botones) -->
             <nav class="hidden md:flex space-x-6 font-medium text-sm">
                 <a href="#" class="text-inneGold hover:text-white transition-colors">Inicio</a>
                 <a href="#malla" class="hover:text-inneGold transition-colors">Malla Curricular</a>
-                <a href="#avisos" class="hover:text-inneGold transition-colors">Avisos y Noticias</a>
+                <a href="#avisos" class="hover:text-inneGold transition-colors">Avisos y Agenda</a>
                 <a href="#instagram" class="hover:text-inneGold transition-colors">Comunidad INNE</a>
                 <a href="#supervivencia" class="hover:text-inneGold transition-colors">Guía de Supervivencia</a>
                 <a href="#contacto" class="hover:text-inneGold transition-colors">Contacto</a>
             </nav>
 
+            <!-- Botón de Hamburguesa (Móvil) -->
             <button id="menu-btn" class="md:hidden text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
 
+        <!-- Menú Desplegable (Móvil) -->
         <div id="mobile-menu" class="hidden md:hidden bg-inneNavy border-t border-gray-700 px-4 py-3 space-y-3 text-sm">
             <a href="#" class="block text-inneGold">Inicio</a>
             <a href="#malla" class="block hover:text-inneGold">Malla Curricular</a>
-            <a href="#avisos" class="block hover:text-inneGold">Avisos y Noticias</a>
+            <a href="#avisos" class="block hover:text-inneGold">Avisos y Agenda</a>
             <a href="#instagram" class="block hover:text-inneGold">Comunidad INNE</a>
             <a href="#supervivencia" class="block hover:text-inneGold">Guía de Supervivencia</a>
             <a href="#contacto" class="block hover:text-inneGold">Contacto</a>
@@ -60,6 +71,9 @@
 
 
     <main class="flex-grow">
+        <!-- =================================================================
+             [BLOQUE 3]: SECCIÓN HERO (BIENVENIDA Y PERSONAJES ANIMADOS VIVOS)
+             ================================================================= -->
         <section class="bg-gradient-to-br from-inneNavy to-blue-900 text-white py-14 px-4 text-center relative overflow-hidden">
             <div class="max-w-4xl mx-auto relative z-10">
                 <h2 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
@@ -69,8 +83,9 @@
                     Tu portal centralizado para la consulta de trámites escolares, recursos metodológicos y vinculación académica de la carrera.
                 </p>
 
+                <!-- Tarjetas de Coordinadores Animadas en Bucle Fijo -->
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-6">
-                    
+                    <!-- Tarjeta: Data Max -->
                     <div class="flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg hover:scale-105 hover:bg-white/10 transition-all cursor-pointer">
                         <div class="h-32 w-full relative overflow-hidden flex justify-center items-center mb-2">
                             <img src="data-max-saludando.gif" alt="Data Max Saludando" class="h-32 w-auto object-contain">
@@ -79,6 +94,7 @@
                         <span class="text-[10px] text-gray-400">Coordinador de Datos</span>
                     </div>
 
+                    <!-- Tarjeta: Enni -->
                     <div class="flex flex-col items-center bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-44 shadow-lg hover:scale-105 hover:bg-white/10 transition-all cursor-pointer">
                         <div class="h-32 w-full relative overflow-hidden flex justify-center items-center mb-2">
                             <img src="enni-saludando.gif" alt="Enni Saludando" class="h-32 w-auto object-contain transform scale-[1.65] origin-center">
@@ -91,6 +107,26 @@
         </section>
 
 
+        <!-- =================================================================
+             [BLOQUE 3.5]: VIDEO DE BIENVENIDA DE LA MAESTRA (REDUCTOR DE FRICCIÓN)
+             ================================================================= -->
+        <section class="bg-white py-12 px-4 border-b border-gray-100">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="text-[10px] bg-inneBlue/10 text-inneBlue font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Mensaje Institucional</span>
+                <h3 class="text-xl md:text-2xl font-bold text-inneNavy mt-2 mb-1">Bienvenido a Ingeniería en Negocios</h3>
+                <p class="text-xs text-gray-500 mb-6">Conoce el mensaje de nuestra coordinación académica para este ciclo escolar.</p>
+                
+                <!-- Reproductor responsivo de YouTube (Usa un link maqueta, listo para cambiarse por el real) -->
+                <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-gray-50">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de Bienvenida INNE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =================================================================
+             [BLOQUE 4]: MALLA CURRICULAR Y PANEL DE PRÁCTICAS (ANTI-MANTENIMIENTO)
+             ================================================================= -->
         <section id="malla" class="bg-white py-14 px-4">
             <div class="max-w-7xl mx-auto">
                 
@@ -100,6 +136,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Tarjeta Izquierda: Enfoque Profesional -->
                     <div class="bg-gray-50 p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
                         <div>
                             <span class="text-[10px] bg-blue-50 text-inneBlue font-bold px-2 py-1 rounded-md uppercase tracking-wider">Perfil INNE</span>
@@ -113,6 +150,7 @@
                         </div>
                     </div>
 
+                    <!-- Tarjeta Derecha: Estructura de Créditos -->
                     <div class="bg-[#64a3c5] p-6 rounded-2xl shadow-md flex flex-col justify-between lg:col-span-2 text-inneNavy">
                         <div>
                             <span class="text-[10px] bg-inneNavy text-white font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Estructura de Créditos</span>
@@ -129,18 +167,37 @@
                     </div>
                 </div>
 
+                <!-- SUB-PANEL: PRÁCTICAS PROFESIONALES (Cero mantenimiento manual para el código) -->
+                <div class="mt-8 bg-gray-50 border border-gray-100 p-6 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
+                    <div class="text-left">
+                        <span class="text-[10px] bg-green-100 text-green-700 font-bold px-2 py-1 rounded-md uppercase tracking-wider">Vinculación Empresarial</span>
+                        <h4 class="text-lg font-bold text-inneNavy mt-2 mb-1">Prácticas Profesionales y Sectores Estratégicos</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed max-w-2xl">
+                            Aplica tus habilidades en optimización y analítica en las organizaciones líderes del ecosistema. Consulta los convenios vigentes, vacantes activas y lineamientos oficiales gestionados de forma directa por la Universidad.
+                        </p>
+                    </div>
+                    <a href="https://cucea.udg.mx/pb/coordinacion-de-extension/s/unidad-de-vinculacion/" target="_blank" class="w-full md:w-auto text-center bg-inneNavy text-white text-xs font-bold px-5 py-3 rounded-xl hover:bg-blue-900 transition-colors shadow whitespace-nowrap">
+                        Ver Convenios de Vinculación →
+                    </a>
+                </div>
+
             </div>
         </section>
 
 
+        <!-- =================================================================
+             [BLOQUE 5]: MONITOR DASHBOARD: PIZARRA DIGITAL Y GOOGLE CALENDAR EN VIVO
+             ================================================================= -->
         <section id="avisos" class="bg-gray-100 py-14 px-4">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-10">
-                    <h3 class="text-2xl md:text-3xl font-bold text-inneNavy">Avisos y Noticias Recientes</h3>
-                    <p class="text-sm text-gray-600 mt-2">Mantente al tanto de los procesos, convocatorias y alertas vigentes de la coordinación.</p>
+                    <h3 class="text-2xl md:text-3xl font-bold text-inneNavy">Avisos y Agenda Escolar</h3>
+                    <p class="text-sm text-gray-600 mt-2">Mantente al tanto de los procesos, fechas límite y alertas vigentes de la coordinación.</p>
                 </div>
 
+                <!-- Bloque de 3 Tarjetas Informativas Fijas -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Alerta 1: Artículo 34 -->
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div>
                             <span class="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">⚠️ Reglamento</span>
@@ -154,6 +211,7 @@
                         </a>
                     </div>
 
+                    <!-- Alerta 2: Servicio Social (PORTAL SIIAU OFICIAL) -->
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div>
                             <span class="bg-inneBlue/10 text-inneBlue text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🎓 Egreso</span>
@@ -167,6 +225,7 @@
                         </a>
                     </div>
 
+                    <!-- Alerta 3: Ventanilla Escolar -->
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div>
                             <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🚀 Alumnos</span>
@@ -179,29 +238,58 @@
                     </div>
                 </div>
 
-                <div class="mt-10 bg-white p-6 rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col items-center justify-center text-center">
-                    <div class="flex items-center justify-center space-x-2 mb-3">
-                        <span class="animate-pulse h-2 w-2 rounded-full bg-green-500"></span>
-                        <span class="bg-inneBlue/10 text-inneBlue text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Pizarra Digital Activa</span>
-                    </div>
-                    <h4 class="font-bold text-lg text-inneNavy mb-1">Boletín Oficial y Circulares Informativas</h4>
-                    <p class="text-xs text-gray-500 mb-6">Espacio de actualización inmediata gestionado por el equipo de asistencia y marketing de la carrera.</p>
+                <!-- DASHBOARD EN ESCUADRA: PIZARRA DIGITAL A LA IZQUIERDA Y CALENDARIO DE GOOGLE A LA DERECHA -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
                     
-                    <div class="w-full flex justify-center items-center overflow-hidden">
-                        <div class="w-full max-w-[1060px] h-[200px] min-[375px]:h-[215px] min-[410px]:h-[240px] sm:h-[600px] relative overflow-hidden flex justify-center">
-                            <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkMMz4Mu6-nn92o7ILoA30BSZPYba3CmOgcWBTcQtY5LMVTVx1Ojuh8V_8-SF9bj_VdOrHO6FVMQy5/pub?embedded=true" 
-                                    class="absolute top-0 w-[1060px] h-[600px] border border-gray-200 rounded-xl bg-white shadow-inner origin-top scale-[0.32] min-[375px]:scale-[0.35] min-[410px]:scale-[0.39] sm:scale-100 transition-transform duration-300">
+                    <!-- LADO A: La Pizarra Digital Activa Horizontal -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col items-center justify-between text-center">
+                        <div class="w-full">
+                            <div class="flex items-center justify-center space-x-2 mb-3">
+                                <span class="animate-pulse h-2 w-2 rounded-full bg-green-500"></span>
+                                <span class="bg-inneBlue/10 text-inneBlue text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Boletín en Vivo</span>
+                            </div>
+                            <h4 class="font-bold text-lg text-inneNavy mb-1">Boletín Oficial y Circulares</h4>
+                            <p class="text-xs text-gray-500 mb-6">Información inmediata editada desde la cuenta de Drive de la carrera.</p>
+                        </div>
+                        <div class="w-full flex justify-center items-center overflow-hidden">
+                            <div class="w-full max-w-[1060px] h-[200px] min-[375px]:h-[215px] min-[410px]:h-[240px] sm:h-[450px] relative overflow-hidden flex justify-center">
+                                <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkMMz4Mu6-nn92o7ILoA30BSZPYba3CmOgcWBTcQtY5LMVTVx1Ojuh8V_8-SF9bj_VdOrHO6FVMQy5/pub?embedded=true" 
+                                        class="absolute top-0 w-[1060px] h-[600px] border border-gray-200 rounded-xl bg-white origin-top scale-[0.32] min-[375px]:scale-[0.35] min-[410px]:scale-[0.39] sm:scale-[0.75] lg:scale-[1] lg:w-full lg:h-full transition-transform duration-300">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LADO B: Calendario Semestral de Google Embebido (El link que me diste) -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col items-center justify-between text-center">
+                        <div class="w-full">
+                            <div class="flex items-center justify-center space-x-2 mb-3">
+                                <span class="h-2 w-2 rounded-full bg-blue-500"></span>
+                                <span class="bg-blue-50 text-inneBlue text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Fechas Críticas</span>
+                            </div>
+                            <h4 class="font-bold text-lg text-inneNavy mb-1">Calendario de Eventos INNE</h4>
+                            <p class="text-xs text-gray-500 mb-6">Exámenes, trámites y cierres de agenda directo de Google Calendar.</p>
+                        </div>
+                        <div class="w-full rounded-xl overflow-hidden border border-gray-100 shadow-inner">
+                            <!-- El Iframe Oficial con tu ID de Configuración Segura -->
+                            <iframe src="https://calendar.google.com/calendar/embed?src=c_7eeb78637fd25261df53f703aaeda7582246b675fcba59d8f941270a0fd7070e%40group.calendar.google.com&ctz=America%2FMexico_City" 
+                                    style="border: 0" width="100%" height="450" frameborder="0" scrolling="no" class="bg-white">
                             </iframe>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
 
+        <!-- =================================================================
+             [BLOQUE 6]: SECCIÓN DEL CARRUSEL INTERACTIVO DE INSTAGRAM
+             ================================================================= -->
         <section id="instagram" class="py-14 px-4 bg-white overflow-hidden">
             <div class="max-w-7xl mx-auto relative">
                 
+                <!-- Encabezado y Flechas de Navegación -->
                 <div class="flex justify-between items-end mb-8">
                     <div class="text-left">
                         <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">#ComunidadINNE</span>
@@ -213,9 +301,11 @@
                     </div>
                 </div>
 
+                <!-- Ventana Desplazable del Carrusel -->
                 <div class="relative w-full overflow-hidden">
                     <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out gap-4" style="transform: translateX(0px);">
                         
+                        <!-- Post 1 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
                                 <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
@@ -225,6 +315,7 @@
                             </a>
                         </div>
 
+                        <!-- Post 2 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
                                 <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
@@ -234,6 +325,7 @@
                             </a>
                         </div>
 
+                        <!-- Post 3 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
                                 <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
@@ -243,6 +335,7 @@
                             </a>
                         </div>
 
+                        <!-- Post 4 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
                                 <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
@@ -252,6 +345,7 @@
                             </a>
                         </div>
 
+                        <!-- Post 5 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
                                 <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
@@ -267,6 +361,9 @@
         </section>
 
 
+        <!-- =================================================================
+             [BLOQUE 7]: MANUAL DE SUPERVIVENCIA ESTUDIANTIL (ACORDEONES)
+             ================================================================= -->
         <section id="supervivencia" class="max-w-4xl mx-auto px-4 py-14">
             <div class="text-center mb-10">
                 <span class="text-xs font-bold text-inneGold uppercase tracking-wider bg-inneNavy px-3 py-1 rounded-full">Exclusivo INNE</span>
@@ -275,6 +372,7 @@
             </div>
 
             <div class="space-y-3">
+                <!-- FAQ 1 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                     <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Cómo interpreto los códigos de las aulas o salones en CUCEA?</span>
@@ -285,6 +383,7 @@
                     </div>
                 </div>
 
+                <!-- FAQ 2 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                     <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Qué es el Artículo 34 y cómo evito caer en esta sanción?</span>
@@ -295,6 +394,7 @@
                     </div>
                 </div>
 
+                <!-- FAQ 3 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                     <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Cuáles son las opciones y promedios para titulación?</span>
@@ -305,6 +405,7 @@
                     </div>
                 </div>
 
+                <!-- FAQ 4 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                     <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Dónde están las oficinas de la Coordinación y qué es el CID?</span>
@@ -319,70 +420,94 @@
     </main>
 
 
+    <!-- =================================================================
+         [BLOQUE 8]: PIE DE PÁGINA (FOOTER) Y DATOS DE CONTACTO DE LA UDG
+         ================================================================= -->
     <footer id="contacto" class="bg-inneNavy text-white border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm text-gray-400">
-            
+            <!-- Redes -->
             <div class="space-y-4">
                 <h5 class="text-white font-bold text-base tracking-wide border-b border-gray-700 pb-2">Ingeniería en Negocios</h5>
                 <p class="text-xs leading-relaxed">Portal de soporte informativo automatizado para la comunidad estudiantil de INNE.</p>
                 <div class="pt-2">
-                    <span class="block text-[11px] text-gray-500 uppercase font-bold tracking-wider mb-2">Comunidad Digital</span>
                     <div class="flex items-center space-x-3">
-                        <a href="https://www.facebook.com/Coordinacion.INNE/" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-sm" title="Facebook INNE">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h2.721L15 8h-3V6.83c0-.855.18-.13.92-.13H15V3h-2.523C10.233 3 9 4.186 9 6.57V8z"/></svg>
-                        </a>
-                        <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all shadow-sm" title="Instagram INNE">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                        </a>
-                        <a href="https://linktr.ee/inne.cucea?utm_source=linktree_profile_share&ltsid=6161476b-9d4e-4d7d-a028-eea29b0fb964" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-green-600 hover:text-white transition-all shadow-sm" title="Linktree INNE">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M13.511 5.854l4.28 4.254-1.42 1.411-2.371-2.355v6.23h5.903l-2.356-2.372 1.412-1.42 4.254 4.281-4.254 4.254-1.412-1.411 2.356-2.372h-5.903v4.613h2.951v2H6.511v-2h2.952v-4.613H3.56l2.356 2.372-1.412 1.411L.25 14.636l4.254-4.281 1.412 1.42-2.356 2.372h5.903v-6.23L5.854 10.28l-1.42-1.411 4.28-4.254v-3h4.8v3z"/></svg>
-                        </a>
+                        <a href="https://www.facebook.com/Coordinacion.INNE/" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-sm"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h2.721L15 8h-3V6.83c0-.855.18-.13.92-.13H15V3h-2.523C10.233 3 9 4.186 9 6.57V8z"/></svg></a>
+                        <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all shadow-sm"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
                     </div>
                 </div>
             </div>
-            
+            <!-- Ubicación -->
             <div class="space-y-3">
                 <h5 class="text-white font-bold text-base tracking-wide border-b border-gray-700 pb-2">Ubicación y Contacto</h5>
                 <ul class="space-y-2.5 text-xs">
-                    <li class="flex items-start space-x-2.5">
-                        <span class="text-base select-none">📍</span>
-                        <span>Torre Smart, Piso 3<br><span class="text-gray-500">CUCEA - Periférico Norte 799, Zapopan, Jal.</span></span>
-                    </li>
-                    <li class="flex items-center space-x-2.5">
-                        <span class="text-base select-none">📞</span>
-                        <span>Tel: 33 3770 3300 <span class="text-inneGold ml-1 font-semibold">Ext: 25997</span></span>
-                    </li>
-                    <li class="flex items-center space-x-2.5">
-                        <span class="text-base select-none">✉️</span>
-                        <span class="hover:text-inneGold transition-colors">inne@cucea.udg.mx</span>
-                    </li>
+                    <li class="flex items-start space-x-2.5">📍 <span>Torre Smart, Piso 3<br><span class="text-gray-500">CUCEA - Periférico Norte 799, Zapopan.</span></span></li>
+                    <li class="flex items-center space-x-2.5">📞 <span>Tel: 33 3770 3300 <span class="text-inneGold ml-1">Ext: 25000</span></span></li>
+                    <li class="flex items-center space-x-2.5">✉️ <span>coordinacion.inne@cucea.udg.mx</span></li>
                 </ul>
             </div>
-            
+            <!-- Horario -->
             <div class="space-y-4 flex flex-col justify-between">
                 <div>
                     <h5 class="text-white font-bold text-base tracking-wide border-b border-gray-700 pb-2">Horario de Atención</h5>
-                    <div class="text-xs space-y-1 mt-2">
-                        <span class="block text-white font-medium">Lunes a Viernes</span>
-                        <span class="block text-gray-400">09:00 AM - 02:00 PM y 04:00 PM - 06:00 PM</span>
-                    </div>
+                    <p class="text-xs text-gray-400 mt-2">Lunes a Viernes<br>09:00 AM - 02:00 PM y 04:00 PM - 06:00 PM</p>
                 </div>
                 <div class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center space-x-3">
-                    <img src="image_a586fa.png" alt="QR Acceso Oficial" class="w-14 h-14 bg-white p-1 rounded-md object-contain">
-                    <div class="text-[11px] leading-tight text-gray-300">
-                        <span class="block font-bold text-white uppercase tracking-wider">Portal Móvil</span>
-                        Escanea para llevar el sitio oficial y la guía en tu celular.
-                    </div>
+                    <img src="image_a586fa.png" alt="QR" class="w-14 h-14 bg-white p-1 rounded-md object-contain">
+                    <div class="text-[11px] text-gray-300"><strong>PORTAL MÓVIL</strong><br>Lleva el sitio y la guía en tu celular.</div>
                 </div>
             </div>
         </div>
-        
         <div class="bg-black/20 text-center py-4 text-[11px] text-gray-500 border-t border-white/5">
-            © 2026 Coordinación INNE - CUCEA. Todos los derechos reservados. Desarrollado con optimización inteligente.
+            © 2026 Coordinación INNE - CUCEA. Todos los derechos reservados.
         </div>
     </footer>
 
 
+    <!-- =================================================================
+         [BLOQUE 8.5]: VENTANA MODAL OCULTA (EL EASTER EGG DE VESTIR A DATA MAX)
+         ================================================================= -->
+    <div id="easter-egg-modal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4 backdrop-blur-sm animate-fade-in">
+        <div class="bg-inneNavy border border-white/10 p-6 rounded-3xl max-w-sm w-full text-center relative shadow-2xl text-white">
+            
+            <button id="close-egg-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl font-bold focus:outline-none">&times;</button>
+            
+            <span class="text-[10px] bg-inneGold text-inneNavy font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">¡Secreto Descubierto!</span>
+            <h4 class="text-xl font-bold mt-2 mb-1 text-white">Rincón de Juegos INNE</h4>
+            <p class="text-[11px] text-gray-400 mb-6">Personaliza el avatar oficial de la coordinación antes de que termine el servicio.</p>
+
+            <!-- LIENZO DE CAPAS DEL AVATAR -->
+            <div class="relative w-48 h-48 bg-white/5 rounded-2xl mx-auto flex items-center justify-center overflow-hidden border border-white/5 shadow-inner">
+                
+                <!-- Capa 1: El cuerpo base (Data Max saludando) -->
+                <img src="data-max-saludando.gif" class="absolute w-36 h-36 object-contain z-10" alt="Base Max">
+
+                <!-- Capa 2: Lentes Hipster (Ocultos con 'hidden' por defecto) -->
+                <img id="prenda-lentes" src="https://images.vexels.com/media/users/3/193297/isolated/preview/26e3cdae043cb68c679f2fe7b973b069-gafas-de-sol-hipster-negras.png" 
+                     class="absolute w-16 h-16 object-contain z-20 top-[28%] hidden" alt="Lentes">
+
+                <!-- Capa 3: Gorra de Graduación (Oculta por defecto) -->
+                <img id="prenda-gorra" src="https://cdn-icons-png.flaticon.com/512/7416/7416738.png" 
+                     class="absolute w-20 h-20 object-contain z-30 top-[10%] hidden" alt="Gorra">
+            </div>
+
+            <!-- MENU DE PRENDAS PARA PRESIONAR -->
+            <div class="grid grid-cols-2 gap-3 mt-6">
+                <button onclick="togglePrenda('lentes')" class="bg-white/5 hover:bg-white/10 border border-white/10 py-2.5 rounded-xl text-xs font-semibold transition-all active:scale-95">
+                    👓 Lentes Hacker
+                </button>
+                <button onclick="togglePrenda('gorra')" class="bg-white/5 hover:bg-white/10 border border-white/10 py-2.5 rounded-xl text-xs font-semibold transition-all active:scale-95">
+                    Cap Graduado
+                </button>
+            </div>
+            
+            <p class="text-[10px] text-gray-500 mt-4 leading-tight">Suministra nuevos archivos PNG transparentes de 500x500px al desarrollador para expandir el guardarropa.</p>
+        </div>
+    </div>
+
+
+    <!-- =================================================================
+         [BLOQUE 9]: CÓDIGO JAVASCRIPT (INTERACTIVIDAD INTERNA)
+         ================================================================= -->
     <script>
         // --- CONTROLADOR 1: MENÚ COLAPSABLE MÓVIL ---
         const menuBtn = document.getElementById('menu-btn');
@@ -400,11 +525,38 @@
             });
         });
 
-        // --- CONTROLADOR 3: RIEL DEL CARRUSEL DE INSTAGRAM ---
+        // --- CONTROLADOR 3: GESTOR DE APUESTAS / EASTER EGG (5 CLICS AL LOGO) ---
+        let logoClicks = 0;
+        const logoTrigger = document.getElementById('header-logo');
+        const eggModal = document.getElementById('easter-egg-modal');
+        const closeEggBtn = document.getElementById('close-egg-btn');
+
+        logoTrigger.addEventListener('click', () => {
+            logoClicks++;
+            if (logoClicks === 5) {
+                logoClicks = 0;
+                eggModal.classList.remove('hidden');
+                eggModal.classList.add('flex');
+            }
+            // Temporizador para resetear los clics si el usuario tarda mucho
+            setTimeout(() => { if(logoClicks > 0) logoClicks--; }, 3000);
+        });
+
+        closeEggBtn.addEventListener('click', () => {
+            eggModal.classList.add('hidden');
+            eggModal.classList.remove('flex');
+        });
+
+        // Función interactiva para encender/apagar la ropa en el lienzo
+        function togglePrenda(idPrenda) {
+            const prenda = document.getElementById('prenda-' + idPrenda);
+            prenda.classList.toggle('hidden');
+        }
+
+        // --- CONTROLADOR 4: RIEL DEL CARRUSEL DE INSTAGRAM ---
         const track = document.getElementById('carousel-track');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
-
         let currentPosition = 0;
         
         function getScrollAmount() {
