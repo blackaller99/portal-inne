@@ -33,7 +33,7 @@
     <header class="bg-inneNavy text-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
-            <!-- Logotipo Activador del Easter Egg (5 clics aquí abren el juego) -->
+            <!-- Logotipo Activador del Easter Egg (5 clics rápidos aquí abren el juego) -->
             <div id="header-logo" class="flex items-center space-x-3 cursor-pointer select-none group">
                 <img src="logo-inne.png" alt="Logo INNE" class="h-10 w-auto object-contain group-hover:scale-105 transition-transform">
                 <div>
@@ -42,7 +42,7 @@
                 </div>
             </div>
             
-            <!-- Menú de Escritorio Limpio (Opción A: Sin sobrecarga de botones) -->
+            <!-- Menú de Escritorio Limpio -->
             <nav class="hidden md:flex space-x-6 font-medium text-sm">
                 <a href="#" class="text-inneGold hover:text-white transition-colors">Inicio</a>
                 <a href="#malla" class="hover:text-inneGold transition-colors">Malla Curricular</a>
@@ -110,13 +110,12 @@
         <!-- =================================================================
              [BLOQUE 3.5]: VIDEO DE BIENVENIDA DE LA MAESTRA (REDUCTOR DE FRICCIÓN)
              ================================================================= -->
-        <section class="bg-white py-12 px-4 border-b border-gray-100">
+        <section class="bg-white py-12 px-4 border-b border-b-gray-100">
             <div class="max-w-4xl mx-auto text-center">
                 <span class="text-[10px] bg-inneBlue/10 text-inneBlue font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Mensaje Institucional</span>
                 <h3 class="text-xl md:text-2xl font-bold text-inneNavy mt-2 mb-1">Bienvenido a Ingeniería en Negocios</h3>
                 <p class="text-xs text-gray-500 mb-6">Conoce el mensaje de nuestra coordinación académica para este ciclo escolar.</p>
                 
-                <!-- Reproductor responsivo de YouTube (Usa un link maqueta, listo para cambiarse por el real) -->
                 <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-gray-50">
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de Bienvenida INNE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -125,7 +124,7 @@
 
 
         <!-- =================================================================
-             [BLOQUE 4]: MALLA CURRICULAR Y PANEL DE PRÁCTICAS (ANTI-MANTENIMIENTO)
+             [BLOQUE 4]: SECCIÓN DE LA MALLA CURRICULAR
              ================================================================= -->
         <section id="malla" class="bg-white py-14 px-4">
             <div class="max-w-7xl mx-auto">
@@ -166,27 +165,12 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- SUB-PANEL: PRÁCTICAS PROFESIONALES (Cero mantenimiento manual para el código) -->
-                <div class="mt-8 bg-gray-50 border border-gray-100 p-6 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
-                    <div class="text-left">
-                        <span class="text-[10px] bg-green-100 text-green-700 font-bold px-2 py-1 rounded-md uppercase tracking-wider">Vinculación Empresarial</span>
-                        <h4 class="text-lg font-bold text-inneNavy mt-2 mb-1">Prácticas Profesionales y Sectores Estratégicos</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed max-w-2xl">
-                            Aplica tus habilidades en optimización y analítica en las organizaciones líderes del ecosistema. Consulta los convenios vigentes, vacantes activas y lineamientos oficiales gestionados de forma directa por la Universidad.
-                        </p>
-                    </div>
-                    <a href="https://cucea.udg.mx/pb/coordinacion-de-extension/s/unidad-de-vinculacion/" target="_blank" class="w-full md:w-auto text-center bg-inneNavy text-white text-xs font-bold px-5 py-3 rounded-xl hover:bg-blue-900 transition-colors shadow whitespace-nowrap">
-                        Ver Convenios de Vinculación →
-                    </a>
-                </div>
-
             </div>
         </section>
 
 
         <!-- =================================================================
-             [BLOQUE 5]: MONITOR DASHBOARD: PIZARRA DIGITAL Y GOOGLE CALENDAR EN VIVO
+             [BLOQUE 5]: SECCIÓN DE AVISOS, TRÁMITES Y AGENDA INTERACTIVA
              ================================================================= -->
         <section id="avisos" class="bg-gray-100 py-14 px-4">
             <div class="max-w-7xl mx-auto">
@@ -238,8 +222,22 @@
                     </div>
                 </div>
 
-                <!-- DASHBOARD EN ESCUADRA: PIZARRA DIGITAL A LA IZQUIERDA Y CALENDARIO DE GOOGLE A LA DERECHA -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
+                <!-- SUB-PANEL: PRÁCTICAS PROFESIONALES (Reubicado orgánicamente en Trámites) -->
+                <div class="mt-6 bg-white border border-gray-200 p-6 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
+                    <div class="text-left">
+                        <span class="text-[10px] bg-green-100 text-green-700 font-bold px-2 py-1 rounded-md uppercase tracking-wider">Vinculación Empresarial</span>
+                        <h4 class="text-lg font-bold text-inneNavy mt-2 mb-1">Prácticas Profesionales y Sectores Estratégicos</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed max-w-4xl">
+                            Aplica tus habilidades en optimización y analítica en las organizaciones líderes del ecosistema. Consulta los convenios vigentes, vacantes activas y lineamientos oficiales gestionados de forma directa por la Universidad.
+                        </p>
+                    </div>
+                    <a href="https://cucea.udg.mx/pb/coordinacion-de-extension/s/unidad-de-vinculacion/" target="_blank" class="w-full md:w-auto text-center bg-inneNavy text-white text-xs font-bold px-5 py-3 rounded-xl hover:bg-blue-900 transition-colors shadow whitespace-nowrap">
+                        Ver Convenios de Vinculación →
+                    </a>
+                </div>
+
+                <!-- DASHBOARD: PIZARRA DIGITAL (IZQUIERDA) Y GOOGLE CALENDAR EN VIVO (DERECHA) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
                     
                     <!-- LADO A: La Pizarra Digital Activa Horizontal -->
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col items-center justify-between text-center">
@@ -260,7 +258,7 @@
                         </div>
                     </div>
 
-                    <!-- LADO B: Calendario Semestral de Google Embebido (El link que me diste) -->
+                    <!-- LADO B: Calendario Semestral Real de Google (Vinculación Segura) -->
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col items-center justify-between text-center">
                         <div class="w-full">
                             <div class="flex items-center justify-center space-x-2 mb-3">
@@ -271,7 +269,6 @@
                             <p class="text-xs text-gray-500 mb-6">Exámenes, trámites y cierres de agenda directo de Google Calendar.</p>
                         </div>
                         <div class="w-full rounded-xl overflow-hidden border border-gray-100 shadow-inner">
-                            <!-- El Iframe Oficial con tu ID de Configuración Segura -->
                             <iframe src="https://calendar.google.com/calendar/embed?src=c_7eeb78637fd25261df53f703aaeda7582246b675fcba59d8f941270a0fd7070e%40group.calendar.google.com&ctz=America%2FMexico_City" 
                                     style="border: 0" width="100%" height="450" frameborder="0" scrolling="no" class="bg-white">
                             </iframe>
@@ -367,7 +364,7 @@
         <section id="supervivencia" class="max-w-4xl mx-auto px-4 py-14">
             <div class="text-center mb-10">
                 <span class="text-xs font-bold text-inneGold uppercase tracking-wider bg-inneNavy px-3 py-1 rounded-full">Exclusivo INNE</span>
-                <h3 class="text-2xl md:text-3xl font-bold text-inneNavy mt-2">Manual de Supervivencia Estudiantil</h3>
+                <h3 class="text-2xl md:text-3xl font-bold text-inneNavy mt-2">Manual de Supervivencia Estanti</h3>
                 <p class="text-sm text-gray-600 mt-2">Respuestas rápidas y directas a las dudas administrativas más comunes de la carrera.</p>
             </div>
 
@@ -421,7 +418,7 @@
 
 
     <!-- =================================================================
-         [BLOQUE 8]: PIE DE PÁGINA (FOOTER) Y DATOS DE CONTACTO DE LA UDG
+         [BLOQUE 8]: PIE DE PÁGINA (FOOTER CON DATOS AUDITADOS V2)
          ================================================================= -->
     <footer id="contacto" class="bg-inneNavy text-white border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm text-gray-400">
@@ -430,19 +427,21 @@
                 <h5 class="text-white font-bold text-base tracking-wide border-b border-gray-700 pb-2">Ingeniería en Negocios</h5>
                 <p class="text-xs leading-relaxed">Portal de soporte informativo automatizado para la comunidad estudiantil de INNE.</p>
                 <div class="pt-2">
+                    <span class="block text-[11px] text-gray-500 uppercase font-bold tracking-wider mb-2">Comunidad Digital</span>
                     <div class="flex items-center space-x-3">
                         <a href="https://www.facebook.com/Coordinacion.INNE/" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-sm"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h2.721L15 8h-3V6.83c0-.855.18-.13.92-.13H15V3h-2.523C10.233 3 9 4.186 9 6.57V8z"/></svg></a>
                         <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all shadow-sm"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                        <a href="https://linktr.ee/inne.cucea?utm_source=linktree_profile_share&ltsid=6161476b-9d4e-4d7d-a028-eea29b0fb964" target="_blank" class="w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center hover:bg-green-600 hover:text-white transition-all shadow-sm"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M13.511 5.854l4.28 4.254-1.42 1.411-2.371-2.355v6.23h5.903l-2.356-2.372 1.412-1.42 4.254 4.281-4.254 4.254-1.412-1.411 2.356-2.372h-5.903v4.613h2.951v2H6.511v-2h2.952v-4.613H3.56l2.356 2.372-1.412 1.411L.25 14.636l4.254-4.281 1.412 1.42-2.356 2.372h5.903v-6.23L5.854 10.28l-1.42-1.411 4.28-4.254v-3h4.8v3z"/></svg></a>
                     </div>
                 </div>
             </div>
-            <!-- Ubicación -->
+            <!-- Ubicación Corregida -->
             <div class="space-y-3">
                 <h5 class="text-white font-bold text-base tracking-wide border-b border-gray-700 pb-2">Ubicación y Contacto</h5>
                 <ul class="space-y-2.5 text-xs">
-                    <li class="flex items-start space-x-2.5">📍 <span>Torre Smart, Piso 3<br><span class="text-gray-500">CUCEA - Periférico Norte 799, Zapopan.</span></span></li>
-                    <li class="flex items-center space-x-2.5">📞 <span>Tel: 33 3770 3300 <span class="text-inneGold ml-1">Ext: 25000</span></span></li>
-                    <li class="flex items-center space-x-2.5">✉️ <span>coordinacion.inne@cucea.udg.mx</span></li>
+                    <li class="flex items-start space-x-2.5">📍 <span>Torre Smart, Piso 3<br><span class="text-gray-500">CUCEA - Periférico Norte 799, Zapopan, Jal.</span></span></li>
+                    <li class="flex items-center space-x-2.5">📞 <span>Tel: 33 3770 3300 <span class="text-inneGold ml-1 font-semibold">Ext: 25997</span></span></li>
+                    <li class="flex items-center space-x-2.5">✉️ <span class="hover:text-inneGold transition-colors">inne@cucea.udg.mx</span></li>
                 </ul>
             </div>
             <!-- Horario -->
@@ -453,18 +452,18 @@
                 </div>
                 <div class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center space-x-3">
                     <img src="image_a586fa.png" alt="QR" class="w-14 h-14 bg-white p-1 rounded-md object-contain">
-                    <div class="text-[11px] text-gray-300"><strong>PORTAL MÓVIL</strong><br>Lleva el sitio y la guía en tu celular.</div>
+                    <div class="text-[11px] text-gray-300"><strong>PORTAL MÓVIL</strong><br>Lleva el sitio oficial y la guía en tu celular.</div>
                 </div>
             </div>
         </div>
         <div class="bg-black/20 text-center py-4 text-[11px] text-gray-500 border-t border-white/5">
-            © 2026 Coordinación INNE - CUCEA. Todos los derechos reservados.
+            © 2026 Coordinación INNE - CUCEA. Todos los derechos reservados. Desarrollado con optimización inteligente.
         </div>
     </footer>
 
 
     <!-- =================================================================
-         [BLOQUE 8.5]: VENTANA MODAL OCULTA (EL EASTER EGG DE VESTIR A DATA MAX)
+         [BLOQUE 8.5]: VENTANA MODAL OCULTA (EL EASTER EGG SECRETO)
          ================================================================= -->
     <div id="easter-egg-modal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4 backdrop-blur-sm animate-fade-in">
         <div class="bg-inneNavy border border-white/10 p-6 rounded-3xl max-w-sm w-full text-center relative shadow-2xl text-white">
@@ -475,31 +474,16 @@
             <h4 class="text-xl font-bold mt-2 mb-1 text-white">Rincón de Juegos INNE</h4>
             <p class="text-[11px] text-gray-400 mb-6">Personaliza el avatar oficial de la coordinación antes de que termine el servicio.</p>
 
-            <!-- LIENZO DE CAPAS DEL AVATAR -->
             <div class="relative w-48 h-48 bg-white/5 rounded-2xl mx-auto flex items-center justify-center overflow-hidden border border-white/5 shadow-inner">
-                
-                <!-- Capa 1: El cuerpo base (Data Max saludando) -->
                 <img src="data-max-saludando.gif" class="absolute w-36 h-36 object-contain z-10" alt="Base Max">
-
-                <!-- Capa 2: Lentes Hipster (Ocultos con 'hidden' por defecto) -->
-                <img id="prenda-lentes" src="https://images.vexels.com/media/users/3/193297/isolated/preview/26e3cdae043cb68c679f2fe7b973b069-gafas-de-sol-hipster-negras.png" 
-                     class="absolute w-16 h-16 object-contain z-20 top-[28%] hidden" alt="Lentes">
-
-                <!-- Capa 3: Gorra de Graduación (Oculta por defecto) -->
-                <img id="prenda-gorra" src="https://cdn-icons-png.flaticon.com/512/7416/7416738.png" 
-                     class="absolute w-20 h-20 object-contain z-30 top-[10%] hidden" alt="Gorra">
+                <img id="prenda-lentes" src="https://images.vexels.com/media/users/3/193297/isolated/preview/26e3cdae043cb68c679f2fe7b973b069-gafas-de-sol-hipster-negras.png" class="absolute w-16 h-16 object-contain z-20 top-[28%] hidden" alt="Lentes">
+                <img id="prenda-gorra" src="https://cdn-icons-png.flaticon.com/512/7416/7416738.png" class="absolute w-20 h-20 object-contain z-30 top-[10%] hidden" alt="Gorra">
             </div>
 
-            <!-- MENU DE PRENDAS PARA PRESIONAR -->
             <div class="grid grid-cols-2 gap-3 mt-6">
-                <button onclick="togglePrenda('lentes')" class="bg-white/5 hover:bg-white/10 border border-white/10 py-2.5 rounded-xl text-xs font-semibold transition-all active:scale-95">
-                    👓 Lentes Hacker
-                </button>
-                <button onclick="togglePrenda('gorra')" class="bg-white/5 hover:bg-white/10 border border-white/10 py-2.5 rounded-xl text-xs font-semibold transition-all active:scale-95">
-                    Cap Graduado
-                </button>
+                <button onclick="togglePrenda('lentes')" class="bg-white/5 hover:bg-white/10 border border-white/10 py-2.5 rounded-xl text-xs font-semibold transition-all active:scale-95">👓 Lentes Hacker</button>
+                <button onclick="togglePrenda('gorra')" class="bg-white/5 hover:bg-white/10 border border-white/10 py-2.5 rounded-xl text-xs font-semibold transition-all active:scale-95">Cap Graduado</button>
             </div>
-            
             <p class="text-[10px] text-gray-500 mt-4 leading-tight">Suministra nuevos archivos PNG transparentes de 500x500px al desarrollador para expandir el guardarropa.</p>
         </div>
     </div>
@@ -525,7 +509,7 @@
             });
         });
 
-        // --- CONTROLADOR 3: GESTOR DE APUESTAS / EASTER EGG (5 CLICS AL LOGO) ---
+        // --- CONTROLADOR 3: GESTOR DEL EASTER EGG (5 CLICS AL LOGO) ---
         let logoClicks = 0;
         const logoTrigger = document.getElementById('header-logo');
         const eggModal = document.getElementById('easter-egg-modal');
@@ -538,7 +522,6 @@
                 eggModal.classList.remove('hidden');
                 eggModal.classList.add('flex');
             }
-            // Temporizador para resetear los clics si el usuario tarda mucho
             setTimeout(() => { if(logoClicks > 0) logoClicks--; }, 3000);
         });
 
@@ -547,7 +530,6 @@
             eggModal.classList.remove('flex');
         });
 
-        // Función interactiva para encender/apagar la ropa en el lienzo
         function togglePrenda(idPrenda) {
             const prenda = document.getElementById('prenda-' + idPrenda);
             prenda.classList.toggle('hidden');
