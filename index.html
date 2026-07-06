@@ -24,6 +24,11 @@
             }
         }
     </script>
+    <style>
+        /* Remueve barras de scroll ocultas en motores de renderizado específicos */
+        iframe::-webkit-scrollbar { display: none; }
+        iframe { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen scroll-smooth">
 
@@ -170,7 +175,7 @@
 
 
         <!-- =================================================================
-             [BLOQUE 5]: SECCIÓN DE AVISOS, TRÁMITES Y AGENDA INTERACTIVA (CORREGIDA V VERTICAL)
+             [BLOQUE 5]: SECCIÓN DE AVISOS, TRÁMITES Y AGENDA INTERACTIVA (PERFECTA 1:1)
              ================================================================= -->
         <section id="avisos" class="bg-gray-100 py-14 px-4">
             <div class="max-w-7xl mx-auto">
@@ -195,7 +200,7 @@
                         </a>
                     </div>
 
-                    <!-- Alerta 2: Servicio Social (PORTAL SIIAU OFICIAL) -->
+                    <!-- Alerta 2: Servicio Social -->
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div>
                             <span class="bg-inneBlue/10 text-inneBlue text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🎓 Egreso</span>
@@ -236,44 +241,45 @@
                     </a>
                 </div>
 
-                <!-- DASHBOARD CALIBRADO: PIZARRA DIGITAL REAJUSTADA A VERTICAL (IZQUIERDA) Y CALENDARIO (DERECHA) -->
+                <!-- DASHBOARD TOTALMENTE CALIBRADO SINCRO PARA EVITAR CUALQUIER DESBORDE U HORIZONTAL SCROLL -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
                     
-                    <!-- LADO A: El Boletín en formato Vertical Limpio sin desborde horizontal -->
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col items-center justify-between text-center">
+                    <!-- LADO A: Boletín en Formato Carta Vertical Impecable (850px) -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col justify-between text-center h-[560px] sm:h-[620px] lg:h-[620px]">
                         <div class="w-full">
                             <div class="flex items-center justify-center space-x-2 mb-3">
                                 <span class="animate-pulse h-2 w-2 rounded-full bg-green-500"></span>
                                 <span class="bg-inneBlue/10 text-inneBlue text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Boletín en Vivo</span>
                             </div>
                             <h4 class="font-bold text-lg text-inneNavy mb-1">Boletín Oficial y Circulares</h4>
-                            <p class="text-xs text-gray-500 mb-6">Información inmediata editada desde la cuenta de Drive de la carrera.</p>
+                            <p class="text-xs text-gray-500 mb-4">Información inmediata editada desde la cuenta de Drive de la carrera.</p>
                         </div>
                         
-                        <!-- CONTENEDOR REAJUSTADO A FORMATO PORTRAIT VERTICAL (800PX) -->
-                        <div class="w-full flex justify-center items-center overflow-hidden">
-                            <div class="w-full max-w-[800px] h-[300px] min-[375px]:h-[340px] min-[410px]:h-[370px] sm:h-[450px] relative overflow-hidden flex justify-center">
+                        <!-- CONTENEDOR MÁSCARA INTELIGENTE CON ESCALADO VERTICAL FIJO SIN BARRAS GRISES -->
+                        <div class="w-full flex justify-center items-center overflow-hidden flex-grow bg-white rounded-xl">
+                            <div class="w-full max-w-[850px] h-[360px] sm:h-[450px] lg:h-[440px] relative overflow-hidden flex justify-center bg-white">
                                 <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkMMz4Mu6-nn92o7ILoA30BSZPYba3CmOgcWBTcQtY5LMVTVx1Ojuh8V_8-SF9bj_VdOrHO6FVMQy5/pub?embedded=true" 
-                                        class="absolute top-0 w-[800px] h-[640px] border border-gray-100 rounded-xl bg-white origin-top scale-[0.42] min-[375px]:scale-[0.48] min-[410px]:scale-[0.52] sm:scale-[0.70] lg:scale-[0.70] xl:scale-[0.72] transition-transform duration-300"
-                                        scrolling="auto">
+                                        class="absolute top-0 w-[850px] h-[1100px] border-0 bg-white origin-top transition-transform duration-300 scale-[0.34] min-[375px]:scale-[0.40] min-[410px]:scale-[0.44] sm:scale-[0.65] md:scale-[0.78] lg:scale-[0.60] xl:scale-[0.70]"
+                                        style="overflow: hidden;"
+                                        scrolling="no">
                                 </iframe>
                             </div>
                         </div>
                     </div>
 
-                    <!-- LADO B: Calendario Semestral Real de Google (Vinculación Segura) -->
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col items-center justify-between text-center">
+                    <!-- LADO B: Calendario Semestral Real de Google (Alineación Gemela h-[620px]) -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col justify-between text-center h-[560px] sm:h-[620px] lg:h-[620px]">
                         <div class="w-full">
                             <div class="flex items-center justify-center space-x-2 mb-3">
                                 <span class="h-2 w-2 rounded-full bg-blue-500"></span>
                                 <span class="bg-blue-50 text-inneBlue text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Fechas Críticas</span>
                             </div>
                             <h4 class="font-bold text-lg text-inneNavy mb-1">Calendario de Eventos INNE</h4>
-                            <p class="text-xs text-gray-500 mb-6">Exámenes, trámites y cierres de agenda directo de Google Calendar.</p>
+                            <p class="text-xs text-gray-500 mb-4">Exámenes, trámites y cierres de agenda directo de Google Calendar.</p>
                         </div>
-                        <div class="w-full rounded-xl overflow-hidden border border-gray-100 shadow-inner">
+                        <div class="w-full rounded-xl overflow-hidden border border-gray-100 shadow-inner flex-grow flex items-center">
                             <iframe src="https://calendar.google.com/calendar/embed?src=c_7eeb78637fd25261df53f703aaeda7582246b675fcba59d8f941270a0fd7070e%40group.calendar.google.com&ctz=America%2FMexico_City" 
-                                    style="border: 0" width="100%" height="450" frameborder="0" scrolling="no" class="bg-white">
+                                    style="border: 0" width="100%" height="440" frameborder="0" scrolling="no" class="bg-white">
                             </iframe>
                         </div>
                     </div>
@@ -421,7 +427,7 @@
 
 
     <!-- =================================================================
-         [BLOQUE 8]: PIE DE PÁGINA (FOOTER CON DATOS AUDITADOS)
+         [BLOQUE 8]: PIE DE PÁGINA (FOOTER CON DATOS AUDITADOS REALES)
          ================================================================= -->
     <footer id="contacto" class="bg-inneNavy text-white border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm text-gray-400">
