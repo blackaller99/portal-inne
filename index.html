@@ -171,94 +171,134 @@
         </section>
 
 <!-- =================================================================
-             [BLOQUE 5]: SECCIÓN DE AVISOS, TRÁMITES Y AGENDA INTERACTIVA
+             [BLOQUE 5]: SECCIÓN DE AVISOS, TRÁMITES Y AGENDA INTERACTIVA (ZIG-ZAG)
              ================================================================= -->
-        <section id="avisos" class="bg-white py-14 px-4">
+        <section id="avisos" class="bg-white py-16 px-4">
             <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-10">
-                    <h3 class="text-2xl md:text-3xl font-bold text-inneAzul">Trámites y Agenda Escolar</h3>
+                <div class="text-center mb-14">
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-inneAzul">Trámites y Agenda Escolar</h3>
                     <p class="text-sm text-gray-600 mt-2">Mantente al tanto de los procesos de la coordinación y alertas vigentes.</p>
                 </div>
 
-                <!-- Bloque de 4 Tarjetas de Trámites (Pintadas con el Crema del Brandboard) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Bloque de 4 Tarjetas de Trámites (Formato Zig-Zag Full Width) -->
+                <div class="flex flex-col space-y-8 mb-12">
                     
-                    <!-- Tarjeta 1: Titulación -->
-                    <div class="bg-inneCrema/30 rounded-2xl p-5 shadow-sm border border-inneMostaza/20 hover:shadow-md transition-shadow flex flex-col justify-between">
-                        <div>
-                            <span class="bg-purple-100 text-purple-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">📜 Egreso</span>
-                            <h4 class="font-bold text-base text-inneAzul mb-2">Modalidades de Titulación</h4>
-                            <p class="text-xs text-gray-600 leading-relaxed mb-4">
-                                Conoce las vías oficiales de titulación (Excelencia, Promedio, Tesis) y los lineamientos vigentes actualizados.
-                            </p>
+                    <!-- Tarjeta 1: Titulación (Texto Izquierda / Imagen Derecha) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 bg-inneCrema/30 rounded-3xl shadow-sm border border-inneMostaza/20 overflow-hidden hover:shadow-md transition-all group">
+                        <!-- Texto -->
+                        <div class="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
+                            <div class="mb-6">
+                                <span class="bg-purple-100 text-purple-700 text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-wider inline-block mb-3">📜 Egreso</span>
+                                <h4 class="font-bold text-2xl text-inneAzul mb-3">Modalidades de Titulación</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    Conoce las vías oficiales de titulación (Excelencia, Promedio, Tesis) y los lineamientos vigentes actualizados. Inicia tu proceso de cierre académico con toda la información centralizada.
+                                </p>
+                            </div>
+                            <a href="https://linktr.ee/inne.cucea?utm_source=linktree_profile_share&ltsid=6161476b-9d4e-4d7d-a028-eea29b0fb964" target="_blank" class="w-fit text-xs font-bold text-inneAzul bg-white border border-gray-200 px-5 py-3 rounded-xl hover:bg-gray-50 transition-colors shadow-sm">
+                                Revisar en Linktree →
+                            </a>
                         </div>
-                        <a href="https://linktr.ee/inne.cucea?utm_source=linktree_profile_share&ltsid=6161476b-9d4e-4d7d-a028-eea29b0fb964" target="_blank" class="text-xs font-bold text-purple-600 pt-3 border-t border-inneMostaza/20 block hover:underline text-left">
-                            Revisar en Linktree →
-                        </a>
+                        <!-- Imagen Falsa -->
+                        <div class="bg-gray-100 min-h-[220px] md:min-h-full flex items-center justify-center order-1 md:order-2 border-b md:border-b-0 md:border-l border-inneMostaza/20 overflow-hidden relative">
+                            <!-- Aquí irá la etiqueta <img> cuando tengas la foto -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-sm font-bold text-gray-400 border-2 border-dashed border-gray-300 px-6 py-3 rounded-xl group-hover:bg-gray-200 transition-colors">[Área para Imagen 1]</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Tarjeta 2: Servicio Social -->
-                    <div class="bg-inneCrema/30 rounded-2xl p-5 shadow-sm border border-inneMostaza/20 hover:shadow-md transition-shadow flex flex-col justify-between">
-                        <div>
-                            <span class="bg-inneAzul/10 text-inneAzul text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🎓 Servicio</span>
-                            <h4 class="font-bold text-base text-inneAzul mb-2">Pre-registro para SS</h4>
-                            <p class="text-xs text-gray-600 leading-relaxed mb-4">
-                                Si ya completaste el 60% de los créditos, ya eres elegible para el Servicio Social. Revisa plazas y calendarios.
-                            </p>
+                    <!-- Tarjeta 2: Servicio Social (Imagen Izquierda / Texto Derecha) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 bg-inneCrema/30 rounded-3xl shadow-sm border border-inneMostaza/20 overflow-hidden hover:shadow-md transition-all group">
+                        <!-- Imagen Falsa -->
+                        <div class="bg-gray-100 min-h-[220px] md:min-h-full flex items-center justify-center order-1 md:order-1 border-b md:border-b-0 md:border-r border-inneMostaza/20 overflow-hidden relative">
+                            <!-- Aquí irá la etiqueta <img> cuando tengas la foto -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-sm font-bold text-gray-400 border-2 border-dashed border-gray-300 px-6 py-3 rounded-xl group-hover:bg-gray-200 transition-colors">[Área para Imagen 2]</span>
+                            </div>
                         </div>
-                        <a href="https://ss.siiau.udg.mx/" target="_blank" class="text-xs font-semibold text-inneAzulClaro pt-3 border-t border-inneMostaza/20 block hover:underline text-left">
-                            Ir al Sistema Oficial →
-                        </a>
+                        <!-- Texto -->
+                        <div class="p-8 md:p-12 flex flex-col justify-center order-2 md:order-2">
+                            <div class="mb-6">
+                                <span class="bg-inneAzul/10 text-inneAzul text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🎓 Servicio</span>
+                                <h4 class="font-bold text-2xl text-inneAzul mb-3">Pre-registro para Servicio Social</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    Si ya completaste el 60% de los créditos totales de la carrera, ya eres elegible para arrancar tu Servicio Social Institucional. Revisa las plazas y el calendario de sorteos oficiales.
+                                </p>
+                            </div>
+                            <a href="https://ss.siiau.udg.mx/" target="_blank" class="w-fit text-xs font-bold text-white bg-inneAzul px-5 py-3 rounded-xl hover:bg-inneAzulSecundario transition-colors shadow-sm">
+                                Ir al Sistema Oficial →
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Tarjeta 3: Ventanilla Escolar -->
-                    <div class="bg-inneCrema/30 rounded-2xl p-5 shadow-sm border border-inneMostaza/20 hover:shadow-md transition-shadow flex flex-col justify-between">
-                        <div>
-                            <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🚀 Ventanilla</span>
-                            <h4 class="font-bold text-base text-inneAzul mb-2">Ventanilla Virtual CUCEA</h4>
-                            <p class="text-xs text-gray-600 leading-relaxed mb-4">
-                                Inicia tus solicitudes de justificantes, constancias y órdenes de pago directamente con tu cuenta institucional.
-                            </p>
+                    <!-- Tarjeta 3: Ventanilla Escolar (Texto Izquierda / Imagen Derecha) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 bg-inneCrema/30 rounded-3xl shadow-sm border border-inneMostaza/20 overflow-hidden hover:shadow-md transition-all group">
+                        <!-- Texto -->
+                        <div class="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
+                            <div class="mb-6">
+                                <span class="bg-green-100 text-green-700 text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🚀 Ventanilla</span>
+                                <h4 class="font-bold text-2xl text-inneAzul mb-3">Ventanilla Virtual CUCEA</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    Ya no necesitas hacer filas extensas. Recuerda que puedes iniciar tus solicitudes de justificantes, órdenes de pago y constancias directamente ingresando con tu correo y contraseña institucional.
+                                </p>
+                            </div>
+                            <a href="https://ventanillaescolar.cucea.udg.mx/login" target="_blank" class="w-fit text-xs font-bold text-green-700 bg-white border border-gray-200 px-5 py-3 rounded-xl hover:bg-gray-50 transition-colors shadow-sm">
+                                Acceder al Portal →
+                            </a>
                         </div>
-                        <a href="https://ventanillaescolar.cucea.udg.mx/login" target="_blank" class="text-xs font-semibold text-inneAzulClaro pt-3 border-t border-inneMostaza/20 block hover:underline text-left">
-                            Acceder al Portal →
-                        </a>
+                        <!-- Imagen Falsa -->
+                        <div class="bg-gray-100 min-h-[220px] md:min-h-full flex items-center justify-center order-1 md:order-2 border-b md:border-b-0 md:border-l border-inneMostaza/20 overflow-hidden relative">
+                            <!-- Aquí irá la etiqueta <img> cuando tengas la foto -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-sm font-bold text-gray-400 border-2 border-dashed border-gray-300 px-6 py-3 rounded-xl group-hover:bg-gray-200 transition-colors">[Área para Imagen 3]</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Tarjeta 4: Artículo 34 -->
-                    <div class="bg-inneCrema/30 rounded-2xl p-5 shadow-sm border border-inneMostaza/20 hover:shadow-md transition-shadow flex flex-col justify-between">
-                        <div>
-                            <span class="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">⚠️ Alerta</span>
-                            <h4 class="font-bold text-base text-inneAzul mb-2">Ley Artículo 34</h4>
-                            <p class="text-xs text-gray-600 leading-relaxed mb-4">
-                                No puedes reprobar la misma materia dos veces seguidas. Si dejaste una en ordinario, es obligatorio acreditar el extraordinario.
-                            </p>
+                    <!-- Tarjeta 4: Artículo 34 (Imagen Izquierda / Texto Derecha) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 bg-inneCrema/30 rounded-3xl shadow-sm border border-inneMostaza/20 overflow-hidden hover:shadow-md transition-all group">
+                        <!-- Imagen Falsa -->
+                        <div class="bg-gray-100 min-h-[220px] md:min-h-full flex items-center justify-center order-1 md:order-1 border-b md:border-b-0 md:border-r border-inneMostaza/20 overflow-hidden relative">
+                            <!-- Aquí irá la etiqueta <img> cuando tengas la foto -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-sm font-bold text-gray-400 border-2 border-dashed border-gray-300 px-6 py-3 rounded-xl group-hover:bg-gray-200 transition-colors">[Área para Imagen 4]</span>
+                            </div>
                         </div>
-                        <a href="https://cucea.udg.mx/oferta-academica/liad/reglamento-evaluacion-y-promocion-de-alumnos-art-33-34-35" target="_blank" class="text-xs font-semibold text-inneAzulClaro pt-3 border-t border-inneMostaza/20 block hover:underline text-left">
-                            Leer Reglamento →
-                        </a>
+                        <!-- Texto -->
+                        <div class="p-8 md:p-12 flex flex-col justify-center order-2 md:order-2">
+                            <div class="mb-6">
+                                <span class="bg-red-100 text-red-700 text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-wider inline-block mb-3">⚠️ Alerta</span>
+                                <h4 class="font-bold text-2xl text-inneAzul mb-3">Ley Artículo 34</h4>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    Recuerda que no puedes reprobar la misma materia dos veces seguidas. Si dejaste una materia en ordinario, es obligatorio acreditarla en el extraordinario de este ciclo para evitar sanciones de agenda.
+                                </p>
+                            </div>
+                            <a href="https://cucea.udg.mx/oferta-academica/liad/reglamento-evaluacion-y-promocion-de-alumnos-art-33-34-35" target="_blank" class="w-fit text-xs font-bold text-white bg-red-600 px-5 py-3 rounded-xl hover:bg-red-700 transition-colors shadow-sm">
+                                Leer Reglamento →
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- SUB-PANEL: PRÁCTICAS PROFESIONALES -->
-                <div class="mt-6 bg-inneCrema/30 border border-inneMostaza/20 p-6 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
+                <div class="bg-inneCrema/30 border border-inneMostaza/20 p-6 md:p-8 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
                     <div class="text-left">
-                        <span class="text-[10px] bg-inneMostaza/30 text-inneAzul font-bold px-2 py-1 rounded-md uppercase tracking-wider">Vinculación Empresarial</span>
-                        <h4 class="text-lg font-bold text-inneAzul mt-2 mb-1">Prácticas Profesionales y Sectores Estratégicos</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed max-w-4xl">
+                        <span class="text-[10px] bg-inneMostaza/30 text-inneAzul font-bold px-3 py-1 rounded-full uppercase tracking-wider">Vinculación Empresarial</span>
+                        <h4 class="text-xl font-bold text-inneAzul mt-3 mb-2">Prácticas Profesionales y Sectores Estratégicos</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed max-w-4xl">
                             Aplica tus habilidades en optimización y analítica en las organizaciones líderes del ecosistema. Consulta los convenios vigentes, vacantes activas y lineamientos oficiales.
                         </p>
                     </div>
-                    <a href="https://cucea.udg.mx/pb/coordinacion-de-extension/s/unidad-de-vinculacion/" target="_blank" class="w-full md:w-auto text-center bg-inneAzul text-white text-xs font-bold px-5 py-3 rounded-xl hover:bg-inneAzulSecundario transition-colors shadow whitespace-nowrap">
+                    <a href="https://cucea.udg.mx/pb/coordinacion-de-extension/s/unidad-de-vinculacion/" target="_blank" class="w-full md:w-auto text-center bg-inneAzul text-white text-sm font-bold px-6 py-4 rounded-xl hover:bg-inneAzulSecundario transition-colors shadow-md whitespace-nowrap">
                         Ver Convenios Oficiales →
                     </a>
                 </div>
 
-                <!-- DASHBOARD SINCRO -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+                <!-- DASHBOARD SINCRO (Boletín + Calendario) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
                     
                     <!-- LADO A: Boletín -->
-                    <div class="bg-inneCrema/30 p-6 rounded-2xl shadow-sm border border-inneMostaza/20 flex flex-col justify-between text-center h-[560px] sm:h-[620px] lg:h-[620px]">
+                    <div class="bg-inneCrema/30 p-6 rounded-3xl shadow-sm border border-inneMostaza/20 flex flex-col justify-between text-center h-[560px] sm:h-[620px] lg:h-[620px]">
                         <div class="w-full">
                             <div class="flex items-center justify-center space-x-2 mb-3">
                                 <span class="animate-pulse h-2 w-2 rounded-full bg-green-500"></span>
@@ -280,7 +320,7 @@
                     </div>
 
                     <!-- LADO B: Calendario -->
-                    <div class="bg-inneAzul p-6 rounded-2xl shadow-md flex flex-col justify-between text-center h-[560px] sm:h-[620px] lg:h-[620px] border border-inneAzulSecundario/30">
+                    <div class="bg-inneAzul p-6 rounded-3xl shadow-md flex flex-col justify-between text-center h-[560px] sm:h-[620px] lg:h-[620px] border border-inneAzulSecundario/30">
                         <div class="w-full">
                             <div class="flex items-center justify-center space-x-2 mb-3">
                                 <span class="h-2 w-2 rounded-full bg-inneAmarillo animate-pulse"></span>
