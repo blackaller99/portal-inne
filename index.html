@@ -51,8 +51,8 @@
     <header class="bg-inneAzul text-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
-            <!-- Logotipo Activador del Easter Egg -->
-            <div id="header-logo" class="flex items-center space-x-3 cursor-pointer select-none group">
+            <!-- Logotipo Institucional -->
+            <div id="header-logo" class="flex items-center space-x-3 select-none group">
                 <img src="logo-inne.png" alt="Logo INNE" class="h-10 w-auto object-contain group-hover:scale-105 transition-transform">
                 <div>
                     <h1 class="text-base md:text-lg font-bold tracking-tight group-hover:text-inneAmarillo transition-colors leading-tight">INNE COORDINACIÓN</h1>
@@ -87,7 +87,7 @@
 
     <main class="flex-grow">
         <!-- =================================================================
-             [BLOQUE 3]: SECCIÓN HERO (ANIMADOS)
+             [BLOQUE 3]: SECCIÓN HERO (ANIMADOS ESCALADOS)
              ================================================================= -->
         <section class="bg-gradient-to-br from-inneAzul to-inneAzulSecundario text-white py-14 px-4 text-center relative overflow-hidden">
             <div class="max-w-4xl mx-auto relative z-10">
@@ -99,44 +99,29 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-6">
-                    <!-- Tarjeta: Data Max -->
-                    <div class="flex flex-col items-center bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20 w-44 shadow-lg hover:scale-105 hover:bg-white/20 transition-all cursor-pointer">
-                        <div class="h-32 w-full relative overflow-hidden flex justify-center items-center mb-2">
-                            <img src="data-max-saludando.gif" alt="Data Max Saludando" class="h-32 w-auto object-contain">
+                    <!-- Tarjeta: Data Max Ampliada en Desktop -->
+                    <div class="flex flex-col items-center bg-white/10 p-4 md:p-6 rounded-2xl backdrop-blur-sm border border-white/20 w-48 md:w-60 shadow-lg hover:scale-105 hover:bg-white/20 transition-all">
+                        <div class="h-36 md:h-48 w-full relative overflow-hidden flex justify-center items-center mb-2">
+                            <img src="data-max-saludando.gif" alt="Data Max Saludando" class="h-36 md:h-48 w-auto object-contain">
                         </div>
-                        <span class="text-xs font-bold text-inneAmarillo">DATA MAX</span>
-                        <span class="text-[10px] text-white/80">Coordinador de Datos</span>
+                        <span class="text-sm md:text-base font-bold text-inneAmarillo">DATA MAX</span>
+                        <span class="text-[10px] md:text-xs text-white/80">Coordinador de Datos</span>
                     </div>
 
-                    <!-- Tarjeta: Enni -->
-                    <div class="flex flex-col items-center bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20 w-44 shadow-lg hover:scale-105 hover:bg-white/20 transition-all cursor-pointer">
-                        <div class="h-32 w-full relative overflow-hidden flex justify-center items-center mb-2">
-                            <img src="enni-saludando.gif" alt="Enni Saludando" class="h-32 w-auto object-contain transform scale-[1.65] origin-center">
+                    <!-- Tarjeta: Enni Ampliada en Desktop -->
+                    <div class="flex flex-col items-center bg-white/10 p-4 md:p-6 rounded-2xl backdrop-blur-sm border border-white/20 w-48 md:w-60 shadow-lg hover:scale-105 hover:bg-white/20 transition-all">
+                        <div class="h-36 md:h-48 w-full relative overflow-hidden flex justify-center items-center mb-2">
+                            <img src="enni-saludando.gif" alt="Enni Saludando" class="h-36 md:h-48 w-auto object-contain transform scale-[1.65] origin-center">
                         </div>
-                        <span class="text-xs font-bold text-inneAmarillo">ENNI</span>
-                        <span class="text-[10px] text-white/80">Coordinadora Académica</span>
+                        <span class="text-sm md:text-base font-bold text-inneAmarillo">ENNI</span>
+                        <span class="text-[10px] md:text-xs text-white/80">Coordinadora Académica</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- =================================================================
-             [BLOQUE 3.5]: VIDEO DE BIENVENIDA
-             ================================================================= -->
-        <section class="bg-white py-12 px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <span class="text-[10px] bg-inneAzulSecundario/10 text-inneAzulSecundario font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Mensaje Institucional</span>
-                <h3 class="text-xl md:text-2xl font-bold text-inneAzul mt-2 mb-1">Bienvenido a Ingeniería en Negocios</h3>
-                <p class="text-xs text-gray-500 mb-6">Conoce el mensaje de nuestra coordinación académica para este ciclo escolar.</p>
-                
-                <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-gray-50">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de Bienvenida INNE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
-
- <!-- =================================================================
-             [BLOQUE 3.8]: IDENTIDAD INSTITUCIONAL (ADN INNE)
+             [BLOQUE 3.8]: IDENTIDAD INSTITUCIONAL (ADN INNE CON ACORDEONES)
              ================================================================= -->
         <section id="identidad" class="bg-inneCrema/40 py-16 px-4 border-y border-inneMostaza/20">
             <div class="max-w-7xl mx-auto">
@@ -147,73 +132,86 @@
                 </div>
 
                 <!-- Misión y Visión (Grid de 2 columnas) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     
                     <!-- Tarjeta Misión -->
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-inneAzulSecundario/20 flex flex-col h-full hover:shadow-md transition-shadow">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">M</div>
-                            <h4 class="text-xl font-bold text-inneAzul">Misión</h4>
+                    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-inneAzulSecundario/20 hover:shadow-md transition-shadow">
+                        <button class="w-full flex items-center justify-between focus:outline-none toggle-adn text-left">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">M</div>
+                                <h4 class="text-xl font-bold text-inneAzul">Misión</h4>
+                            </div>
+                            <svg class="w-5 h-5 transform transition-transform text-inneAzulSecundario" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="hidden mt-4 pt-4 border-t border-gray-100">
+                            <p class="text-xs text-gray-600 leading-relaxed text-justify">
+                                [Formar ingenieros con talento en ciencia, ingeniería y tecnología, en cumplimiento con los requerimientos estratégicos de México y Jalisco y para cumplir con la demanda de profesionistas de clase mundial con perfiles globales e internacionales. En un campo profesional innovador que ofrece opciones para el desarrollo de la industria y las organizaciones de negocios tales como: la aeroespacial, la electrónica, la biotecnología y de alimentación, la de tecnologías de la información, la de equipo médico, la de servicios entre otros. Teniendo en cuenta la necesidad de abordar las capacidades humanas, físicas, materiales y financieras para garantizar el desarrollo de las organizaciones.]
+                            </p>
                         </div>
-                        <p class="text-xs text-gray-600 leading-relaxed text-justify flex-grow">
-                            <!-- ALEX: PEGA AQUÍ EL TEXTO DE LA MISIÓN (Diapositiva 3) -->
-                            [Formar ingenieros con talento en ciencia, ingeniería y tecnología, en cumplimiento con los requerimientos estratégicos de México y Jalisco y para cumplir con la demanda de profesionistas de clase mundial con perfiles globales e internacionales. En un campo profesional innovador que ofrece opciones para el desarrollo de la industria y las organizaciones de negocios tales como: la aeroespacial, la electrónica, la biotecnología y de alimentación, la de tecnologías de la información, la de equipo médico, la de servicios entre otros. Teniendo en cuenta la necesidad de abordar las capacidades humanas, físicas, materiales y financieras para garantizar el desarrollo de las organizaciones.]
-                        </p>
                     </div>
 
                     <!-- Tarjeta Visión -->
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-inneAzulSecundario/20 flex flex-col h-full hover:shadow-md transition-shadow">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">V</div>
-                            <h4 class="text-xl font-bold text-inneAzul">Visión</h4>
+                    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-inneAzulSecundario/20 hover:shadow-md transition-shadow">
+                        <button class="w-full flex items-center justify-between focus:outline-none toggle-adn text-left">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">V</div>
+                                <h4 class="text-xl font-bold text-inneAzul">Visión</h4>
+                            </div>
+                            <svg class="w-5 h-5 transform transition-transform text-inneAzulSecundario" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="hidden mt-4 pt-4 border-t border-gray-100">
+                            <p class="text-xs text-gray-600 leading-relaxed text-justify">
+                                [Este programa educativo se creó con la intención de proveer profesionistas que intervengan en las organizaciones utilizando metodologías y modelos de análisis y optimización, sustentados en: innovación, eficiencia, eficacia, flexibilidad, uso intensivo de la tecnología para gestionar rubros tales como la competitividad, adaptación y resiliencia. Podrán desempeñarse en la sistematización de modelos de negocios en empresas privadas, en cualquier área funcional mediante la innovación en la gestión de la organización, con capacidad para incursionar en entornos complejos e interdependientes, aprovechando y usando de manera intensiva, las tecnologías actuales y canalizando la energía de las personas.]
+                            </p>
                         </div>
-                        <p class="text-xs text-gray-600 leading-relaxed text-justify flex-grow">
-                            <!-- ALEX: PEGA AQUÍ EL TEXTO DE LA VISIÓN (Diapositiva 4) -->
-                            [Este programa educativo se creó con la intención de proveer profesionistas que intervengan en las organizaciones utilizando metodologías y modelos de análisis y optimización, sustentados en: innovación, eficiencia, eficacia, flexibilidad, uso intensivo de la tecnología para gestionar rubros tales como la competitividad, adaptación y resiliencia. Podrán desempeñarse en la sistematización de modelos de negocios en empresas privadas, en cualquier área funcional mediante la innovación en la gestión de la organización, con capacidad para incursionar en entornos complejos e interdependientes, aprovechando y usando de manera intensiva, las tecnologías actuales y canalizando la energía de las personas.]
-                        </p>
                     </div>
                 </div>
 
                 <!-- Objetivos y Perfiles (Grid de 2 columnas) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
                     <!-- Tarjeta Objetivos -->
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-inneAzulSecundario/20 flex flex-col h-full hover:shadow-md transition-shadow">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">O</div>
-                            <h4 class="text-xl font-bold text-inneAzul">Objetivos</h4>
-                        </div>
-                        <p class="text-xs text-gray-600 leading-relaxed text-justify flex-grow mb-4">
-                            <!-- ALEX: PEGA AQUÍ EL TEXTO DE OBJETIVOS (Diapositiva 5) -->
-                            [Formar integralmente ingenieros de alto nivel con la capacidad de comprensión y aplicación de las ciencias económico-administrativas y exactas, con énfasis en los negocios y mercados.]
-                        </p>
-                    </div>
-
-                    <!-- Tarjeta Perfiles (Ingreso y Egreso en sub-grid) -->
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-inneAzulSecundario/20 flex flex-col h-full hover:shadow-md transition-shadow">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">P</div>
-                            <h4 class="text-xl font-bold text-inneAzul">Perfiles</h4>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 flex-grow">
-                            <div>
-                                <h5 class="text-sm font-bold text-inneAzulSecundario mb-2 border-b border-gray-100 pb-1">Ingreso</h5>
-                                <p class="text-[11px] text-gray-600 leading-relaxed text-justify">
-                                    <!-- ALEX: PEGA AQUÍ EL TEXTO DE PERFIL DE INGRESO (Diapositiva 6) -->
-                                    [Capacidad analítica; Pensamiento emprendedor; Habilidades en la comprensión y el uso de las tecnologías de la información; Habilidad y lógica matemática; y, Gusto por el desarrollo tecnológico y científico.]
-                                </p>
+                    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-inneAzulSecundario/20 hover:shadow-md transition-shadow">
+                        <button class="w-full flex items-center justify-between focus:outline-none toggle-adn text-left">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">O</div>
+                                <h4 class="text-xl font-bold text-inneAzul">Objetivos</h4>
                             </div>
-                            <div>
-                                <h5 class="text-sm font-bold text-inneAzulSecundario mb-2 border-b border-gray-100 pb-1">Egreso</h5>
-                                <p class="text-[11px] text-gray-600 leading-relaxed text-justify">
-                                    <!-- ALEX: PEGA AQUÍ EL TEXTO DE PERFIL DE EGRESO (Diapositiva 6) -->
-                                    [Está orientado a la aplicación del pensamiento analítico, integral y sistémico para la detección de problemas y el diseño de estrategias de solución con el apoyo de nuevas tecnologías, es capaz de tomar decisiones para la innovación de productos, servicios, comercialización, procesos, estructuras organizacionales. Aplica modelos de ingeniería y optimización de negocios. Impulsa la competitividad de las empresas a través de la creatividad, la disrupción, la flexibilidad y el aprendizaje permanente en la administración del cambio organizacional.]
-                                </p>
-                            </div>
+                            <svg class="w-5 h-5 transform transition-transform text-inneAzulSecundario" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="hidden mt-4 pt-4 border-t border-gray-100">
+                            <p class="text-xs text-gray-600 leading-relaxed text-justify mb-4">
+                                [Formar integralmente ingenieros de alto nivel con la capacidad de comprensión y aplicación de las ciencias económico-administrativas y exactas, con énfasis en los negocios y mercados.]
+                            </p>
                         </div>
                     </div>
 
+                    <!-- Tarjeta Perfiles (Ingreso y Egreso) -->
+                    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-inneAzulSecundario/20 hover:shadow-md transition-shadow">
+                        <button class="w-full flex items-center justify-between focus:outline-none toggle-adn text-left">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">P</div>
+                                <h4 class="text-xl font-bold text-inneAzul">Perfiles</h4>
+                            </div>
+                            <svg class="w-5 h-5 transform transition-transform text-inneAzulSecundario" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="hidden mt-4 pt-4 border-t border-gray-100">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <h5 class="text-sm font-bold text-inneAzulSecundario mb-2 border-b border-gray-100 pb-1">Ingreso</h5>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed text-justify">
+                                        [Capacidad analítica; Pensamiento emprendedor; Habilidades en la comprensión y el uso de las tecnologías de la información; Habilidad y lógica matemática; y, Gusto por el desarrollo tecnológico y científico.]
+                                    </p>
+                                </div>
+                                <div>
+                                    <h5 class="text-sm font-bold text-inneAzulSecundario mb-2 border-b border-gray-100 pb-1">Egreso</h5>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed text-justify">
+                                        [Está orientado a la aplicación del pensamiento analítico, integral y sistémico para la detección de problemas y el diseño de estrategias de solución con el apoyo de nuevas tecnologías, es capaz de tomar decisiones para la innovación de productos, servicios, comercialización, procesos, estructuras organizacionales. Aplica modelos de ingeniería y optimización de negocios. Impulsa la competitividad de las empresas a través de la creatividad, la disrupción, la flexibilidad y el aprendizaje permanente en la administración del cambio organizacional.]
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -268,12 +266,12 @@
         </section>
 
         <!-- =================================================================
-             [BLOQUE 5]: SECCIÓN DE AVISOS, TRÁMITES Y AGENDA INTERACTIVA (PERFECTA 1:1)
+             [BLOQUE 5]: SECCIÓN DE AVISOS, TRÁMITES Y AGENDA INTERACTIVA
              ================================================================= -->
         <section id="avisos" class="bg-gray-100 py-14 px-4">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-10">
-                    <h3 class="text-2xl md:text-3xl font-bold text-inneNavy">Avisos y Agenda Escolar</h3>
+                    <h3 class="text-2xl md:text-3xl font-bold text-inneAzul">Avisos y Agenda Escolar</h3>
                     <p class="text-sm text-gray-600 mt-2">Mantente al tanto de los procesos, fechas límite y alertas vigentes de la coordinación.</p>
                 </div>
 
@@ -283,12 +281,12 @@
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div>
                             <span class="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">⚠️ Reglamento</span>
-                            <h4 class="font-bold text-base text-inneNavy mb-2">¡Atención con el Artículo 34!</h4>
+                            <h4 class="font-bold text-base text-inneAzul mb-2">¡Atención con el Artículo 34!</h4>
                             <p class="text-xs text-gray-600 leading-relaxed mb-4">
                                 Recuerda que no puedes reprobar la misma materia dos veces seguidas. Si dejaste una materia en ordinario, es obligatorio acreditarla en el extraordinario de este ciclo para evitar sanciones de agenda.
                             </p>
                         </div>
-                        <a href="https://cucea.udg.mx/oferta-academica/liad/reglamento-evaluacion-y-promocion-de-alumnos-art-33-34-35" target="_blank" class="text-xs font-semibold text-inneBlue pt-3 border-t border-gray-100 block hover:underline text-left">
+                        <a href="https://cucea.udg.mx/oferta-academica/liad/reglamento-evaluacion-y-promocion-de-alumnos-art-33-34-35" target="_blank" class="text-xs font-semibold text-inneAzulClaro pt-3 border-t border-gray-100 block hover:underline text-left">
                             Leer Reglamento Art. 33-35 →
                         </a>
                     </div>
@@ -296,13 +294,13 @@
                     <!-- Alerta 2: Servicio Social -->
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div>
-                            <span class="bg-inneBlue/10 text-inneBlue text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🎓 Egreso</span>
-                            <h4 class="font-bold text-base text-inneNavy mb-2">Pre-registro para Servicio Social</h4>
+                            <span class="bg-inneAzul/10 text-inneAzul text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🎓 Egreso</span>
+                            <h4 class="font-bold text-base text-inneAzul mb-2">Pre-registro para Servicio Social</h4>
                             <p class="text-xs text-gray-600 leading-relaxed mb-4">
                                 Si ya completaste el 60% de los créditos totales de la carrera, ya eres elegible para arrancar tu Servicio Social Institucional. Revisa las plazas y el calendario de sorteos oficiales.
                             </p>
                         </div>
-                        <a href="https://ss.siiau.udg.mx/" target="_blank" class="text-xs font-semibold text-inneBlue pt-3 border-t border-gray-100 block hover:underline text-left">
+                        <a href="https://ss.siiau.udg.mx/" target="_blank" class="text-xs font-semibold text-inneAzulClaro pt-3 border-t border-gray-100 block hover:underline text-left">
                             Ir al Sistema de Servicio Social →
                         </a>
                     </div>
@@ -311,12 +309,12 @@
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div>
                             <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🚀 Alumnos</span>
-                            <h4 class="font-bold text-base text-inneNavy mb-2">Ventanilla Escolar Digital</h4>
+                            <h4 class="font-bold text-base text-inneAzul mb-2">Ventanilla Escolar Digital</h4>
                             <p class="text-xs text-gray-600 leading-relaxed mb-4">
                                 Ya no necesitas hacer filas extensas. Recuerda que puedes iniciar tus solicitudes de justificantes, órdenes de pago y constancias directamente ingresando con tu correo y contraseña institucional.
                             </p>
                         </div>
-                        <a href="https://ventanillaescolar.cucea.udg.mx/login" target="_blank" class="text-xs font-semibold text-inneBlue pt-3 border-t border-gray-100 block hover:underline text-left">Acceder a Ventanilla Escolar →</a>
+                        <a href="https://ventanillaescolar.cucea.udg.mx/login" target="_blank" class="text-xs font-semibold text-inneAzulClaro pt-3 border-t border-gray-100 block hover:underline text-left">Acceder a Ventanilla Escolar →</a>
                     </div>
                 </div>
 
@@ -324,12 +322,12 @@
                 <div class="mt-6 bg-white border border-gray-200 p-6 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
                     <div class="text-left">
                         <span class="text-[10px] bg-green-100 text-green-700 font-bold px-2 py-1 rounded-md uppercase tracking-wider">Vinculación Empresarial</span>
-                        <h4 class="text-lg font-bold text-inneNavy mt-2 mb-1">Prácticas Profesionales y Sectores Estratégicos</h4>
+                        <h4 class="text-lg font-bold text-inneAzul mt-2 mb-1">Prácticas Profesionales y Sectores Estratégicos</h4>
                         <p class="text-xs text-gray-600 leading-relaxed max-w-4xl">
                             Aplica tus habilidades en optimización y analítica en las organizaciones líderes del ecosistema. Consulta los convenios vigentes, vacantes activas y lineamientos oficiales gestionados de forma directa por la Universidad.
                         </p>
                     </div>
-                    <a href="https://cucea.udg.mx/pb/coordinacion-de-extension/s/unidad-de-vinculacion/" target="_blank" class="w-full md:w-auto text-center bg-inneNavy text-white text-xs font-bold px-5 py-3 rounded-xl hover:bg-blue-900 transition-colors shadow whitespace-nowrap">
+                    <a href="https://cucea.udg.mx/pb/coordinacion-de-extension/s/unidad-de-vinculacion/" target="_blank" class="w-full md:w-auto text-center bg-inneAzul text-white text-xs font-bold px-5 py-3 rounded-xl hover:bg-inneAzulSecundario transition-colors shadow whitespace-nowrap">
                         Ver Convenios de Vinculación →
                     </a>
                 </div>
@@ -342,9 +340,9 @@
                         <div class="w-full">
                             <div class="flex items-center justify-center space-x-2 mb-3">
                                 <span class="animate-pulse h-2 w-2 rounded-full bg-green-500"></span>
-                                <span class="bg-inneBlue/10 text-inneBlue text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Boletín en Vivo</span>
+                                <span class="bg-inneAzulClaro text-inneAzul text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Boletín en Vivo</span>
                             </div>
-                            <h4 class="font-bold text-lg text-inneNavy mb-1">Boletín Oficial y Circulares</h4>
+                            <h4 class="font-bold text-lg text-inneAzul mb-1">Boletín Oficial y Circulares</h4>
                             <p class="text-xs text-gray-500 mb-4">Información inmediata editada desde la cuenta de Drive de la carrera.</p>
                         </div>
                         
@@ -360,7 +358,7 @@
                         </div>
                     </div>
 
-<!-- LADO B: Calendario Semestral Real de Google (Alineación Gemela bg-inneAzul) -->
+                    <!-- LADO B: Calendario Semestral Real de Google (Alineación Gemela bg-inneAzul) -->
                     <div class="bg-inneAzul p-6 rounded-2xl shadow-md flex flex-col justify-between text-center h-[560px] sm:h-[620px] lg:h-[620px] border border-inneAzulSecundario/30">
                         <div class="w-full">
                             <div class="flex items-center justify-center space-x-2 mb-3">
@@ -381,7 +379,6 @@
             </div>
         </section>
 
-
         <!-- =================================================================
              [BLOQUE 6]: SECCIÓN DEL CARRUSEL INTERACTIVO DE INSTAGRAM
              ================================================================= -->
@@ -392,11 +389,11 @@
                 <div class="flex justify-between items-end mb-8">
                     <div class="text-left">
                         <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">#ComunidadINNE</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-inneNavy mt-1">Síguenos en Instagram</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold text-inneAzul mt-1">Síguenos en Instagram</h3>
                     </div>
                     <div class="flex space-x-2">
-                        <button id="prev-btn" class="w-10 h-10 rounded-xl bg-gray-100 hover:bg-inneNavy hover:text-white flex items-center justify-center font-bold text-lg transition-colors focus:outline-none shadow-sm">&lt;</button>
-                        <button id="next-btn" class="w-10 h-10 rounded-xl bg-gray-100 hover:bg-inneNavy hover:text-white flex items-center justify-center font-bold text-lg transition-colors focus:outline-none shadow-sm">&gt;</button>
+                        <button id="prev-btn" class="w-10 h-10 rounded-xl bg-gray-100 hover:bg-inneAzul hover:text-white flex items-center justify-center font-bold text-lg transition-colors focus:outline-none shadow-sm">&lt;</button>
+                        <button id="next-btn" class="w-10 h-10 rounded-xl bg-gray-100 hover:bg-inneAzul hover:text-white flex items-center justify-center font-bold text-lg transition-colors focus:outline-none shadow-sm">&gt;</button>
                     </div>
                 </div>
 
@@ -465,15 +462,15 @@
              ================================================================= -->
         <section id="supervivencia" class="max-w-4xl mx-auto px-4 py-14">
             <div class="text-center mb-10">
-                <span class="text-xs font-bold text-inneGold uppercase tracking-wider bg-inneNavy px-3 py-1 rounded-full">Exclusivo INNE</span>
-                <h3 class="text-2xl md:text-3xl font-bold text-inneNavy mt-2">Manual de Supervivencia Estudiantil</h3>
+                <span class="text-xs font-bold text-inneMostaza uppercase tracking-wider bg-inneAzul px-3 py-1 rounded-full">Exclusivo INNE</span>
+                <h3 class="text-2xl md:text-3xl font-bold text-inneAzul mt-2">Manual de Supervivencia Estudiantil</h3>
                 <p class="text-sm text-gray-600 mt-2">Respuestas rápidas y directas a las dudas administrativas más comunes de la carrera.</p>
             </div>
 
             <div class="space-y-3">
                 <!-- FAQ 1 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-                    <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
+                    <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneAzul flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Cómo interpreto los códigos de las aulas o salones en CUCEA?</span>
                         <svg class="w-4 h-4 transform transition-transform text-gray-400 font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
@@ -484,7 +481,7 @@
 
                 <!-- FAQ 2 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-                    <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
+                    <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneAzul flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Qué es el Artículo 34 y cómo evito caer en esta sanción?</span>
                         <svg class="w-4 h-4 transform transition-transform text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
@@ -495,7 +492,7 @@
 
                 <!-- FAQ 3 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-                    <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
+                    <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneAzul flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Cuáles son las opciones y promedios para titulación?</span>
                         <svg class="w-4 h-4 transform transition-transform text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
@@ -506,7 +503,7 @@
 
                 <!-- FAQ 4 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-                    <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneNavy flex justify-between items-center focus:outline-none toggle-faq">
+                    <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneAzul flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Dónde están las oficinas de la Coordinación y qué es el CID?</span>
                         <svg class="w-4 h-4 transform transition-transform text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
@@ -517,7 +514,6 @@
             </div>
         </section>
     </main>
-
 
    <!-- =================================================================
          [BLOQUE 8]: PIE DE PÁGINA (FOOTER CON BRANDING ACTUALIZADO)
@@ -563,83 +559,6 @@
         </div>
     </footer>
 
-<!-- =================================================================
-         [BLOQUE 8.5]: VENTANA MODAL OCULTA (EL EASTER EGG ARCADE EVOLUCIONADO)
-         ================================================================= -->
-    <div id="easter-egg-modal" class="fixed inset-0 bg-black/85 z-[100] hidden items-center justify-center p-4 backdrop-blur-md">
-        <div class="bg-gradient-to-b from-inneNavy to-slate-900 border border-white/10 p-6 rounded-3xl max-w-sm w-full text-center relative shadow-2xl text-white">
-            
-            <!-- Botón Cerrar -->
-            <button id="close-egg-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl font-bold focus:outline-none">&times;</button>
-            
-            <span class="text-[10px] bg-inneGold text-inneNavy font-bold px-2 py-0.5 rounded-md uppercase tracking-wider font-mono">INNE Character Creator v2.0</span>
-            <h4 class="text-xl font-bold mt-1 mb-4 text-white tracking-wide">Viste a la Coordinación</h4>
-
-            <!-- LIENZO CENTRAL DEL AVATAR -->
-            <div class="relative w-48 h-48 bg-white/5 rounded-2xl mx-auto flex items-center justify-center overflow-hidden border border-white/5 shadow-inner mb-6">
-                
-                <!-- Capa 1: El cuerpo base dinámico (Max o Enni) -->
-                <img id="avatar-base" src="data-max-saludando.gif" class="absolute w-36 h-36 object-contain z-10 transition-all duration-200" alt="Base">
-
-                <!-- Capa 2: Prenda Superior (Top / Playera) -->
-                <img id="layer-top" src="" class="absolute w-36 h-36 object-contain z-20 hidden" alt="Top">
-
-                <!-- Capa 3: Prenda Inferior (Bottom / Pantalón) -->
-                <img id="layer-bottom" src="" class="absolute w-36 h-36 object-contain z-30 hidden" alt="Bottom">
-
-                <!-- Capa 4: Calzado (Tenis) -->
-                <img id="layer-shoes" src="" class="absolute w-36 h-36 object-contain z-40 hidden" alt="Shoes">
-            </div>
-
-            <!-- PANEL DE SELECTORES CON FLECHAS (CONTROLES) -->
-            <div class="space-y-3 bg-white/5 p-4 rounded-2xl border border-white/5">
-                
-                <!-- Selector 1: Personaje Base -->
-                <div class="flex justify-between items-center bg-black/20 rounded-xl px-3 py-1.5 text-xs">
-                    <span class="text-gray-400 font-medium">Modelo:</span>
-                    <div class="flex items-center space-x-3">
-                        <button onclick="changeSelection('char', -1)" class="text-inneGold font-bold text-sm p-1 hover:scale-125 transition-transform">&lt;</button>
-                        <span id="label-char" class="font-bold tracking-wide w-24 inline-block text-center text-white">Data Max</span>
-                        <button onclick="changeSelection('char', 1)" class="text-inneGold font-bold text-sm p-1 hover:scale-125 transition-transform">&gt;</button>
-                    </div>
-                </div>
-
-                <!-- Selector 2: Prenda Superior (Top) -->
-                <div class="flex justify-between items-center bg-black/20 rounded-xl px-3 py-1.5 text-xs">
-                    <span class="text-gray-400 font-medium">Prenda Sup:</span>
-                    <div class="flex items-center space-x-3">
-                        <button onclick="changeSelection('top', -1)" class="text-inneGold font-bold text-sm p-1 hover:scale-125 transition-transform">&lt;</button>
-                        <span id="label-top" class="font-bold tracking-wide w-24 inline-block text-center text-white text-[11px]">Ninguno</span>
-                        <button onclick="changeSelection('top', 1)" class="text-inneGold font-bold text-sm p-1 hover:scale-125 transition-transform">&gt;</button>
-                    </div>
-                </div>
-
-                <!-- Selector 3: Prenda Inferior (Bottom) -->
-                <div class="flex justify-between items-center bg-black/20 rounded-xl px-3 py-1.5 text-xs">
-                    <span class="text-gray-400 font-medium">Pantalón:</span>
-                    <div class="flex items-center space-x-3">
-                        <button onclick="changeSelection('bottom', -1)" class="text-inneGold font-bold text-sm p-1 hover:scale-125 transition-transform">&lt;</button>
-                        <span id="label-bottom" class="font-bold tracking-wide w-24 inline-block text-center text-white text-[11px]">Ninguno</span>
-                        <button onclick="changeSelection('bottom', 1)" class="text-inneGold font-bold text-sm p-1 hover:scale-125 transition-transform">&gt;</button>
-                    </div>
-                </div>
-
-                <!-- Selector 4: Calzado (Tenis) -->
-                <div class="flex justify-between items-center bg-black/20 rounded-xl px-3 py-1.5 text-xs">
-                    <span class="text-gray-400 font-medium">Calzado:</span>
-                    <div class="flex items-center space-x-3">
-                        <button onclick="changeSelection('shoes', -1)" class="text-inneGold font-bold text-sm p-1 hover:scale-125 transition-transform">&lt;</button>
-                        <span id="label-shoes" class="font-bold tracking-wide w-24 inline-block text-center text-white text-[11px]">Ninguno</span>
-                        <button onclick="changeSelection('shoes', 1)" class="text-inneGold font-bold text-sm p-1 hover:scale-125 transition-transform">&gt;</button>
-                    </div>
-                </div>
-
-            </div>
-            
-            <p class="text-[9px] text-gray-500 mt-4 leading-tight font-mono">Tip: Ajusta el lienzo transparente de la ropa a 500x500px.</p>
-        </div>
-    </div>
-
     <!-- =================================================================
          [BLOQUE 9]: CÓDIGO JAVASCRIPT (INTERACTIVIDAD INTERNA)
          ================================================================= -->
@@ -649,8 +568,8 @@
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
 
-        // --- CONTROLADOR 2: ACORDEÓN DE PREGUNTAS (FAQ) ---
-        const accordions = document.querySelectorAll('.toggle-faq');
+        // --- CONTROLADOR 2: ACORDEÓN DE PREGUNTAS (FAQ Y ADN INSTITUCIONAL) ---
+        const accordions = document.querySelectorAll('.toggle-faq, .toggle-adn');
         accordions.forEach(button => {
             button.addEventListener('click', () => {
                 const content = button.nextElementSibling;
@@ -660,33 +579,7 @@
             });
         });
 
-        // --- CONTROLADOR 3: GESTOR DEL EASTER EGG (5 CLICS AL LOGO) ---
-        let logoClicks = 0;
-        const logoTrigger = document.getElementById('header-logo');
-        const eggModal = document.getElementById('easter-egg-modal');
-        const closeEggBtn = document.getElementById('close-egg-btn');
-
-        logoTrigger.addEventListener('click', () => {
-            logoClicks++;
-            if (logoClicks === 5) {
-                logoClicks = 0;
-                eggModal.classList.remove('hidden');
-                eggModal.classList.add('flex');
-            }
-            setTimeout(() => { if(logoClicks > 0) logoClicks--; }, 3000);
-        });
-
-        closeEggBtn.addEventListener('click', () => {
-            eggModal.classList.add('hidden');
-            eggModal.classList.remove('flex');
-        });
-
-        function togglePrenda(idPrenda) {
-            const prenda = document.getElementById('prenda-' + idPrenda);
-            prenda.classList.toggle('hidden');
-        }
-
-        // --- CONTROLADOR 4: RIEL DEL CARRUSEL DE INSTAGRAM ---
+        // --- CONTROLADOR 3: RIEL DEL CARRUSEL DE INSTAGRAM ---
         const track = document.getElementById('carousel-track');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
@@ -723,68 +616,6 @@
             currentPosition = 0;
             track.style.transform = `translateX(0px)`;
         });
-   // --- MOTOR DEL MINIJUEGO ARCADE (ROPA DINÁMICA CÍCLICA) ---
-        // Catálogos de ropa configurados de forma elástica
-        const catalog = {
-            char: [
-                { name: "Data Max", file: "data-max-saludando.gif" },
-                { name: "Enni", file: "enni-saludando.gif" }
-            ],
-            top: [
-                { name: "Ninguno", file: "" },
-                { name: "Playera INNE", file: "ropa-playera-inne.png" },
-                { name: "Sudadera Tech", file: "ropa-sudadera-tech.png" }
-            ],
-            bottom: [
-                { name: "Ninguno", file: "" },
-                { name: "Jeans Premium", file: "ropa-pantalones-jeans.png" },
-                { name: "Short Deportivo", file: "ropa-pantalones-short.png" }
-            ],
-            shoes: [
-                { name: "Ninguno", file: "" },
-                { name: "Tenis de Correr", file: "ropa-calzado-tenis.png" },
-                { name: "Botas de Campo", file: "ropa-calzado-botas.png" }
-            ]
-        };
-
-        // Índices de estado inicial del juego
-        const currentOutfit = { char: 0, top: 0, bottom: 0, shoes: 0 };
-
-        function changeSelection(category, direction) {
-            const list = catalog[category];
-            let index = currentOutfit[category];
-
-            // Modifica el índice con comportamiento cíclico matemático
-            index += direction;
-            if (index < 0) index = list.length - 1;
-            if (index >= list.length) index = 0;
-
-            // Guarda el nuevo estado
-            currentOutfit[category] = index;
-
-            // Actualiza la interfaz visual (Textos y Capas)
-            document.getElementById(`label-${category}`).innerText = list[index].name;
-
-            if (category === 'char') {
-                const baseImg = document.getElementById('avatar-base');
-                baseImg.src = list[index].file;
-                
-                // Hack estético: Enni necesita un scaling diferente para emparejar
-                if (list[index].name === "Enni") {
-                    baseImg.className = "absolute w-36 h-36 object-contain z-10 transition-all duration-200 transform scale-[1.65] origin-center";
-                } else {
-                    baseImg.className = "absolute w-36 h-36 object-contain z-10 transition-all duration-200";
-                }
-            } else {
-                const layer = document.getElementById(`layer-${category}`);
-                if (list[index].file === "") {
-                    layer.classList.add('hidden');
-                } else {
-                    layer.src = list[index].file;
-                    layer.classList.remove('hidden');
-                }
-            }
-        }
     </script>
 </body>
 </html>
