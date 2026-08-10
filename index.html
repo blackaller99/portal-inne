@@ -30,7 +30,6 @@
                         inneCrema: '#ECF6D2'
                     },
                     fontFamily: {
-                        /* Forzamos a Tailwind a usar Poppins por defecto */
                         sans: ['Poppins', 'sans-serif'],
                     }
                 }
@@ -41,6 +40,9 @@
         /* Remueve barras de scroll ocultas en el iframe */
         iframe::-webkit-scrollbar { display: none; }
         iframe { -ms-overflow-style: none; scrollbar-width: none; }
+        /* Animación suave para la galería/zoom */
+        .fade-in { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen scroll-smooth">
@@ -51,7 +53,6 @@
     <header class="bg-inneAzul text-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
-            <!-- Logotipo Institucional -->
             <div id="header-logo" class="flex items-center space-x-3 select-none group">
                 <img src="logo-inne.png" alt="Logo INNE" class="h-10 w-auto object-contain group-hover:scale-105 transition-transform">
                 <div>
@@ -60,28 +61,25 @@
                 </div>
             </div>
             
-            <!-- Menú de Escritorio -->
             <nav class="hidden md:flex space-x-6 font-medium text-sm">
                 <a href="#" class="text-inneAmarillo hover:text-white transition-colors">Inicio</a>
-                <a href="#identidad" class="hover:text-inneAmarillo transition-colors">Identidad</a>
                 <a href="#malla" class="hover:text-inneAmarillo transition-colors">Malla Curricular</a>
-                <a href="#avisos" class="hover:text-inneAmarillo transition-colors">Avisos y Agenda</a>
+                <a href="#avisos" class="hover:text-inneAmarillo transition-colors">Trámites y Avisos</a>
                 <a href="#supervivencia" class="hover:text-inneAmarillo transition-colors">Supervivencia</a>
+                <a href="#identidad" class="hover:text-inneAmarillo transition-colors">Identidad</a>
             </nav>
 
-            <!-- Botón de Hamburguesa (Móvil) -->
             <button id="menu-btn" class="md:hidden text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
 
-        <!-- Menú Desplegable (Móvil) -->
         <div id="mobile-menu" class="hidden md:hidden bg-inneAzul border-t border-white/10 px-4 py-3 space-y-3 text-sm font-medium">
             <a href="#" class="block text-inneAmarillo">Inicio</a>
-            <a href="#identidad" class="block hover:text-inneAmarillo">Identidad Institucional</a>
             <a href="#malla" class="block hover:text-inneAmarillo">Malla Curricular</a>
-            <a href="#avisos" class="block hover:text-inneAmarillo">Avisos y Agenda</a>
+            <a href="#avisos" class="block hover:text-inneAmarillo">Trámites y Avisos</a>
             <a href="#supervivencia" class="block hover:text-inneAmarillo">Guía de Supervivencia</a>
+            <a href="#identidad" class="block hover:text-inneAmarillo">Identidad Institucional</a>
         </div>
     </header>
 
@@ -99,7 +97,7 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-6">
-                    <!-- Tarjeta: Data Max Ampliada en Desktop -->
+                    <!-- Tarjeta: Data Max -->
                     <div class="flex flex-col items-center bg-white/10 p-4 md:p-6 rounded-2xl backdrop-blur-sm border border-white/20 w-48 md:w-60 shadow-lg hover:scale-105 hover:bg-white/20 transition-all">
                         <div class="h-36 md:h-48 w-full relative overflow-hidden flex justify-center items-center mb-2">
                             <img src="data-max-saludando.gif" alt="Data Max Saludando" class="h-36 md:h-48 w-auto object-contain">
@@ -108,7 +106,7 @@
                         <span class="text-[10px] md:text-xs text-white/80">Coordinador de Datos</span>
                     </div>
 
-                    <!-- Tarjeta: Enni Ampliada en Desktop -->
+                    <!-- Tarjeta: Enni -->
                     <div class="flex flex-col items-center bg-white/10 p-4 md:p-6 rounded-2xl backdrop-blur-sm border border-white/20 w-48 md:w-60 shadow-lg hover:scale-105 hover:bg-white/20 transition-all">
                         <div class="h-36 md:h-48 w-full relative overflow-hidden flex justify-center items-center mb-2">
                             <img src="enni-saludando.gif" alt="Enni Saludando" class="h-36 md:h-48 w-auto object-contain transform scale-[1.65] origin-center">
@@ -121,105 +119,9 @@
         </section>
 
         <!-- =================================================================
-             [BLOQUE 3.8]: IDENTIDAD INSTITUCIONAL (ADN INNE CON ACORDEONES)
+             [BLOQUE 4]: SECCIÓN DE LA MALLA CURRICULAR (CON ZOOM/GALERÍA)
              ================================================================= -->
-        <section id="identidad" class="bg-inneCrema/40 py-16 px-4 border-y border-inneMostaza/20">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-12">
-                    <span class="text-[10px] font-bold text-inneAzul bg-inneMostaza/30 px-3 py-1 rounded-full uppercase tracking-wider">ADN INNE</span>
-                    <h3 class="text-2xl md:text-3xl font-extrabold text-inneAzul mt-3">Identidad Institucional</h3>
-                    <p class="text-sm text-gray-600 mt-2">Nuestra razón de ser, hacia dónde vamos y el perfil de nuestros ingenieros.</p>
-                </div>
-
-                <!-- Misión y Visión (Grid de 2 columnas) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    
-                    <!-- Tarjeta Misión -->
-                    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-inneAzulSecundario/20 hover:shadow-md transition-shadow">
-                        <button class="w-full flex items-center justify-between focus:outline-none toggle-adn text-left">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">M</div>
-                                <h4 class="text-xl font-bold text-inneAzul">Misión</h4>
-                            </div>
-                            <svg class="w-5 h-5 transform transition-transform text-inneAzulSecundario" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="hidden mt-4 pt-4 border-t border-gray-100">
-                            <p class="text-xs text-gray-600 leading-relaxed text-justify">
-                                [Formar ingenieros con talento en ciencia, ingeniería y tecnología, en cumplimiento con los requerimientos estratégicos de México y Jalisco y para cumplir con la demanda de profesionistas de clase mundial con perfiles globales e internacionales. En un campo profesional innovador que ofrece opciones para el desarrollo de la industria y las organizaciones de negocios tales como: la aeroespacial, la electrónica, la biotecnología y de alimentación, la de tecnologías de la información, la de equipo médico, la de servicios entre otros. Teniendo en cuenta la necesidad de abordar las capacidades humanas, físicas, materiales y financieras para garantizar el desarrollo de las organizaciones.]
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta Visión -->
-                    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-inneAzulSecundario/20 hover:shadow-md transition-shadow">
-                        <button class="w-full flex items-center justify-between focus:outline-none toggle-adn text-left">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">V</div>
-                                <h4 class="text-xl font-bold text-inneAzul">Visión</h4>
-                            </div>
-                            <svg class="w-5 h-5 transform transition-transform text-inneAzulSecundario" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="hidden mt-4 pt-4 border-t border-gray-100">
-                            <p class="text-xs text-gray-600 leading-relaxed text-justify">
-                                [Este programa educativo se creó con la intención de proveer profesionistas que intervengan en las organizaciones utilizando metodologías y modelos de análisis y optimización, sustentados en: innovación, eficiencia, eficacia, flexibilidad, uso intensivo de la tecnología para gestionar rubros tales como la competitividad, adaptación y resiliencia. Podrán desempeñarse en la sistematización de modelos de negocios en empresas privadas, en cualquier área funcional mediante la innovación en la gestión de la organización, con capacidad para incursionar en entornos complejos e interdependientes, aprovechando y usando de manera intensiva, las tecnologías actuales y canalizando la energía de las personas.]
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Objetivos y Perfiles (Grid de 2 columnas) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
-                    <!-- Tarjeta Objetivos -->
-                    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-inneAzulSecundario/20 hover:shadow-md transition-shadow">
-                        <button class="w-full flex items-center justify-between focus:outline-none toggle-adn text-left">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">O</div>
-                                <h4 class="text-xl font-bold text-inneAzul">Objetivos</h4>
-                            </div>
-                            <svg class="w-5 h-5 transform transition-transform text-inneAzulSecundario" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="hidden mt-4 pt-4 border-t border-gray-100">
-                            <p class="text-xs text-gray-600 leading-relaxed text-justify mb-4">
-                                [Formar integralmente ingenieros de alto nivel con la capacidad de comprensión y aplicación de las ciencias económico-administrativas y exactas, con énfasis en los negocios y mercados.]
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta Perfiles (Ingreso y Egreso) -->
-                    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-inneAzulSecundario/20 hover:shadow-md transition-shadow">
-                        <button class="w-full flex items-center justify-between focus:outline-none toggle-adn text-left">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">P</div>
-                                <h4 class="text-xl font-bold text-inneAzul">Perfiles</h4>
-                            </div>
-                            <svg class="w-5 h-5 transform transition-transform text-inneAzulSecundario" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="hidden mt-4 pt-4 border-t border-gray-100">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <h5 class="text-sm font-bold text-inneAzulSecundario mb-2 border-b border-gray-100 pb-1">Ingreso</h5>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed text-justify">
-                                        [Capacidad analítica; Pensamiento emprendedor; Habilidades en la comprensión y el uso de las tecnologías de la información; Habilidad y lógica matemática; y, Gusto por el desarrollo tecnológico y científico.]
-                                    </p>
-                                </div>
-                                <div>
-                                    <h5 class="text-sm font-bold text-inneAzulSecundario mb-2 border-b border-gray-100 pb-1">Egreso</h5>
-                                    <p class="text-[11px] text-gray-600 leading-relaxed text-justify">
-                                        [Está orientado a la aplicación del pensamiento analítico, integral y sistémico para la detección de problemas y el diseño de estrategias de solución con el apoyo de nuevas tecnologías, es capaz de tomar decisiones para la innovación de productos, servicios, comercialización, procesos, estructuras organizacionales. Aplica modelos de ingeniería y optimización de negocios. Impulsa la competitividad de las empresas a través de la creatividad, la disrupción, la flexibilidad y el aprendizaje permanente en la administración del cambio organizacional.]
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- =================================================================
-             [BLOQUE 4]: SECCIÓN DE LA MALLA CURRICULAR
-             ================================================================= -->
-        <section id="malla" class="bg-white py-16 px-4">
+        <section id="malla" class="bg-white py-16 px-4 border-b border-gray-100">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-10">
                     <h3 class="text-2xl md:text-3xl font-extrabold text-inneAzul">Plan de Estudios</h3>
@@ -228,37 +130,40 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <!-- Tarjeta Izquierda: Enfoque Profesional -->
-                    <div class="bg-inneCrema/30 p-6 rounded-3xl shadow-sm border border-inneMostaza/20 flex flex-col justify-between">
-                        <div>
-                            <span class="text-[10px] bg-inneAzul/10 text-inneAzul font-bold px-2 py-1 rounded-md uppercase tracking-wider">Perfil INNE</span>
-                            <h4 class="text-lg font-bold text-inneAzul mt-3 mb-2">¿Qué nos diferencia?</h4>
-                            <p class="text-xs text-gray-600 leading-relaxed">
-                                A diferencia de Administración o Negocios Internacionales, el Ingeniero en Negocios optimiza procesos utilizando tecnología profunda, ciencia de datos, programación y modelos matemáticos aplicados.
-                            </p>
-                        </div>
-                        <div class="mt-6 border-t border-inneAzulSecundario/20 pt-4 flex justify-between items-center text-xs text-inneAzulSecundario font-medium">
-                            <span>Requiere Laptop: i5/Ryzen 5 + 8-16GB RAM</span>
+                    <div class="bg-inneCrema/30 p-6 rounded-3xl shadow-sm border border-inneMostaza/20 flex flex-col justify-start">
+                        <span class="text-[10px] bg-inneAzul/10 text-inneAzul font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block self-start">Perfil INNE</span>
+                        <h4 class="text-lg font-bold text-inneAzul mt-3 mb-2">¿Qué nos diferencia?</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed mb-6">
+                            A diferencia de Administración o Negocios Internacionales, el Ingeniero en Negocios optimiza procesos utilizando tecnología profunda, ciencia de datos, programación y modelos matemáticos aplicados.
+                        </p>
+                        
+                        <!-- Botones de Especializantes reubicados aquí para limpiar el diseño -->
+                        <div class="mt-auto border-t border-inneAzulSecundario/20 pt-4 flex flex-col space-y-3">
+                            <a href="especializantes-recomendadas.png" target="_blank" class="w-full text-center bg-white border border-gray-200 text-inneAzul text-xs font-bold px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors shadow-sm">Ver Especializantes Recomendadas</a>
+                            <a href="especializantes-generales.png" target="_blank" class="w-full text-center bg-white border border-gray-200 text-inneAzul text-xs font-bold px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors shadow-sm">Ver Especializantes Generales</a>
                         </div>
                     </div>
 
-                    <!-- Tarjeta Derecha: Estructura de Créditos -->
-                    <div class="bg-inneAzulSecundario p-8 rounded-3xl shadow-md flex flex-col justify-between lg:col-span-2 text-white relative overflow-hidden">
-                        <!-- Elemento decorativo de fondo -->
-                        <div class="absolute -right-10 -bottom-10 opacity-10">
-                            <svg width="200" height="200" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 22h20L12 2zm0 3.83L18.17 20H5.83L12 5.83z"/></svg>
+                    <!-- Tarjeta Derecha: Visor de Malla Curricular -->
+                    <div class="bg-inneAzulSecundario p-6 md:p-8 rounded-3xl shadow-md lg:col-span-2 text-white relative overflow-hidden flex flex-col">
+                        <div class="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+                            <div>
+                                <span class="text-[10px] bg-inneAzul text-white font-bold px-2.5 py-1 rounded-md uppercase tracking-wider shadow-sm">Estructura de Créditos</span>
+                                <h4 class="text-xl font-bold mt-2 text-white">Malla Curricular Oficial</h4>
+                            </div>
+                            <span class="text-xs font-medium text-white/80 mt-2 sm:mt-0 bg-black/20 px-3 py-1 rounded-lg">Clica en la imagen para ampliar 🔍</span>
                         </div>
                         
-                        <div class="relative z-10">
-                            <span class="text-[10px] bg-inneAzul text-white font-bold px-2.5 py-1 rounded-md uppercase tracking-wider shadow-sm">Estructura de Créditos</span>
-                            <h4 class="text-xl font-bold mt-4 mb-2 text-white">Malla Curricular Oficial</h4>
-                            <p class="text-xs text-white/90 font-medium leading-relaxed max-w-xl">
-                                Consulta la distribución de materias obligatorias, especializantes y optativas libres. Organiza tus bloques desde los primeros semestres hasta el área de especialización en analítica o finanzas de los últimos ciclos.
-                            </p>
-                        </div>
-                        <div class="mt-8 flex flex-wrap gap-3 relative z-10">
-                            <a href="malla-curricular.jpg" target="_blank" class="bg-inneMostaza text-inneAzul text-xs font-bold px-5 py-3 rounded-xl hover:bg-inneAmarillo transition-colors shadow-sm">Malla Curricular</a>
-                            <a href="especializantes-recomendadas.png" target="_blank" class="bg-white/10 backdrop-blur-sm text-white border border-white/20 text-xs font-bold px-5 py-3 rounded-xl hover:bg-white/20 transition-colors shadow-sm">Especializantes Recomendadas</a>
-                            <a href="especializantes-generales.png" target="_blank" class="bg-white/10 backdrop-blur-sm text-white border border-white/20 text-xs font-bold px-5 py-3 rounded-xl hover:bg-white/20 transition-colors shadow-sm">Especializantes Generales</a>
+                        <!-- Contenedor Interactivo de la Imagen -->
+                        <div class="relative group cursor-pointer rounded-2xl overflow-hidden shadow-lg border-2 border-white/20 bg-white" onclick="openLightbox('malla-curricular.jpg')">
+                            <div class="absolute inset-0 bg-inneAzul/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10 backdrop-blur-sm">
+                                <span class="text-white font-bold text-lg bg-black/50 px-6 py-3 rounded-xl shadow-2xl flex items-center gap-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                                    Ampliar Mapa
+                                </span>
+                            </div>
+                            <!-- SE MUESTRA LA IMAGEN DIRECTAMENTE EN PANTALLA -->
+                            <img src="malla-curricular.jpg" alt="Malla Curricular Oficial" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
                         </div>
                     </div>
                 </div>
@@ -271,82 +176,98 @@
         <section id="avisos" class="bg-gray-100 py-14 px-4">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-10">
-                    <h3 class="text-2xl md:text-3xl font-bold text-inneAzul">Avisos y Agenda Escolar</h3>
-                    <p class="text-sm text-gray-600 mt-2">Mantente al tanto de los procesos, fechas límite y alertas vigentes de la coordinación.</p>
+                    <h3 class="text-2xl md:text-3xl font-bold text-inneAzul">Trámites y Agenda Escolar</h3>
+                    <p class="text-sm text-gray-600 mt-2">Mantente al tanto de los procesos de la coordinación y alertas vigentes.</p>
                 </div>
 
-                <!-- Bloque de 3 Tarjetas Informativas Fijas -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Alerta 1: Artículo 34 -->
+                <!-- Bloque de 4 Tarjetas de Trámites (Incluye Nueva Titulación a Linktree) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Tarjeta 1: Titulación (NUEVA DIRIGIDA A LINKTREE) -->
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div>
-                            <span class="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">⚠️ Reglamento</span>
-                            <h4 class="font-bold text-base text-inneAzul mb-2">¡Atención con el Artículo 34!</h4>
+                            <span class="bg-purple-100 text-purple-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">📜 Egreso</span>
+                            <h4 class="font-bold text-base text-inneAzul mb-2">Modalidades de Titulación</h4>
                             <p class="text-xs text-gray-600 leading-relaxed mb-4">
-                                Recuerda que no puedes reprobar la misma materia dos veces seguidas. Si dejaste una materia en ordinario, es obligatorio acreditarla en el extraordinario de este ciclo para evitar sanciones de agenda.
+                                Conoce las vías oficiales de titulación (Excelencia, Promedio, Tesis) y los lineamientos vigentes actualizados.
                             </p>
                         </div>
-                        <a href="https://cucea.udg.mx/oferta-academica/liad/reglamento-evaluacion-y-promocion-de-alumnos-art-33-34-35" target="_blank" class="text-xs font-semibold text-inneAzulClaro pt-3 border-t border-gray-100 block hover:underline text-left">
-                            Leer Reglamento Art. 33-35 →
+                        <a href="https://linktr.ee/inne.cucea?utm_source=linktree_profile_share&ltsid=6161476b-9d4e-4d7d-a028-eea29b0fb964" target="_blank" class="text-xs font-bold text-purple-600 pt-3 border-t border-gray-100 block hover:underline text-left">
+                            Revisar en Linktree →
                         </a>
                     </div>
 
-                    <!-- Alerta 2: Servicio Social -->
+                    <!-- Tarjeta 2: Servicio Social -->
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div>
-                            <span class="bg-inneAzul/10 text-inneAzul text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🎓 Egreso</span>
-                            <h4 class="font-bold text-base text-inneAzul mb-2">Pre-registro para Servicio Social</h4>
+                            <span class="bg-inneAzul/10 text-inneAzul text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🎓 Servicio</span>
+                            <h4 class="font-bold text-base text-inneAzul mb-2">Pre-registro para SS</h4>
                             <p class="text-xs text-gray-600 leading-relaxed mb-4">
-                                Si ya completaste el 60% de los créditos totales de la carrera, ya eres elegible para arrancar tu Servicio Social Institucional. Revisa las plazas y el calendario de sorteos oficiales.
+                                Si ya completaste el 60% de los créditos, ya eres elegible para el Servicio Social. Revisa plazas y calendarios.
                             </p>
                         </div>
                         <a href="https://ss.siiau.udg.mx/" target="_blank" class="text-xs font-semibold text-inneAzulClaro pt-3 border-t border-gray-100 block hover:underline text-left">
-                            Ir al Sistema de Servicio Social →
+                            Ir al Sistema Oficial →
                         </a>
                     </div>
 
-                    <!-- Alerta 3: Ventanilla Escolar -->
+                    <!-- Tarjeta 3: Ventanilla Escolar -->
                     <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
                         <div>
-                            <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🚀 Alumnos</span>
-                            <h4 class="font-bold text-base text-inneAzul mb-2">Ventanilla Escolar Digital</h4>
+                            <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">🚀 Ventanilla</span>
+                            <h4 class="font-bold text-base text-inneAzul mb-2">Ventanilla Virtual CUCEA</h4>
                             <p class="text-xs text-gray-600 leading-relaxed mb-4">
-                                Ya no necesitas hacer filas extensas. Recuerda que puedes iniciar tus solicitudes de justificantes, órdenes de pago y constancias directamente ingresando con tu correo y contraseña institucional.
+                                Inicia tus solicitudes de justificantes, constancias y órdenes de pago directamente con tu cuenta institucional.
                             </p>
                         </div>
-                        <a href="https://ventanillaescolar.cucea.udg.mx/login" target="_blank" class="text-xs font-semibold text-inneAzulClaro pt-3 border-t border-gray-100 block hover:underline text-left">Acceder a Ventanilla Escolar →</a>
+                        <a href="https://ventanillaescolar.cucea.udg.mx/login" target="_blank" class="text-xs font-semibold text-inneAzulClaro pt-3 border-t border-gray-100 block hover:underline text-left">
+                            Acceder al Portal →
+                        </a>
+                    </div>
+
+                    <!-- Tarjeta 4: Artículo 34 -->
+                    <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col justify-between">
+                        <div>
+                            <span class="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider inline-block mb-3">⚠️ Alerta</span>
+                            <h4 class="font-bold text-base text-inneAzul mb-2">Ley Artículo 34</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                                No puedes reprobar la misma materia dos veces seguidas. Si dejaste una en ordinario, es obligatorio acreditar el extraordinario.
+                            </p>
+                        </div>
+                        <a href="https://cucea.udg.mx/oferta-academica/liad/reglamento-evaluacion-y-promocion-de-alumnos-art-33-34-35" target="_blank" class="text-xs font-semibold text-inneAzulClaro pt-3 border-t border-gray-100 block hover:underline text-left">
+                            Leer Reglamento →
+                        </a>
                     </div>
                 </div>
 
                 <!-- SUB-PANEL: PRÁCTICAS PROFESIONALES -->
                 <div class="mt-6 bg-white border border-gray-200 p-6 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm">
                     <div class="text-left">
-                        <span class="text-[10px] bg-green-100 text-green-700 font-bold px-2 py-1 rounded-md uppercase tracking-wider">Vinculación Empresarial</span>
+                        <span class="text-[10px] bg-inneMostaza/30 text-inneAzul font-bold px-2 py-1 rounded-md uppercase tracking-wider">Vinculación Empresarial</span>
                         <h4 class="text-lg font-bold text-inneAzul mt-2 mb-1">Prácticas Profesionales y Sectores Estratégicos</h4>
                         <p class="text-xs text-gray-600 leading-relaxed max-w-4xl">
-                            Aplica tus habilidades en optimización y analítica en las organizaciones líderes del ecosistema. Consulta los convenios vigentes, vacantes activas y lineamientos oficiales gestionados de forma directa por la Universidad.
+                            Aplica tus habilidades en optimización y analítica en las organizaciones líderes del ecosistema. Consulta los convenios vigentes, vacantes activas y lineamientos oficiales.
                         </p>
                     </div>
                     <a href="https://cucea.udg.mx/pb/coordinacion-de-extension/s/unidad-de-vinculacion/" target="_blank" class="w-full md:w-auto text-center bg-inneAzul text-white text-xs font-bold px-5 py-3 rounded-xl hover:bg-inneAzulSecundario transition-colors shadow whitespace-nowrap">
-                        Ver Convenios de Vinculación →
+                        Ver Convenios Oficiales →
                     </a>
                 </div>
 
-                <!-- DASHBOARD TOTALMENTE CALIBRADO SINCRO PARA EVITAR CUALQUIER DESBORDE U HORIZONTAL SCROLL -->
+                <!-- DASHBOARD SINCRO -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
                     
-                    <!-- LADO A: Boletín en Formato Carta Vertical Impecable (850px) -->
+                    <!-- LADO A: Boletín -->
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col justify-between text-center h-[560px] sm:h-[620px] lg:h-[620px]">
                         <div class="w-full">
                             <div class="flex items-center justify-center space-x-2 mb-3">
                                 <span class="animate-pulse h-2 w-2 rounded-full bg-green-500"></span>
-                                <span class="bg-inneAzulClaro text-inneAzul text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Boletín en Vivo</span>
+                                <span class="bg-inneAzulClaro/30 text-inneAzul text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Boletín en Vivo</span>
                             </div>
                             <h4 class="font-bold text-lg text-inneAzul mb-1">Boletín Oficial y Circulares</h4>
                             <p class="text-xs text-gray-500 mb-4">Información inmediata editada desde la cuenta de Drive de la carrera.</p>
                         </div>
                         
-                        <!-- CONTENEDOR MÁSCARA INTELIGENTE CON ESCALADO VERTICAL FIJO SIN BARRAS GRISES -->
                         <div class="w-full flex justify-center items-center overflow-hidden flex-grow bg-white rounded-xl">
                             <div class="w-full max-w-[850px] h-[360px] sm:h-[450px] lg:h-[440px] relative overflow-hidden flex justify-center bg-white">
                                 <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkMMz4Mu6-nn92o7ILoA30BSZPYba3CmOgcWBTcQtY5LMVTVx1Ojuh8V_8-SF9bj_VdOrHO6FVMQy5/pub?embedded=true" 
@@ -358,7 +279,7 @@
                         </div>
                     </div>
 
-                    <!-- LADO B: Calendario Semestral Real de Google (Alineación Gemela bg-inneAzul) -->
+                    <!-- LADO B: Calendario -->
                     <div class="bg-inneAzul p-6 rounded-2xl shadow-md flex flex-col justify-between text-center h-[560px] sm:h-[620px] lg:h-[620px] border border-inneAzulSecundario/30">
                         <div class="w-full">
                             <div class="flex items-center justify-center space-x-2 mb-3">
@@ -374,18 +295,16 @@
                             </iframe>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
         <!-- =================================================================
-             [BLOQUE 6]: SECCIÓN DEL CARRUSEL INTERACTIVO DE INSTAGRAM
+             [BLOQUE 6]: SECCIÓN DEL CARRUSEL DE INSTAGRAM
              ================================================================= -->
         <section id="instagram" class="py-14 px-4 bg-white overflow-hidden">
             <div class="max-w-7xl mx-auto relative">
                 
-                <!-- Encabezado y Flechas de Navegación -->
                 <div class="flex justify-between items-end mb-8">
                     <div class="text-left">
                         <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">#ComunidadINNE</span>
@@ -397,57 +316,46 @@
                     </div>
                 </div>
 
-                <!-- Ventana Desplazable del Carrusel -->
                 <div class="relative w-full overflow-hidden">
                     <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out gap-4" style="transform: translateX(0px);">
                         
                         <!-- Post 1 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
-                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
-                                    <img src="insta-post-1.jpg" alt="Post Instagram" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative flex items-center justify-center">
+                                    <span class="text-gray-400 text-xs text-center px-4">[Espacio reservado para Portada IG 1]</span>
                                 </div>
-                                <p class="text-xs text-gray-600 line-clamp-2">📈 ¡Ruta de Especialización! Descubre cómo orientar tus materias optativas en analítica avanzada de negocios...</p>
+                                <p class="text-xs text-gray-600 line-clamp-2">📈 ¡Ruta de Especialización! Descubre cómo orientar tus materias optativas...</p>
                             </a>
                         </div>
 
                         <!-- Post 2 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
-                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
-                                    <img src="insta-post-2.jpg" alt="Post Instagram" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative flex items-center justify-center">
+                                    <span class="text-gray-400 text-xs text-center px-4">[Espacio reservado para Portada IG 2]</span>
                                 </div>
-                                <p class="text-xs text-gray-600 line-clamp-2">💻 Laptop Ideal: Todo lo que necesitas saber antes de comprar tu equipo de cómputo para los laboratorios de código...</p>
+                                <p class="text-xs text-gray-600 line-clamp-2">💻 Laptop Ideal: Todo lo que necesitas saber antes de comprar tu equipo...</p>
                             </a>
                         </div>
 
                         <!-- Post 3 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
-                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
-                                    <img src="insta-post-3.jpg" alt="Post Instagram" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative flex items-center justify-center">
+                                    <span class="text-gray-400 text-xs text-center px-4">[Espacio reservado para Portada IG 3]</span>
                                 </div>
-                                <p class="text-xs text-gray-600 line-clamp-2">🎓 ¡Proceso de Titulación! Conoce los promedios mínimos y las 5 modalidades aprobadas para Ingeniería en Negocios...</p>
+                                <p class="text-xs text-gray-600 line-clamp-2">🎓 ¡Proceso de Titulación! Conoce los promedios mínimos aprobados...</p>
                             </a>
                         </div>
 
                         <!-- Post 4 -->
                         <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
                             <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
-                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
-                                    <img src="insta-post-4.jpg" alt="Post Instagram" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative flex items-center justify-center">
+                                    <span class="text-gray-400 text-xs text-center px-4">[Espacio reservado para Portada IG 4]</span>
                                 </div>
-                                <p class="text-xs text-gray-600 line-clamp-2">📋 ¡Atención! Conoce las fechas del calendario escolar y regístrate con tu bloque antes del cierre...</p>
-                            </a>
-                        </div>
-
-                        <!-- Post 5 -->
-                        <div class="min-w-[100%] sm:min-w-[calc(50%-8px)] md:min-w-[calc(25%-12px)] bg-gray-50 rounded-2xl border border-gray-100 p-3 flex flex-col justify-between hover:shadow-md transition-shadow">
-                            <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="block group">
-                                <div class="overflow-hidden rounded-xl bg-gray-200 aspect-square mb-3 relative">
-                                    <img src="insta-post-5.jpg" alt="Post Instagram" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                                </div>
-                                <p class="text-xs text-gray-600 line-clamp-2">🚀 ¡Verano de Investigación! Abierta la convocatoria para estancias de desarrollo científico en tecnologías 4.0...</p>
+                                <p class="text-xs text-gray-600 line-clamp-2">📋 ¡Atención! Conoce las fechas del calendario escolar y regístrate...</p>
                             </a>
                         </div>
 
@@ -456,11 +364,10 @@
             </div>
         </section>
 
-
         <!-- =================================================================
-             [BLOQUE 7]: MANUAL DE SUPERVIVENCIA ESTUDIANTIL (ACORDEONES)
+             [BLOQUE 7]: MANUAL DE SUPERVIVENCIA ESTUDIANTIL
              ================================================================= -->
-        <section id="supervivencia" class="max-w-4xl mx-auto px-4 py-14">
+        <section id="supervivencia" class="bg-inneCrema/20 max-w-4xl mx-auto px-4 py-14 rounded-3xl mb-14 border border-inneMostaza/20">
             <div class="text-center mb-10">
                 <span class="text-xs font-bold text-inneMostaza uppercase tracking-wider bg-inneAzul px-3 py-1 rounded-full">Exclusivo INNE</span>
                 <h3 class="text-2xl md:text-3xl font-bold text-inneAzul mt-2">Manual de Supervivencia Estudiantil</h3>
@@ -468,7 +375,6 @@
             </div>
 
             <div class="space-y-3">
-                <!-- FAQ 1 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                     <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneAzul flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Cómo interpreto los códigos de las aulas o salones en CUCEA?</span>
@@ -479,7 +385,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ 2 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                     <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneAzul flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Qué es el Artículo 34 y cómo evito caer en esta sanción?</span>
@@ -490,18 +395,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ 3 -->
-                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-                    <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneAzul flex justify-between items-center focus:outline-none toggle-faq">
-                        <span>¿Cuáles son las opciones y promedios para titulación?</span>
-                        <svg class="w-4 h-4 transform transition-transform text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="hidden px-5 pb-4 text-xs text-gray-600 leading-relaxed bg-gray-50/50 border-t border-gray-100">
-                        Contamos con diversas modalidades para tu egreso, tales como Excelencia Académica, Titulación por Promedio, Tesis, Tesina y Diplomados de Posgrado. Para **Excelencia Académica** necesitas un promedio mínimo de 95 con historial completamente limpio en ordinarios, mientras que la **Titulación por Promedio** te solicita un mínimo global de 90.
-                    </div>
-                </div>
-
-                <!-- FAQ 4 -->
                 <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                     <button class="w-full text-left px-5 py-4 font-semibold text-sm text-inneAzul flex justify-between items-center focus:outline-none toggle-faq">
                         <span>¿Dónde están las oficinas de la Coordinación y qué es el CID?</span>
@@ -513,10 +406,98 @@
                 </div>
             </div>
         </section>
+
+        <!-- =================================================================
+             [BLOQUE 7.5]: IDENTIDAD INSTITUCIONAL (MOVIDO AL FONDO)
+             ================================================================= -->
+        <section id="identidad" class="bg-white py-16 px-4 border-t border-gray-100">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-[10px] font-bold text-white bg-inneAzulSecundario px-3 py-1 rounded-full uppercase tracking-wider">ADN INNE</span>
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-inneAzul mt-3">Identidad Institucional</h3>
+                    <p class="text-sm text-gray-600 mt-2">Nuestra razón de ser, hacia dónde vamos y el perfil de nuestros ingenieros.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-gray-50 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                        <button class="w-full flex items-center justify-between focus:outline-none toggle-adn text-left">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">M</div>
+                                <h4 class="text-xl font-bold text-inneAzul">Misión</h4>
+                            </div>
+                            <svg class="w-5 h-5 transform transition-transform text-inneAzulSecundario" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="hidden mt-4 pt-4 border-t border-gray-200">
+                            <p class="text-xs text-gray-600 leading-relaxed text-justify">
+                                [Formar ingenieros con talento en ciencia, ingeniería y tecnología, en cumplimiento con los requerimientos estratégicos de México y Jalisco y para cumplir con la demanda de profesionistas de clase mundial con perfiles globales e internacionales. En un campo profesional innovador que ofrece opciones para el desarrollo de la industria y las organizaciones de negocios tales como: la aeroespacial, la electrónica, la biotecnología y de alimentación, la de tecnologías de la información, la de equipo médico, la de servicios entre otros. Teniendo en cuenta la necesidad de abordar las capacidades humanas, físicas, materiales y financieras para garantizar el desarrollo de las organizaciones.]
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                        <button class="w-full flex items-center justify-between focus:outline-none toggle-adn text-left">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">V</div>
+                                <h4 class="text-xl font-bold text-inneAzul">Visión</h4>
+                            </div>
+                            <svg class="w-5 h-5 transform transition-transform text-inneAzulSecundario" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="hidden mt-4 pt-4 border-t border-gray-200">
+                            <p class="text-xs text-gray-600 leading-relaxed text-justify">
+                                [Este programa educativo se creó con la intención de proveer profesionistas que intervengan en las organizaciones utilizando metodologías y modelos de análisis y optimización, sustentados en: innovación, eficiencia, eficacia, flexibilidad, uso intensivo de la tecnología para gestionar rubros tales como la competitividad, adaptación y resiliencia. Podrán desempeñarse en la sistematización de modelos de negocios en empresas privadas, en cualquier área funcional mediante la innovación en la gestión de la organización, con capacidad para incursionar en entornos complejos e interdependientes, aprovechando y usando de manera intensiva, las tecnologías actuales y canalizando la energía de las personas.]
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                        <button class="w-full flex items-center justify-between focus:outline-none toggle-adn text-left">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">O</div>
+                                <h4 class="text-xl font-bold text-inneAzul">Objetivos</h4>
+                            </div>
+                            <svg class="w-5 h-5 transform transition-transform text-inneAzulSecundario" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="hidden mt-4 pt-4 border-t border-gray-200">
+                            <p class="text-xs text-gray-600 leading-relaxed text-justify mb-4">
+                                [Formar integralmente ingenieros de alto nivel con la capacidad de comprensión y aplicación de las ciencias económico-administrativas y exactas, con énfasis en los negocios y mercados.]
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                        <button class="w-full flex items-center justify-between focus:outline-none toggle-adn text-left">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-inneAzul rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm">P</div>
+                                <h4 class="text-xl font-bold text-inneAzul">Perfiles</h4>
+                            </div>
+                            <svg class="w-5 h-5 transform transition-transform text-inneAzulSecundario" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="hidden mt-4 pt-4 border-t border-gray-200">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <h5 class="text-sm font-bold text-inneAzulSecundario mb-2 border-b border-gray-200 pb-1">Ingreso</h5>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed text-justify">
+                                        [Capacidad analítica; Pensamiento emprendedor; Habilidades en la comprensión y el uso de las tecnologías de la información; Habilidad y lógica matemática; y, Gusto por el desarrollo tecnológico y científico.]
+                                    </p>
+                                </div>
+                                <div>
+                                    <h5 class="text-sm font-bold text-inneAzulSecundario mb-2 border-b border-gray-200 pb-1">Egreso</h5>
+                                    <p class="text-[11px] text-gray-600 leading-relaxed text-justify">
+                                        [Está orientado a la aplicación del pensamiento analítico, integral y sistémico para la detección de problemas y el diseño de estrategias de solución con el apoyo de nuevas tecnologías, es capaz de tomar decisiones para la innovación de productos, servicios, comercialización, procesos, estructuras organizacionales. Aplica modelos de ingeniería y optimización de negocios. Impulsa la competitividad de las empresas a través de la creatividad, la disrupción, la flexibilidad y el aprendizaje permanente en la administración del cambio organizacional.]
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-   <!-- =================================================================
-         [BLOQUE 8]: PIE DE PÁGINA (FOOTER CON BRANDING ACTUALIZADO)
+    <!-- =================================================================
+         [BLOQUE 8]: PIE DE PÁGINA (FOOTER CON YOUTUBE INCLUIDO)
          ================================================================= -->
     <footer id="contacto" class="bg-inneAzul text-white border-t border-inneAzulSecundario/50">
         <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-sm text-inneAzulClaro">
@@ -527,9 +508,10 @@
                 <div class="pt-2">
                     <span class="block text-[11px] text-inneCrema uppercase font-bold tracking-wider mb-2">Comunidad Digital</span>
                     <div class="flex items-center space-x-3">
-                        <a href="https://www.facebook.com/Coordinacion.INNE/" target="_blank" class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-inneAmarillo transition-all shadow-sm"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h2.721L15 8h-3V6.83c0-.855.18-.13.92-.13H15V3h-2.523C10.233 3 9 4.186 9 6.57V8z"/></svg></a>
-                        <a href="https://www.instagram.com/inne.cucea/" target="_blank" class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-inneAmarillo transition-all shadow-sm"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-                        <a href="https://linktr.ee/inne.cucea?utm_source=linktree_profile_share&ltsid=6161476b-9d4e-4d7d-a028-eea29b0fb964" target="_blank" class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-inneAmarillo transition-all shadow-sm"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M13.511 5.854l4.28 4.254-1.42 1.411-2.371-2.355v6.23h5.903l-2.356-2.372 1.412-1.42 4.254 4.281-4.254 4.254-1.412-1.411 2.356-2.372h-5.903v4.613h2.951v2H6.511v-2h2.952v-4.613H3.56l2.356 2.372-1.412 1.411L.25 14.636l4.254-4.281 1.412 1.42-2.356 2.372h5.903v-6.23L5.854 10.28l-1.42-1.411 4.28-4.254v-3h4.8v3z"/></svg></a>
+                        <a href="https://www.facebook.com/Coordinacion.INNE/" target="_blank" title="Facebook" class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-inneAmarillo transition-all shadow-sm"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h2.721L15 8h-3V6.83c0-.855.18-.13.92-.13H15V3h-2.523C10.233 3 9 4.186 9 6.57V8z"/></svg></a>
+                        <a href="https://www.instagram.com/inne.cucea/" target="_blank" title="Instagram" class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-inneAmarillo transition-all shadow-sm"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                        <a href="https://www.youtube.com/@ingenieriadenegocios-cucea" target="_blank" title="YouTube" class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-inneAmarillo transition-all shadow-sm"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                        <a href="https://linktr.ee/inne.cucea?utm_source=linktree_profile_share&ltsid=6161476b-9d4e-4d7d-a028-eea29b0fb964" target="_blank" title="Linktree" class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 hover:text-inneAmarillo transition-all shadow-sm"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M13.511 5.854l4.28 4.254-1.42 1.411-2.371-2.355v6.23h5.903l-2.356-2.372 1.412-1.42 4.254 4.281-4.254 4.254-1.412-1.411 2.356-2.372h-5.903v4.613h2.951v2H6.511v-2h2.952v-4.613H3.56l2.356 2.372-1.412 1.411L.25 14.636l4.254-4.281 1.412 1.42-2.356 2.372h5.903v-6.23L5.854 10.28l-1.42-1.411 4.28-4.254v-3h4.8v3z"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -550,7 +532,7 @@
                 </div>
                 <div class="bg-black/20 p-3 rounded-xl border border-white/10 flex items-center space-x-3">
                     <img src="image_a586fa.png" alt="QR" class="w-14 h-14 bg-white p-1 rounded-md object-contain">
-                    <div class="text-[11px] text-inneCrema"><strong>PORTAL MÓVIL</strong><br><span class="text-inneAzulClaro">Lleva el sitio oficial y la guía en tu celular.</span></div>
+                    <div class="text-[11px] text-inneCrema"><strong>PORTAL MÓVIL</strong><br><span class="text-inneAzulClaro">Lleva el sitio oficial en tu celular.</span></div>
                 </div>
             </div>
         </div>
@@ -558,6 +540,14 @@
             © 2026 Coordinación INNE - CUCEA. Todos los derechos reservados. Desarrollado con optimización inteligente.
         </div>
     </footer>
+
+    <!-- =================================================================
+         [MODAL]: VISOR DE IMAGEN (LIGHTBOX) PARA LA MALLA CURRICULAR
+         ================================================================= -->
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center p-4 backdrop-blur-sm fade-in">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 md:top-10 md:right-10 text-white text-4xl hover:text-inneAmarillo focus:outline-none transition-colors">&times;</button>
+        <img id="lightbox-img" src="" alt="Malla Ampliada" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
+    </div>
 
     <!-- =================================================================
          [BLOQUE 9]: CÓDIGO JAVASCRIPT (INTERACTIVIDAD INTERNA)
@@ -579,7 +569,26 @@
             });
         });
 
-        // --- CONTROLADOR 3: RIEL DEL CARRUSEL DE INSTAGRAM ---
+        // --- CONTROLADOR 3: VISOR DE IMAGEN (LIGHTBOX) ---
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Bloquea el scroll del fondo
+        }
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = 'auto'; // Restaura el scroll
+        }
+        // Cerrar visor al dar clic en el fondo negro
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        // --- CONTROLADOR 4: RIEL DEL CARRUSEL DE INSTAGRAM ---
         const track = document.getElementById('carousel-track');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
