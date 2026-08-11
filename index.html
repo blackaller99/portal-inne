@@ -47,44 +47,43 @@
 </head>
 <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen scroll-smooth">
 
-    <!-- =================================================================
-         [BLOQUE 2]: ENCABEZADO / MENÚ DE NAVEGACIÓN (NAVBAR)
+<!-- =================================================================
+         [BLOQUE 2]: ENCABEZADO / MENÚ DE NAVEGACIÓN (VERDE INNE / CREMA)
          ================================================================= -->
-    <header class="bg-inneAzul text-white sticky top-0 z-50 shadow-md">
+    <header class="bg-inneCrema text-inneAzul sticky top-0 z-50 shadow-md border-b border-inneMostaza/30">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
-            <div id="header-logo" class="flex items-center space-x-3 select-none group">
+            <div id="header-logo" class="flex items-center space-x-3 select-none group cursor-pointer">
                 <img src="logo-inne.png" alt="Logo INNE" class="h-10 w-auto object-contain group-hover:scale-105 transition-transform">
                 <div>
-                    <h1 class="text-base md:text-lg font-bold tracking-tight group-hover:text-inneAmarillo transition-colors leading-tight">INNE COORDINACIÓN</h1>
-                    <p class="text-[10px] text-inneAzulClaro hidden sm:block font-medium">Portal Informativo Oficial</p>
+                    <h1 class="text-base md:text-lg font-bold tracking-tight group-hover:text-inneAzulSecundario transition-colors leading-tight">INNE COORDINACIÓN</h1>
+                    <p class="text-[10px] text-inneAzulSecundario hidden sm:block font-medium">Portal Informativo Oficial</p>
                 </div>
             </div>
             
             <nav class="hidden md:flex space-x-6 font-medium text-sm">
-                <a href="#" class="text-inneAmarillo hover:text-white transition-colors">Inicio</a>
-                <a href="#malla" class="hover:text-inneAmarillo transition-colors">Malla Curricular</a>
-                <a href="#avisos" class="hover:text-inneAmarillo transition-colors">Trámites y Avisos</a>
-                <a href="#supervivencia" class="hover:text-inneAmarillo transition-colors">Supervivencia</a>
-                <a href="#identidad" class="hover:text-inneAmarillo transition-colors">Identidad</a>
+                <a href="#" class="text-inneAzul hover:text-inneAzulSecundario transition-colors font-bold">Inicio</a>
+                <a href="#malla" class="text-inneAzul hover:text-inneAzulSecundario transition-colors">Malla Curricular</a>
+                <a href="#avisos" class="text-inneAzul hover:text-inneAzulSecundario transition-colors">Trámites y Avisos</a>
+                <a href="#supervivencia" class="text-inneAzul hover:text-inneAzulSecundario transition-colors">Supervivencia</a>
+                <a href="#identidad" class="text-inneAzul hover:text-inneAzulSecundario transition-colors">Identidad</a>
             </nav>
 
-            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+            <button id="menu-btn" class="md:hidden text-inneAzul focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-inneAzul border-t border-white/10 px-4 py-3 space-y-3 text-sm font-medium">
-            <a href="#" class="block text-inneAmarillo">Inicio</a>
-            <a href="#malla" class="block hover:text-inneAmarillo">Malla Curricular</a>
-            <a href="#avisos" class="block hover:text-inneAmarillo">Trámites y Avisos</a>
-            <a href="#supervivencia" class="block hover:text-inneAmarillo">Guía de Supervivencia</a>
-            <a href="#identidad" class="block hover:text-inneAmarillo">Identidad Institucional</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-inneCrema border-t border-inneMostaza/20 px-4 py-3 space-y-3 text-sm font-medium shadow-inner">
+            <a href="#" class="block text-inneAzul font-bold">Inicio</a>
+            <a href="#malla" class="block text-inneAzul hover:text-inneAzulSecundario">Malla Curricular</a>
+            <a href="#avisos" class="block text-inneAzul hover:text-inneAzulSecundario">Trámites y Avisos</a>
+            <a href="#supervivencia" class="block text-inneAzul hover:text-inneAzulSecundario">Guía de Supervivencia</a>
+            <a href="#identidad" class="block text-inneAzul hover:text-inneAzulSecundario">Identidad Institucional</a>
         </div>
     </header>
-
-    <main class="flex-grow">
-<!-- =================================================================
+    
+    <!-- =================================================================
              [BLOQUE 3]: SECCIÓN HERO (ANIMADOS CON IMAGEN DE FONDO CLARA)
              ================================================================= -->
         <section class="relative py-14 px-4 text-center overflow-hidden bg-cover bg-center bg-no-repeat" style="background-image: url('fondo-max-y-enni.jpeg');">
