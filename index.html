@@ -84,10 +84,14 @@
     </header>
 
     <main class="flex-grow">
-        <!-- =================================================================
-             [BLOQUE 3]: SECCIÓN HERO (ANIMADOS ESCALADOS)
+<!-- =================================================================
+             [BLOQUE 3]: SECCIÓN HERO (ANIMADOS CON IMAGEN DE FONDO)
              ================================================================= -->
-        <section class="bg-gradient-to-br from-inneAzul to-inneAzulSecundario text-white py-14 px-4 text-center relative overflow-hidden">
+        <section class="relative py-14 px-4 text-center overflow-hidden bg-cover bg-center bg-no-repeat" style="background-image: url('fondo-max-y-enni.jpeg');">
+            
+            <!-- OVERLAY: Cristal entintado institucional para que el texto se lea perfecto -->
+            <div class="absolute inset-0 bg-gradient-to-br from-inneAzul/85 to-inneAzulSecundario/90"></div>
+
             <div class="max-w-4xl mx-auto relative z-10">
                 <h2 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight text-white">
                     Eficiencia Académica y Gestión Inteligente
@@ -97,8 +101,8 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mt-6">
-                    <!-- Tarjeta: Data Max -->
-                    <div class="flex flex-col items-center bg-white/10 p-4 md:p-6 rounded-2xl backdrop-blur-sm border border-white/20 w-48 md:w-60 shadow-lg hover:scale-105 hover:bg-white/20 transition-all">
+                    <!-- Tarjeta: Data Max Ampliada en Desktop -->
+                    <div class="flex flex-col items-center bg-white/10 p-4 md:p-6 rounded-2xl backdrop-blur-md border border-white/20 w-48 md:w-60 shadow-lg hover:scale-105 hover:bg-white/20 transition-all">
                         <div class="h-36 md:h-48 w-full relative overflow-hidden flex justify-center items-center mb-2">
                             <img src="data-max-saludando.gif" alt="Data Max Saludando" class="h-36 md:h-48 w-auto object-contain">
                         </div>
@@ -106,8 +110,8 @@
                         <span class="text-[10px] md:text-xs text-white/80">Coordinador de Datos</span>
                     </div>
 
-                    <!-- Tarjeta: Enni -->
-                    <div class="flex flex-col items-center bg-white/10 p-4 md:p-6 rounded-2xl backdrop-blur-sm border border-white/20 w-48 md:w-60 shadow-lg hover:scale-105 hover:bg-white/20 transition-all">
+                    <!-- Tarjeta: Enni Ampliada en Desktop -->
+                    <div class="flex flex-col items-center bg-white/10 p-4 md:p-6 rounded-2xl backdrop-blur-md border border-white/20 w-48 md:w-60 shadow-lg hover:scale-105 hover:bg-white/20 transition-all">
                         <div class="h-36 md:h-48 w-full relative overflow-hidden flex justify-center items-center mb-2">
                             <img src="enni-saludando.gif" alt="Enni Saludando" class="h-36 md:h-48 w-auto object-contain transform scale-[1.65] origin-center">
                         </div>
@@ -117,7 +121,7 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- =================================================================
              [BLOQUE 4]: SECCIÓN DE LA MALLA CURRICULAR (CON ZOOM/GALERÍA)
              ================================================================= -->
