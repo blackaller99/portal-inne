@@ -294,15 +294,12 @@
                             <p class="text-xs text-gray-500 mb-4">Información inmediata editada desde la cuenta de Drive de la carrera.</p>
                         </div>
                         
-                        <div class="w-full flex justify-center items-center overflow-hidden flex-grow bg-white rounded-xl border border-white/40 shadow-sm">
-                            <div class="w-full max-w-[850px] h-[360px] sm:h-[450px] lg:h-[440px] relative overflow-hidden flex justify-center bg-white">
-                                <!-- CAMBIO APLICADO: h-[2500px] y scrolling="yes" -->
-                                <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkMMz4Mu6-nn92o7ILoA30BSZPYba3CmOgcWBTcQtY5LMVTVx1Ojuh8V_8-SF9bj_VdOrHO6FVMQy5/pub?embedded=true" 
-                                        class="absolute top-0 w-[850px] h-[2500px] border-0 bg-white origin-top transition-transform duration-300 scale-[0.34] min-[375px]:scale-[0.40] min-[410px]:scale-[0.44] sm:scale-[0.65] md:scale-[0.78] lg:scale-[0.60] xl:scale-[0.70] overflow-y-auto"
-                                        style="overflow-x: hidden;"
-                                        scrolling="yes">
-                                </iframe>
-                            </div>
+                        <div class="w-full flex justify-center items-center overflow-hidden flex-grow bg-white rounded-xl border border-white/40 shadow-sm relative">
+                            <!-- Aquí aplicamos la matemática exacta de alturas (h-[...]) para forzar el scroll interno -->
+                            <iframe src="https://docs.google.com/document/d/e/2PACX-1vSkMMz4Mu6-nn92o7ILoA30BSZPYba3CmOgcWBTcQtY5LMVTVx1Ojuh8V_8-SF9bj_VdOrHO6FVMQy5/pub?embedded=true" 
+                                    class="absolute top-0 w-[850px] border-0 bg-white origin-top transition-transform duration-300 scale-[0.34] min-[375px]:scale-[0.40] min-[410px]:scale-[0.44] sm:scale-[0.65] md:scale-[0.78] lg:scale-[0.60] xl:scale-[0.70] h-[1060px] min-[375px]:h-[900px] min-[410px]:h-[820px] sm:h-[695px] md:h-[580px] lg:h-[735px] xl:h-[630px]"
+                                    scrolling="yes">
+                            </iframe>
                         </div>
                     </div>
                     
